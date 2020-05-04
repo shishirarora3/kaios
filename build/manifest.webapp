@@ -4,6 +4,7 @@
   "description": "Used for calendars/mails/people",
   "subtitle":"this is official microsoft app",
   "launch_path": "/index.html",
+  "theme":"#51b7c1",
   "icons": {
     "16": "/img/icons/icon16x16.png",
     "48": "/img/icons/icon48x48.png",
@@ -15,9 +16,6 @@
     "url": "http://example.com"
   },
     "type": "privileged",
-  "installs_allowed_from": [
-    "*"
-  ],
   "locales": {
     "es": {
       "name": "Aplicación privilegiada",
@@ -35,7 +33,7 @@
         "to": "/a.html"
       }
     ],
-  "fullscreen": "false",
-    "default_locale": "en",
-    "cursor": "true"
+  "fullscreen": "true",
+  "default_locale": "en",
+  "cursor": "true"
 }
