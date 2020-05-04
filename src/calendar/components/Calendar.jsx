@@ -31,7 +31,7 @@ export const Calendar = observer(class Calendar extends React.Component {
         const activeEtag = this?.props?.match?.params?.etag;
         if(activeEtag){
             const eventDetails = getActiveEventDetailsByEtag(activeEtag);
-            return <div dangerouslySetInnerHTML={{__html: eventDetails?.body?.content}}/>;
+            return <div className="mailListContainer" dangerouslySetInnerHTML={{__html: eventDetails?.body?.content}}/>;
         }
         return <div className="mailListContainer">{
             eventKeys.map((eventKey, k) => <React.Fragment key={k}>

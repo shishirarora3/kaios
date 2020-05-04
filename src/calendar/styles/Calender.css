@@ -1,2 +1,7 @@
 .mailListContainer {
+    top: 48px;
+    position: relative;
+}
+a{
+    text-decoration: none;
 }

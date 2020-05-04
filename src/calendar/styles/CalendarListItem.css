@@ -6,7 +6,6 @@
     position: relative;
     right: 0px;
     top: 0px;
-    width: 351px;
     align-items: center;
     perspective-origin: 187.5px 34px;
     transform-origin: 187.5px 34px;
@@ -265,7 +264,6 @@
     height: 19px;
     text-decoration: none solid rgb(0, 91, 163);
     white-space: pre-line;
-    width: 261.813px;
     column-rule-color: rgb(0, 91, 163);
     perspective-origin: 130.906px 9.5px;
     transform-origin: 130.906px 9.5px;
@@ -289,7 +287,6 @@
     text-decoration: none solid rgb(0, 91, 163);
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 147.547px;
     column-rule-color: rgb(0, 91, 163);
     perspective-origin: 73.7656px 9.5px;
     transform-origin: 73.7734px 9.5px;
@@ -311,7 +308,6 @@
     height: 16px;
     text-decoration: none solid rgb(0, 91, 163);
     white-space: pre-line;
-    width: 261.813px;
     column-rule-color: rgb(0, 91, 163);
     align-items: center;
     perspective-origin: 130.906px 8px;
