@@ -36,7 +36,7 @@ export const Calendar = observer(class Calendar extends React.Component {
         return <div className="mailListContainer">{
             eventKeys.map((eventKey, k) => <React.Fragment key={k}>
                 <CalendarListItemHeader start={eventsMap[eventKey][0]?.start}/>
-                {eventsMap[eventKey].map((e, k)=><CalendarListItem key={k} {...e} />)}
+                {eventsMap[eventKey].map((e, k)=><CalendarListItem key={k} tabIndex={k+1} {...e} />)}
             </React.Fragment>)
         }
         </div>;

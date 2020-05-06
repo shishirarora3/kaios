@@ -1,9 +1,8 @@
-{
-  "version": "0.2.0",
+{"version": "1.1.0",
   "name": "Outlook",
   "description": "Used for calendars/mails/people",
-  "subtitle":"this is official microsoft app",
   "launch_path": "/index.html",
+  "cursor": true,
   "icons": {
     "16": "/img/icons/icon16x16.png",
     "48": "/img/icons/icon48x48.png",
@@ -14,28 +13,20 @@
     "name": "Your name",
     "url": "http://example.com"
   },
-    "type": "privileged",
-  "installs_allowed_from": [
-    "*"
-  ],
+  "type": "privileged",
+  "permissions": {},
+  "installs_allowed_from": ["*"],
   "locales": {
     "es": {
-      "name": "Aplicación privilegiada",
-      "description": "Demuestra cómo utilizar permisos para cargar contenido remoto",
-      "permissions": {
-        "systemXHR": {
-          "description": "Requerido para cargar contenido remoto"
-        }
-      }
+      "name": "Aplicación vacía privilegiada",
+      "description": "Una plantilla con la mínima estructura",
+      "permissions": {}
     }
   },
   "redirects": [
-      {
-        "from": "https://outlook-sdf.office.com/mail/inbox",
-        "to": "/a.html"
-      }
-    ],
-  "fullscreen": "false",
-    "default_locale": "en",
-    "cursor": "true"
-}
+        {
+          "from": "https://outlook-sdf.office.com/mail/inbox",
+          "to": "/a.html"
+        }
+      ],
+  "default_locale": "en"}

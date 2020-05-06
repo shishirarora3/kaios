@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 export const CalendarListItem = (props) => {
   const {start, duration, subject, location} = props;
   const encodeEtag = encodeURIComponent(props["@odata.etag"]);
-  return <Link className="calendar_3"  to={`/event-details/${encodeEtag}`}>
+  return <Link className="calendar_3"  tabIndex={props.tabIndex} to={`/event-details/${encodeEtag}`}>
     <div className="calendar_4">
       <div className="calendar_5">{start && start[1]}</div>
       <div className="calendar_6">{duration}</div>
