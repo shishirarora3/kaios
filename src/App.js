@@ -16,11 +16,15 @@ class App extends Component {
                 clientId: config.appId,
                 navigateToLoginRequestUrl: false,
                 redirectUri: config.redirectUri
+            },
+            cache: {
+                cacheLocation: "localStorage"
             }
         });
         userAgentApplication.handleRedirectCallback((error, response) => {
             console.log(error, response.accessToken, response);
         });
+
         const user = this.userAgentApplication.getAccount();
         console.log("got account", user);//null
         this.state = {
