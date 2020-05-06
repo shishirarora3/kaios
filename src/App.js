@@ -16,11 +16,15 @@ class App extends Component {
                 clientId: config.appId,
                 navigateToLoginRequestUrl: false,
                 redirectUri: config.redirectUri
+            },
+            cache: {
+                cacheLocation: "localStorage"
             }
         });
         userAgentApplication.handleRedirectCallback((error, response) => {
             console.log(error, response.accessToken, response);
         });
+
         const user = this.userAgentApplication.getAccount();
         console.log("got account", user);//null
         this.state = {
@@ -107,12 +111,12 @@ class App extends Component {
 
     async login() {
         try {
-            const s = await this.userAgentApplication.loginPopup(
+            await this.userAgentApplication.loginRedirect(
                 {
                     scopes: config.scopes,
                     prompt: "select_account"
                 });
-            console.log("login popup closed idToken, idTokenClaims", s.idToken, s.idTokenClaims);
+            //console.log("login popup closed idToken, idTokenClaims", s.idToken, s.idTokenClaims);
             /**
              * { uniqueId: "98e50d11-9e73-44e3-baf7-682c838db2ca",
              * tenantId: "d4f08ae6-b571-462b-a459-b56a8c0b2c14",
