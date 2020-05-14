@@ -14,7 +14,12 @@
     "url": "http://example.com"
   },
   "type": "privileged",
-  "permissions": {},
+  "permissions": {
+      "contacts": {
+  		  "description": "Needed to access the contacts",
+  		  "access": "readcreate"
+  	  }
+  },
   "installs_allowed_from": ["*"],
   "locales": {
     "es": {

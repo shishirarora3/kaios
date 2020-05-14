@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/kaios.iml" filepath="$PROJECT_DIR$/.idea/kaios.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/kaios-packaged.iml" filepath="$PROJECT_DIR$/.idea/kaios-packaged.iml" />
     </modules>
   </component>
 </project>
