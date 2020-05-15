@@ -7,7 +7,6 @@ export const EventDetails = () =>{
     useEffect(()=>{
         let contentWindow, intervalID, contentWindowHref;
         const urlNavigate = 'https://jvaneyck.wordpress.com/2014/01/07/cross-domain-requests-in-javascript/';
-        const redirectURL = "https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy";
         const handler = ()=>{
             console.log("handler started..");
             if (contentWindow?.closed) {
@@ -29,17 +28,26 @@ export const EventDetails = () =>{
                 console.log("contentWindow",contentWindow);
                 contentWindowHref = contentWindow.location.href;
                 console.log("contentWindowHref",contentWindowHref);
+                /**
+                 * only in one case it will reach here, contentWindowHref = internal url app://fqwfqw/b.html
+                 * ass then origin of parent and child window will match and cross origin error wont be thrown
+                 */
             } catch (e) {}
             if (!contentWindowHref || contentWindowHref === "about:blank") {
+                /**
+                 * this will be general error scenario
+                 */
                 return;
             }
-            const isRedirectionReqd = contentWindowHref === redirectURL;
-
-            console.log({isRedirectionReqd});
-            if(isRedirectionReqd){
-                clearInterval(intervalID);
-                window.location.href = redirectURL;
-            }
+            console.log("here we are sure that we are inside an app url");
+            clearInterval(intervalID);
+            contentWindow.close();
+            /**
+             * here we are sure that we are inside an app url
+             * so we can close the window pop
+             *  with contentWindow.close();
+             * @type {boolean}
+             */
         };
         const winLeft = window.screenLeft ? window.screenLeft : window.screenX;
         const winTop = window.screenTop ? window.screenTop : window.screenY;
@@ -56,14 +64,13 @@ export const EventDetails = () =>{
         const left = ((width / 2) - (popUpWidth / 2)) + winLeft;
         const top_1 = ((height / 2) - (popUpHeight / 2)) + winTop;
         // open the window
-         contentWindow = window.open(urlNavigate, title, "width=" + popUpWidth + ", height=" + popUpHeight + ", top=" + top_1 + ", left=" + left + ", scrollbars=yes");
-        if (!contentWindow) {
-            console.log("not working ....");
-        }
+         if (!contentWindow) {
+             contentWindow = window.open(urlNavigate, title, "width=" + popUpWidth + ", height=" + popUpHeight + ", top=" + top_1 + ", left=" + left + ", scrollbars=yes");
+         }
         if (contentWindow.focus) {
             contentWindow.focus();
         }
-        intervalID = setInterval(handler, 1000);
+        intervalID = setInterval(handler, 100);
 
     }, []);
     return <>

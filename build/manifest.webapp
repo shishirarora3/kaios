@@ -29,7 +29,7 @@
           "to": "/a.html"
         },
         {
-          "from": "https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy",
+          "from": "https://my.app/",
           "to": "/b.html"
         }
       ],
