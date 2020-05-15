@@ -27,6 +27,10 @@
         {
           "from": "https://outlook-sdf.office.com/mail/inbox",
           "to": "/a.html"
+        },
+        {
+          "from": "https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy",
+          "to": "/b.html"
         }
       ],
   "default_locale": "en"}

@@ -4,7 +4,7 @@ import {CalendarListItem} from "./CalendarListItem";
 import config from "../../Config";
 import {getEvents} from "../../GraphService";
 import "../styles/Calender.css";
-
+import {EventDetails} from "./EventDetails";
 import {observer} from 'mobx-react';
 import {updateCalendarItemsMap} from '../actions/calendarActions';
 import {getActiveEventDetailsByEtag, getParsedEventsMap} from "../selectors/getCalendarEvents";
@@ -31,7 +31,9 @@ export const Calendar = observer(class Calendar extends React.Component {
         const activeEtag = this?.props?.match?.params?.etag;
         if(activeEtag){
             const eventDetails = getActiveEventDetailsByEtag(activeEtag);
-            return <div className="mailListContainer" dangerouslySetInnerHTML={{__html: eventDetails?.body?.content}}/>;
+            return <EventDetails {...this?.props}
+                                 className="mailListContainer"
+                                 dangerouslySetInnerHTML={{__html: eventDetails?.body?.content}}/>;
         }
         return <div className="mailListContainer">{
             eventKeys.map((eventKey, k) => <React.Fragment key={k}>

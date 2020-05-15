@@ -79,6 +79,7 @@ class App extends Component {
                                                 user={user}
                                                 showError={this.setErrorMessage.bind(this)}
                                                 select={false}
+                                                userAgentApplication = {this.userAgentApplication}
                                    />
                                }/>
                         <Route exact path=""
@@ -93,6 +94,7 @@ class App extends Component {
                                                            user={user}
                                                            showError={this.setErrorMessage.bind(this)}
                                                            select="id,subject,start,end,location,body"
+                                                           userAgentApplication = {this.userAgentApplication}
                                        />
                                    }
                                    return null;
