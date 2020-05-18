@@ -23,6 +23,7 @@ class App extends Component {
         });
         userAgentApplication.handleRedirectCallback((error, response) => {
             console.log(error, response.accessToken, response);
+            this.getUserProfile();
         });
 
         const user = this.userAgentApplication.getAccount();
@@ -111,14 +112,14 @@ class App extends Component {
         });
     }
 
-    async login() {
+    login() {
         try {
-            const s = await this.userAgentApplication.loginPopup(
+            this.userAgentApplication.loginRedirect(
                 {
                     scopes: config.scopes,
                     prompt: "select_account"
                 });
-            console.log("login popup closed idToken, idTokenClaims", s.idToken, s.idTokenClaims);
+            //console.log("login popup closed idToken, idTokenClaims", s.idToken, s.idTokenClaims);
             /**
              * { uniqueId: "98e50d11-9e73-44e3-baf7-682c838db2ca",
              * tenantId: "d4f08ae6-b571-462b-a459-b56a8c0b2c14",
@@ -129,8 +130,8 @@ class App extends Component {
              * scopes: Array[0], expiresOn: Date 2020-04-25T23:26:02.000Z, account: Object,
              * accountState: "156aeb73-9c3c-4649-905e-80ba1cca4f93", 1 more… }
              */
-            const g = await this.getUserProfile();
-            console.log("got User Profile", g);//undefined if not logged in
+            //const g = await this.getUserProfile();
+            //console.log("got User Profile", g);//undefined if not logged in
         } catch (err) {
             console.log("got error", err);
             var error = {};

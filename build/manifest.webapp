@@ -26,10 +26,10 @@
   "redirects": [
         {
           "from": "https://outlook-sdf.office.com/mail/inbox",
-          "to": "/a.html"
+          "to": "/index.html"
         },
         {
-          "from": "https://my.app/",
+          "from": "https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy",
           "to": "/b.html"
         }
       ],
