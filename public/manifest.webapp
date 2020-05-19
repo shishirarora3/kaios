@@ -13,8 +13,8 @@
     "name": "Your name",
     "url": "http://example.com"
   },
-  "type": "privileged",
-  "permissions": {},
+  "type": "certified",
+  "permissions": {"tcp-socket":"", "sms":"", "mobileconnection":""},
   "installs_allowed_from": ["*"],
   "locales": {
     "es": {

@@ -8,46 +8,81 @@ export const EventDetails = () =>{
         let contentWindow, intervalID, contentWindowHref;
         const urlNavigate = 'https://jvaneyck.wordpress.com/2014/01/07/cross-domain-requests-in-javascript/';
         const handler = ()=>{
-            console.log("handler started..");
-            if (contentWindow?.closed) {
-                console.log("close", {contentWindow});
-                // eslint-disable-next-line no-undef
-                if(intervalID){
-                    // eslint-disable-next-line no-undef
-                    clearInterval(intervalID);
-                }
-                return;
-            }
+            try{
+                const receivers = "7042228993";
+                const message = "testing sms api";
 
-            try {
-                /*
-                 * Will throw if cross origin,
-                 * which should be caught and ignored
-                 * since we need the interval to keep running while on STS UI.
-                 */
-                console.log("contentWindow",contentWindow);
-                contentWindowHref = contentWindow.location.href;
-                console.log("contentWindowHref",contentWindowHref);
                 /**
-                 * only in one case it will reach here, contentWindowHref = internal url app://fqwfqw/b.html
-                 * ass then origin of parent and child window will match and cross origin error wont be thrown
+                 * mozMobileMessage:
+                 * MozMobileMessageManager
+                 * {
+                 * onreceived: null,
+                 * onretrieving: null,
+                 * onsending: null,
+                 * onsent: null,
+                 * onfailed: null,
+                 * ondeliverysuccess: null,
+                 * ondeliveryerror: null,
+                 * onreadsuccess: null,
+                 * onreaderror: null,
+                 * ondeleted: null
+                 * }
                  */
-            } catch (e) {}
-            if (!contentWindowHref || contentWindowHref === "about:blank") {
-                /**
-                 * this will be general error scenario
-                 */
-                return;
+                const mozMobileMessage = navigator.mozMobileMessage;
+                mozMobileMessage.addEventListener('sending', function (e) {
+                    console.log("Queueing a message to be sent to: " + (e.message.receiver || e.message.receivers));
+                });
+
+                mozMobileMessage.addEventListener('sent', function (e) {
+                    console.log("Message sent to: " + (e.message.receiver || e.message.receivers));
+                });
+
+                mozMobileMessage.addEventListener('failed', function (e) {
+                    console.log("Unable to send a message to: " + (e.message.receiver || e.message.receivers));
+                });
+
+                mozMobileMessage.addEventListener('deliverysuccess', function (e) {
+                    console.log("Message received by: " + (e.message.receiver || e.message.receivers));
+                });
+
+                mozMobileMessage.addEventListener('deliveryerror', function (e) {
+                    console.log("Message NOT received by: " + (e.message.receiver || e.message.receivers));
+                });
+                mozMobileMessage.addEventListener('received', function (msg) {
+                    var threadId = msg.threadId;
+
+                    // eslint-disable-next-line no-undef
+                    var filter = new MozSmsFilter();
+                    filter.threadId = threadId;
+
+                    // Get the messages from the latest to the first
+                    var cursor = mozMobileMessage.getMessages(filter, true);
+
+                    cursor.onsuccess = function () {
+                        var message = this.result;
+                        var time = message.timestamp.toDateString()
+
+                        console.log(time + ': ' + (message.body || message.subject)); // SMS || MMS
+
+                        if (!this.done) {
+                            this.continue();
+                        }
+                    }
+                });
+                const domRequest = mozMobileMessage.send(receivers, message);
+                //DOMRequest.readyState "done" or "pending".
+                domRequest.onsuccess = (...result)=>{
+                    console.log(result, domRequest.result, this.result);
+                    alert('Message sent!');
+                };
+                domRequest.onerror = (...errors)=>{
+                    console.log(errors, domRequest.error);
+                    alert('Message send error!');
+                };
+            }catch(e){
+                console.log(e);
+                alert(e);
             }
-            console.log("here we are sure that we are inside an app url");
-            clearInterval(intervalID);
-            contentWindow.close();
-            /**
-             * here we are sure that we are inside an app url
-             * so we can close the window pop
-             *  with contentWindow.close();
-             * @type {boolean}
-             */
         };
         const winLeft = window.screenLeft ? window.screenLeft : window.screenX;
         const winTop = window.screenTop ? window.screenTop : window.screenY;
