@@ -1,5 +1,5 @@
 {"version": "1.1.0",
-  "name": "Outlook",
+  "name": "Outlook-sms",
   "description": "Used for calendars/mails/people",
   "launch_path": "/index.html",
   "cursor": true,
