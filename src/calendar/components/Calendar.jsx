@@ -2,7 +2,7 @@ import React from 'react';
 import {CalendarListItemHeader} from "./CalendarListItemHeader";
 import {CalendarListItem} from "./CalendarListItem";
 import config from "../../Config";
-import {getEvents} from "../../GraphService";
+import {getEvents, getAllDriveItems} from "../../GraphService";
 import "../styles/Calender.css";
 import {EventDetails} from "./EventDetails";
 import {observer} from 'mobx-react';
@@ -12,16 +12,19 @@ import {getActiveEventDetailsByEtag, getParsedEventsMap} from "../selectors/getC
 export const Calendar = observer(class Calendar extends React.Component {
     async componentDidMount() {
         try {
+
             // Get the user's access token
-            const accessToken = await window.msal.acquireTokenSilent({
-                scopes: config.scopes
-            });
+            const accessToken = this.props.accessToken;
+            console.log("Calendar: "+ accessToken);
+            if(!accessToken){
+                return;
+            }
             // Get the user's events
-            const events = await getEvents(accessToken, this.props.select);
+            const events = await getAllDriveItems(accessToken, this.props.select);
             // Update the array of events in state
             events && updateCalendarItemsMap(events);
         } catch (err) {
-            console.error('ERROR', err);
+            console.error('ERROR in getting events', err);
         }
     }
 

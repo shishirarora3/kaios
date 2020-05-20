@@ -25,8 +25,8 @@
   },
   "redirects": [
         {
-          "from": "https://outlook-sdf.office.com/mail/inbox",
-          "to": "/index.html"
+          "from": "https://ninja.outlookweb.io/",
+          "to": "/b.html"
         },
         {
           "from": "https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy",

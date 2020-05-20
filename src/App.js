@@ -1,54 +1,78 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {UserAgentApplication} from 'msal';
-import config from './Config';
 import {getUserDetails} from './GraphService';
 import {CalendarBox} from './calendar/components/CalendarBox';
 
 let history;
 let location;
+let childWindow;
 
 class App extends Component {
     constructor(props) {
         super(props);
-        const userAgentApplication = this.userAgentApplication = new UserAgentApplication({
-            auth: {
-                clientId: config.appId,
-                navigateToLoginRequestUrl: false,
-                redirectUri: config.redirectUri
-            },
-            cache: {
-                cacheLocation: "localStorage"
-            }
-        });
-        userAgentApplication.handleRedirectCallback((error, response) => {
-            console.log(error, response.accessToken, response);
-            this.getUserProfile();
-        });
 
-        const user = this.userAgentApplication.getAccount();
-        console.log("got account", user);//null
+
         this.state = {
-            isAuthenticated: (user !== null),
+            isAuthenticated: (true),
             user: null,
-            error: null
+            error: null,
+            accessToken: null
         };
 
-        if (user) {
-            // Enhance user object with data from Graph
-            this.getUserProfile();
-        } else {
-            this.login();
+
+    }
+    componentDidMount() {
+        let childWindowHref;
+        if (!childWindow) {
+            childWindow = window.open("https://outlook-sdf.office.com/calendar?gulp");
+            if (childWindow.focus) {
+                childWindow.focus();
+            }
         }
+        const int = setInterval(async () => {
+            try {
+                childWindowHref = childWindow.location.href;
+            } catch (e) {
+                console.log("not matched", childWindow.location);
+            }
+            try{
+                if (!childWindowHref || childWindowHref === "about:blank") {
+                    /**
+                     * this will be general error scenario
+                     */
+                    return;
+                }
+                if (childWindowHref) {
+                    clearInterval(int);
+                    console.log("matched...", childWindowHref);
+                    const accessToken = decodeURIComponent(childWindowHref?.split("token=")?.[1]);
+                    console.log("got accessToken", accessToken);
+                    const _state = await this.getUserProfile(accessToken);
+                    _state && this.setState(_state);
+                    console.log("_state, ", _state, this.setState);
+                    childWindow.close();
+                }
+            }catch(e){
+                console.log(e);
+                throw e;
+            }
+
+        }, 100);
     }
 
     render() {
         let error = null;
-        const {user, isAuthenticated} = this.state;
+        const {user, isAuthenticated, accessToken} = this.state;
         /**
          * {"displayName":"shishir","email":"shishir@kaiosorg.onmicrosoft.com"}
          */
-        console.log("user in render", user);
+        console.log("user in render", user, accessToken);
+        if(!user || !accessToken){
+            return <pre>
+                {isAuthenticated}
+                {accessToken}
+                    </pre>
+        }
         /**
          * location:
          * {
@@ -67,20 +91,22 @@ class App extends Component {
         return (
             <>
                 <Router>
-                    {/*<pre>
+                    <pre>
                             {JSON.stringify(user)}
                         {JSON.stringify(location)}
                         {isAuthenticated}
-                    </pre>*/}
+                        {accessToken}
+                    </pre>
                     <Switch>
                         <Route path="/event-details/:etag"
                                render={(props, params) =>
                                    <CalendarBox {...props} params={params}
                                                 headerText="Calendar Details"
+                                                accessToken={accessToken}
                                                 user={user}
                                                 showError={this.setErrorMessage.bind(this)}
                                                 select={false}
-                                                userAgentApplication = {this.userAgentApplication}
+                                                userAgentApplication={this.userAgentApplication}
                                    />
                                }/>
                         <Route exact path=""
@@ -88,14 +114,13 @@ class App extends Component {
                                    history = props.history;
                                    location = props.location;
                                    //   /index.html
-                                   console.log("matched", props.match.url, isAuthenticated, location);
                                    if (isAuthenticated) {
                                        return <CalendarBox {...props}
-                                                           headerText="Calendar"
+                                                           accessToken={accessToken}
+                                                           headerText={`Calendar - ${user.displayName}`}
                                                            user={user}
                                                            showError={this.setErrorMessage.bind(this)}
                                                            select="id,subject,start,end,location,body"
-                                                           userAgentApplication = {this.userAgentApplication}
                                        />
                                    }
                                    return null;
@@ -112,64 +137,14 @@ class App extends Component {
         });
     }
 
-    login() {
-        try {
-            this.userAgentApplication.loginRedirect(
-                {
-                    scopes: config.scopes,
-                    prompt: "select_account"
-                });
-            //console.log("login popup closed idToken, idTokenClaims", s.idToken, s.idTokenClaims);
-            /**
-             * { uniqueId: "98e50d11-9e73-44e3-baf7-682c838db2ca",
-             * tenantId: "d4f08ae6-b571-462b-a459-b56a8c0b2c14",
-             * tokenType: "id_token",
-             * idToken: Object,
-             * idTokenClaims: Object,
-             * accessToken: null,
-             * scopes: Array[0], expiresOn: Date 2020-04-25T23:26:02.000Z, account: Object,
-             * accountState: "156aeb73-9c3c-4649-905e-80ba1cca4f93", 1 more… }
-             */
-            //const g = await this.getUserProfile();
-            //console.log("got User Profile", g);//undefined if not logged in
-        } catch (err) {
-            console.log("got error", err);
-            var error = {};
-
-            if (typeof (err) === 'string') {
-                var errParts = err.split('|');
-                error = errParts.length > 1 ?
-                    {message: errParts[1], debug: errParts[0]} :
-                    {message: err};
-            } else {
-                error = {
-                    message: err.message,
-                    debug: JSON.stringify(err)
-                };
-            }
-
-            this.setState({
-                isAuthenticated: false,
-                user: null,
-                error: error
-            });
-        }
-    }
 
     logout() {
         this.userAgentApplication.logout();
     }
 
-    async getUserProfile() {
+    async getUserProfile(accessToken) {
         try {
-            // Get the access token silently
-            // If the cache contains a non-expired token, this function
-            // will just return the cached token. Otherwise, it will
-            // make a request to the Azure OAuth endpoint to get a token
 
-            var accessToken = await this.userAgentApplication.acquireTokenSilent({
-                scopes: config.scopes
-            });
             /**
              * Array [ "Calendars.Read", "openid", "profile", "User.Read", "email" ]
              * { uniqueId: "98e50d11-9e73-44e3-baf7-682c838db2ca",
@@ -188,24 +163,24 @@ class App extends Component {
                 let user;
                 // Get the user's profile from Graph
                 try {
-                    user = await getUserDetails(accessToken);
+                    user = await getUserDetails({accessToken});
                 } catch (e) {
                     console.log(e);
                     console.error(e);
                 }
                 console.log("got acquireTokenSilent, getUserDetails", user, location, location?.pathname);
                 /* eslint no-restricted-globals: "off"*/
+                document.head.getElementsByTagName("title")[0].text = `Calendar - ${user?.displayName} - Outlook`;
 
-                this.setState({
+                return {
                     isAuthenticated: true,
                     user: {
                         email: user?.mail || user?.userPrincipalName,
                         ...user
                     },
-                    error: null
-                });
-                document.head.getElementsByTagName("title")[0].text = `Calendar - ${user?.displayName} - Outlook`;
-
+                    error: null,
+                    accessToken
+                };
             }
         } catch (err) {
             console.log(err);
