@@ -3,6 +3,10 @@ module.exports = {
   redirectUri: process.env.NODE_ENV === 'development'? window.location.href: 'https://outlook-sdf.office.com/mail/inbox',
   scopes: [
     'user.read',
-    'calendars.read'
+    'calendars.read',
+      'mail.read',
+      'Mail.ReadWrite',
+      'files.readwrite.all',
+      'Sites.ReadWrite.All'
   ]
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import {CalendarListItemHeader} from "./CalendarListItemHeader";
 import {CalendarListItem} from "./CalendarListItem";
 import config from "../../Config";
-import {getEvents} from "../../GraphService";
+import {getEvents, getAllDriveItems} from "../../GraphService";
 import "../styles/Calender.css";
 
 import {observer} from 'mobx-react';
@@ -17,9 +17,11 @@ export const Calendar = observer(class Calendar extends React.Component {
                 scopes: config.scopes
             });
             // Get the user's events
-            const events = await getEvents(accessToken, this.props.select);
+            const _events = await getAllDriveItems(accessToken);
+            const events = _events[0];
             // Update the array of events in state
             events && updateCalendarItemsMap(events);
+            navigator.spatialNavigationEnabled = false;
         } catch (err) {
             console.error('ERROR', err);
         }

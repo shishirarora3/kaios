@@ -35,3 +35,42 @@ export async function getEvents(accessToken, select) {
 
     return events;
 }
+export async function getAllDriveItems(accessToken) {
+    const client = getAuthenticatedClient(accessToken);
+    const fn = async (endPoint)=>{
+        let events;
+        try{
+            events = await client.api(endPoint)
+                //.version('beta')
+                .get();
+            console.log(events);
+        }catch(e){
+            console.log("error ", endPoint, e);
+            return e;
+        }
+        console.log("success ", endPoint, events);
+        return events;
+    }
+
+
+    const urls = [
+        "/me/events?$select=subject,body,bodyPreview,organizer,attendees,start,end,location",
+        "/me/calendars",
+        "me/calendarview?startdatetime=2020-05-20T11:06:34.856Z&enddatetime=2020-05-27T11:06:34.856Z",
+        "/me/messages",
+        "/me/drive/root/children","/me/drive/recent", "/me/drive/sharedWithMe" //drive
+    ]
+
+    const $batch = {requests: urls.map((url, id)=>{
+        return ({
+            url,
+            method: "GET",
+            id: id+1
+        });
+    })};
+    const responses= await client.api('/$batch').version("v1.0").post($batch).then(({responses})=>
+        responses.sort(({id: a}, {id: b})=>a-b).map(({body})=>body)
+    ).catch(console.log);
+    return responses;
+
+}

@@ -14,7 +14,11 @@
     "url": "http://example.com"
   },
   "type": "privileged",
-  "permissions": {},
+  "permissions": {
+      "spatialnavigation-app-manage": {
+         "description": "Required for toggling the cursor in JS."
+      }
+  },
   "installs_allowed_from": ["*"],
   "locales": {
     "es": {
