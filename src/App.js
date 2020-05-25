@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {UserAgentApplication} from 'msal';
 import config from './Config';
 import {getUserDetails} from './GraphService';
-import {CalendarBox} from './calendar/components/CalendarBox';
+import {Box} from './calendar/components/Box';
 
 let history;
 let location;
@@ -11,6 +11,7 @@ let location;
 class App extends Component {
     constructor(props) {
         super(props);
+        navigator.spatialNavigationEnabled = true;
         const userAgentApplication = this.userAgentApplication = new UserAgentApplication({
             auth: {
                 clientId: config.appId,
@@ -74,11 +75,11 @@ class App extends Component {
                     <Switch>
                         <Route path="/event-details/:etag"
                                render={(props, params) =>
-                                   <CalendarBox {...props} params={params}
-                                                headerText="Calendar Details"
-                                                user={user}
-                                                showError={this.setErrorMessage.bind(this)}
-                                                select={false}
+                                   <Box {...props} params={params}
+                                        headerText="Calendar Details"
+                                        user={user}
+                                        showError={this.setErrorMessage.bind(this)}
+                                        select={false}
                                    />
                                }/>
                         <Route exact path=""
@@ -88,11 +89,11 @@ class App extends Component {
                                    //   /index.html
                                    console.log("matched", props.match.url, isAuthenticated, location);
                                    if (isAuthenticated) {
-                                       return <CalendarBox {...props}
-                                                           headerText="Calendar"
-                                                           user={user}
-                                                           showError={this.setErrorMessage.bind(this)}
-                                                           select="id,subject,start,end,location,body"
+                                       return <Box {...props}
+                                                   headerText="Calendar"
+                                                   user={user}
+                                                   showError={this.setErrorMessage.bind(this)}
+                                                   select="id,subject,start,end,location,body"
                                        />
                                    }
                                    return null;

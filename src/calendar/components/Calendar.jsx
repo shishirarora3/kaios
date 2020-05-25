@@ -5,6 +5,8 @@ import config from "../../Config";
 import {getEvents, getAllDriveItems} from "../../GraphService";
 import "../styles/Calender.css";
 
+import ListView from "../../kai-ui/src/views/ListView/ListView";
+import ArrowListItem from "../../kai-ui/src/components/ArrowListItem/ArrowListItem";
 import {observer} from 'mobx-react';
 import {updateCalendarItemsMap} from '../actions/calendarActions';
 import {getActiveEventDetailsByEtag, getParsedEventsMap} from "../selectors/getCalendarEvents";
@@ -28,19 +30,34 @@ export const Calendar = observer(class Calendar extends React.Component {
     }
 
     render() {
-        const eventsMap= getParsedEventsMap();
+        const eventsMap = getParsedEventsMap();
         const eventKeys = Object.keys(eventsMap).sort();
         const activeEtag = this?.props?.match?.params?.etag;
-        if(activeEtag){
+        if (activeEtag) {
             const eventDetails = getActiveEventDetailsByEtag(activeEtag);
             return <div className="mailListContainer" dangerouslySetInnerHTML={{__html: eventDetails?.body?.content}}/>;
         }
-        return <div className="mailListContainer">{
-            eventKeys.map((eventKey, k) => <React.Fragment key={k}>
-                <CalendarListItemHeader start={eventsMap[eventKey][0]?.start}/>
-                {eventsMap[eventKey].map((e, k)=><CalendarListItem key={k} tabIndex={k+1} {...e} />)}
-            </React.Fragment>)
-        }
+        return <div className="mailListContainer">
+            {
+                eventKeys.length > 0 && <ListView>
+                    {
+                        eventKeys.map((eventKey, k) => {
+                            const start = eventsMap[eventKey][0]?.start;
+                            const ref = React.createRef();
+                            return <ArrowListItem
+                                ref={ref}
+                                primary={`${start[0]} ${start[2]}`}
+                                index={k}
+                                key={k}
+                            >
+                                {eventsMap[eventKey].map((e, k) => <div>
+                                    <CalendarListItem key={k} tabIndex={k + 1} {...e} />
+                                </div>)}
+                            </ArrowListItem>
+                        })
+                    }
+                </ListView>
+            }
         </div>;
     }
 });
