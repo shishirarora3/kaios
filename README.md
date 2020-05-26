@@ -1,3 +1,26 @@
+Demo Video Links:
+https://microsoft.sharepoint-df.com/:v:/t/outlookonkaiosfc/EVIVTswdeVlLu2d1L3dkENYBY6zq6DJuJD42p6qwtjMIhA?e=6uPv6Z
+https://microsoft.sharepoint-df.com/:v:/t/outlookonkaiosfc/EYmBK52iXWBPknxcGBkKWsIBTyGK07Di97Pd443UeNqxHA?e=Wg1vAk
+
+
+login: shishirarora3@outlook.com/Rohan@501
+ 
+steps to install:
+
+npm install
+npm build
+upload build folder to simulator/phone General Engg
+
+ 
+
+ 
+
+or to open in desktop browser
+
+npm install
+npm run start 
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
