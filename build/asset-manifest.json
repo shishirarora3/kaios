@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.1de4ee4a.css",
-    "main.js": "/static/js/main.f0d42527.js",
-    "main.js.map": "/static/js/main.f0d42527.js.map",
+    "main.css": "/static/css/main.191f07ab.css",
+    "main.js": "/static/js/main.2ed09657.js",
+    "main.js.map": "/static/js/main.2ed09657.js.map",
     "index.html": "/index.html",
-    "precache-manifest.bf83714864c27173b1b6e4d7061ba45a.js": "/precache-manifest.bf83714864c27173b1b6e4d7061ba45a.js",
+    "precache-manifest.c541f3a47c03498701944eeed5dae0de.js": "/precache-manifest.c541f3a47c03498701944eeed5dae0de.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.1de4ee4a.css.map": "/static/css/main.1de4ee4a.css.map",
-    "static/js/main.f0d42527.js.LICENSE.txt": "/static/js/main.f0d42527.js.LICENSE.txt"
+    "static/css/main.191f07ab.css.map": "/static/css/main.191f07ab.css.map",
+    "static/js/main.2ed09657.js.LICENSE.txt": "/static/js/main.2ed09657.js.LICENSE.txt",
+    "static/media/ArrowListItem.scss": "/static/media/kai-icons.686d74df.eot"
   },
   "entrypoints": [
-    "static/css/main.1de4ee4a.css",
-    "static/js/main.f0d42527.js"
+    "static/css/main.191f07ab.css",
+    "static/js/main.2ed09657.js"
   ]
 }
