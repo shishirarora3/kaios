@@ -5,7 +5,11 @@ import ReactDOM from 'react-dom';
 import App from './App';
 const bootstrap = () => {
     // Render the app
-    ReactDOM.render(<App />, document.getElementById('root'));
+    if(process.env.DEMO){
+        ReactDOM.render(<div>true</div>, document.getElementById('root'));
+    }else{
+        ReactDOM.render(<App />, document.getElementById('root'));
+    }
 };
 
 
