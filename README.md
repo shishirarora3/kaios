@@ -28,12 +28,17 @@ steps to run:
     
 5)  
     ci-cd Hosted urls
-    with demo components to be build:
-    https://kaios.onrender.com
-    with integrated app
-    https://integrated-app.onrender.com
-    with kai ui
-    https://kai-ui.onrender.com
+        with demo components to be build:
+            https://kaios.onrender.com
+            <img src="./src/demo/screenshot.png"/>
+            
+        with integrated app
+            https://integrated-app.onrender.com
+            
+        with kai ui
+            https://kai-ui.onrender.com
+            <video src="./src/kai-ui.mov"/>
+            
 6) every pr against master, will have a deploy link generated
 
 7)ci-cd service 
