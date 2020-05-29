@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "config-overrides-path": "node_modules/react-app-rewire-disable-chunks",
-  "homepage": "https://shishirarora3.github.io/kaios",
+  "homepage": "https://shishirarora3.github.io",
   "dependencies": {
     "@microsoft/microsoft-graph-client": "^2.0.0",
     "@testing-library/jest-dom": "^4.2.4",
@@ -28,6 +28,7 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
+    "start:demo": "DEMO=true react-app-rewired start",
     "build": "INLINE_RUNTIME_CHUNK=false react-app-rewired build",
     "postbuild": "node replace.js",
     "test": "react-app-rewired test",

@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 const bootstrap = () => {
     // Render the app
+    console.log(process.env.DEMO);
     if(process.env.DEMO){
         ReactDOM.render(<div>true</div>, document.getElementById('root'));
     }else{
