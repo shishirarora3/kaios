@@ -26,8 +26,18 @@ steps to run:
     npm run start
     login: shishirarora3@outlook.com/Rohan@501
     
-5)  ci-cd Hosted url with demo components to be build:
-    https://kaios.onrender.com 
+5)  
+    ci-cd Hosted urls
+    with demo components to be build:
+    https://kaios.onrender.com
+    with integrated app
+    https://integrated-app.onrender.com
+    with kai ui
+    https://kai-ui.onrender.com
+6) every pr against master, will have a deploy link generated
+
+7)ci-cd service 
+   https://dashboard.render.com/
     
  
 
