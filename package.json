@@ -32,6 +32,7 @@
     "start:kai-ui": "REACT_APP_KAI_UI=true react-app-rewired start",
     "start:demo": "REACT_APP_DEMO=true react-app-rewired start",
     "build": "INLINE_RUNTIME_CHUNK=false react-app-rewired build",
+    "build:integrated-app": "INLINE_RUNTIME_CHUNK=false REACT_APP_INTEGRATED_APP=true react-app-rewired build",
     "postbuild": "node replace.js",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject",
