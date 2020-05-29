@@ -37,7 +37,10 @@ steps to run:
             
         with kai ui
             https://kai-ui.onrender.com
-            <video src="./src/kai-ui.mov"/>
+            <video width="320" height="240" controls Autoplay=autoplay>
+              <source src="./src/kai-ui.mov" type="video/quicktime">
+              Your browser does not support the video tag.
+            </video>
             
 6) every pr against master, will have a deploy link generated
 
