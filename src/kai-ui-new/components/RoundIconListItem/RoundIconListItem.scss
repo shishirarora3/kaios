@@ -1,0 +1,95 @@
+@import '../../theme/fonts.scss';
+@import '../../theme/theme.scss';
+@import '../../theme/layout';
+@import '../../kai-font/style.scss';
+
+:root {
+  --il-text-focused: var(--color-gs00);
+  --il-icon-unfocused: var(--color-zeta);
+}
+.kai-ril {
+  width: auto;
+  height: 60px;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+  outline: none;
+  &:focus {
+    color: var(--il-text-focused);
+    border-radius: 10px;
+  }
+
+  &-icon {
+    &-focused {
+      span::before {
+        @include list-item-icon;
+        color: var(--il-text-focused);
+      }
+
+      img {
+        @include list-item-icon;
+        //color: var(--il-text-focused);
+        border:1.8px solid #ffffff;
+        border-radius: 50px;  
+        padding:0.18px;
+      }
+      
+    }
+
+    &-unfocused {
+      span::before {
+        @include list-item-icon;
+        color: var(--il-icon-unfocused);
+      }
+
+      img {
+        @include list-item-icon;
+        color: var(--il-icon-unfocused);
+        border-radius: 50px;
+      }
+    }
+  }
+
+  &-line {
+    font-family: 'Open Sans';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 1rem 1rem 1rem 0;
+    span,
+    label {
+      padding: 0;
+      width: 100%;
+      overflow: hidden;
+    }
+  }
+
+  &-primary {
+    font-weight: bold;
+    font-size: 15px;
+   line-height: 20px;
+  }
+
+  &-secondary {
+    font-weight:normal;
+    font-size:15px;
+   line-height:20px
+  }
+
+  &-message{
+    position:absolute;
+    right:0.3rem;
+    vertical-align: middle;
+    z-index: 1;
+    text-align: center;
+    font-weight: 700;
+    font-size:13px;
+    width: 18px;
+    height: 18px;
+    border-radius:3px;
+  }
+}
