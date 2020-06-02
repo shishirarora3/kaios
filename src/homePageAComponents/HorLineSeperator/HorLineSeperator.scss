@@ -1,0 +1,18 @@
+@import '../../homePageA/HomePageATheme/theme.scss';
+
+.top{
+    position: absolute;
+    width: 240px;
+    height: 0px;
+    left: 0px;
+    top: 30px;
+    border: 1px solid var(--color-home-a-dark-grey);
+}
+.bottom{
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 3.33%;
+    bottom: 96.67%;
+    border: 1px solid var(--color-home-a-dark-grey);
+}

@@ -1,0 +1,13 @@
+@import '../../homePageA/HomePageATheme/theme.scss';
+
+.gridContainerType{
+    position: absolute;
+    top: 45px;
+	bottom: 45px;
+	right: 10px;
+	left: 10px;
+	height: 230px;
+	width: 220px;
+	box-sizing: border-box;
+    background: var(--color-home-a-light-grey);
+}

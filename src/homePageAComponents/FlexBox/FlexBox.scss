@@ -1,0 +1,17 @@
+.kai-listhor-view {
+    position: absolute;
+    width: stretch;
+    height: stretch;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+	margin: auto auto;
+	box-sizing: border-box;
+}
+.toBeHidden{
+    width: 100%;
+    clear: both;
+    visibility: hidden;
+}

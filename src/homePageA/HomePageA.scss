@@ -1,0 +1,12 @@
+@import '../homePageA/HomePageATheme/theme.scss';
+.JioPhoneDimentions{
+    margin: 0px;
+	padding: 0px;
+	height: 320px;
+	width: 240px;
+	box-sizing: border-box;
+	background: var(--color-home-a-light-grey);
+}
+*{
+    box-sizing: border-box;
+}

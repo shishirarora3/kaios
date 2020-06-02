@@ -1,0 +1,48 @@
+@import '../../homePageA/HomePageATheme/fonts.scss';
+@import '../../homePageA/HomePageATheme/theme.scss';
+
+:root {
+  --tl-text-focused: var(--color-gs00);
+}
+.kai-tl {
+  // width: fit-content;
+  // height: fit-content;
+  width: 66px;
+  height: 66px;
+  align-items: center;
+  min-width: var(--list-item-height);
+  outline: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  // padding: 1rem;
+  box-sizing: border-box;
+
+  img{
+    height: fit-content;
+    width: fit-content;
+  }
+  span,
+  label {
+    padding: 0;
+    height: 100%;
+    width: fit-content;
+    overflow: hidden;
+  }
+
+  &:focus {
+    color: var(--tl-text-focused);
+  }
+
+  &-primary {
+    @extend .p-pri;
+  }
+
+  &-secondary {
+    @extend .p-sec;
+  }
+
+  &-tertiary {
+    @extend .p-thi;
+  }
+}
