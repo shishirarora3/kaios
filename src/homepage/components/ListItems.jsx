@@ -5,10 +5,10 @@ import IconListItem from './kaiUiComponents/IconListItem/IconListItem'
 import Icon from '../assets/pic1.jpg'
 
 export default function ListItems() {
-    const imgPath1_1=require('../assets/pic1.1.png')
-    const imgPath1_2=require('../assets/pic1.2.png')
-    const imgPath2=require('../assets/pic2.png')
-    const imgPath3=require('../assets/pic3.png')
+    const imgPath1_1=require('../assets/pic1.1.svg')
+    const imgPath1_2=require('../assets/pic1.2.svg')
+    const imgPath2=require('../assets/pic2.svg')
+    const imgPath3=require('../assets/pic3.svg')
     const areThere2Icons=true
       return (
         <div >

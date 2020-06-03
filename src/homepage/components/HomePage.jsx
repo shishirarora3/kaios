@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Header from './kaiUiComponents/Header/Header'
-import TabBar from './TabBar'
 import ListItems from './ListItems'
 import SoftKeys from './SoftKeys'
 import SoftKey from '../../kai-ui/src/components/SoftKey/SoftKey'

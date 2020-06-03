@@ -77,8 +77,8 @@ const IconListItem = React.memo(
       }
       else if(type===2){
         return (<div style={{alignItems:'center',justifyContent:'center'}}>
-          <img src={require('../../../assets/imageForNotification.png' ) } className='listTwoNotification1' />
-          { <img src={require('../../../assets/imageForNotification2.png' )} className='listTwoNotification2'></img> }
+          <img src={require('../../../assets/imageForNotification.svg' ) } className='listTwoNotification1' />
+          { <img src={require('../../../assets/imageForNotification2.svg' )} className='listTwoNotification2'></img> }
           </div>);
       }
       else{
