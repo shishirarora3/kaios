@@ -1,9 +1,11 @@
-*{
+*{  
     font-family: 'Noto Sans';
     font-style: normal;
     font-weight: normal;
 }
 
 .mainDiv{
+    height:100%;
+    width:100%;
     background-color:#F2F2F2;
 }

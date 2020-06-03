@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import Header from './kaiUiComponents/Header/Header'
 import ListItems from './ListItems'
-import SoftKeys from './SoftKeys'
-import SoftKey from '../../kai-ui/src/components/SoftKey/SoftKey'
+import SoftKey from './kaiUiComponents/SoftKey/SoftKey'
 import { withSoftKeyManager } from '../../kai-ui/src/components/SoftKey/withSoftKeyManager'
 import '../styles/HomePage.css'
 

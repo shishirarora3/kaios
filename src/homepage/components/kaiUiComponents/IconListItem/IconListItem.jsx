@@ -48,7 +48,7 @@ const IconListItem = React.memo(
     let anyNotification=isNotification; 
 
     const overlappedIcons=(
-      <div style={{width:'98px',height:'72px'}}>
+      <div style={{width:'40.833vw',height:'22.5vh'}}>
         <img src={iconSrc2} className='firstIcon' alt="" />
         <img src={iconSrc} className='secondIcon' alt="" />
         
