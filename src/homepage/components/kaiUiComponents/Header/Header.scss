@@ -2,20 +2,22 @@
 
 
 .kaiHeader {
-  border-bottom: 1px solid #E4E4E4;
-  height:30px;
-  width: 240px;
-  background-color:#F2F2F2;
-  margin-bottom:1px
+  display: flex;
+  border-bottom: 0.1rem solid #E4E4E4;
+  height:9.375%;
+  width: 100%;
+  background-color:'F2F2F2';
+  margin-bottom:0.1rem;
+ // align-items: center;
+ // justify-content: center;
+}
 
-}
- .h1style{
-  display: inline-block;
-  margin:3px 85px 4px 86px ;
+.h1style{  
+  margin: 0.9375vh 35.416vw 1.25vh 35.83vw;
+  color:black;
   font-weight: bold;
-  font-size: 17px;
-  height: 23px;
-  width:69px;
+  font-size: 7.083vw;
+  line-height: 7.1875vh;
   text-align: center;
-  color: black;
 }
+ 
