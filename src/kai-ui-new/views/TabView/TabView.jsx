@@ -56,11 +56,11 @@ const TabView = React.memo(
 
     return (
       <div className={prefixCls}>
+
         <div className={tabViewTabs}>
           <Tabs onChangeIndex={handleChangeIndex}>
             {renderTabs()}
           </Tabs>
-          
         </div>
         <div className="divider"></div>
         <div className={tabViewContent}>

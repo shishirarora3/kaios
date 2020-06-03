@@ -8,17 +8,18 @@
   --il-icon-unfocused: var(--color-zeta);
 }
 .kai-ril {
-  width: auto;
+  width: 100%;
   height: 60px;
   display: flex;
-  position: relative;
+  //position: relative;
   flex-direction: row;
   align-items: center;
   overflow: hidden;
   outline: none;
+  padding :5px 0;
   &:focus {
     color: var(--il-text-focused);
-    border-radius: 10px;
+    border-radius: 6px;
   }
 
   &-icon {
@@ -53,7 +54,7 @@
   }
 
   &-line {
-    font-family: 'Open Sans';
+    font-family: 'Noto Sans';
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -84,7 +85,7 @@
     position:absolute;
     right:0.3rem;
     vertical-align: middle;
-    z-index: 1;
+    z-index: 4;
     text-align: center;
     font-weight: 700;
     font-size:13px;
