@@ -16,7 +16,7 @@
   align-items: center;
   overflow: hidden;
   outline: none;
-  padding :5px 0;
+  padding :3px 0;
   &:focus {
     color: var(--il-text-focused);
     border-radius: 6px;
@@ -78,7 +78,7 @@
   &-secondary {
     font-weight:normal;
     font-size:15px;
-   line-height:20px
+     line-height:20px
   }
 
   &-message{

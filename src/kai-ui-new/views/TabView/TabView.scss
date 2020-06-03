@@ -18,19 +18,18 @@
   &-content {
     //box-shadow:0 -2px 0 0 #b8b1b8;
     // position: absolute;
-      z-index: 2;
-      top:30px;
-    margin-top: 3rem;
-    flex-grow: 1;
-    height:180px;
-    overflow: auto;
+      z-index:2;
+      margin-top: 3rem;
+      flex-grow: 1;
+      height:180px;
+      overflow: auto;
   }
   
 }
 .divider{
   height:0.7px;
   background-color: #e4e4e4;
-  width:240px;
+  width:100%;
   position:absolute;
   z-index:2;
   top:2.4rem;
