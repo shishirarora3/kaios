@@ -6,16 +6,12 @@ import SoftKey from '../../kai-ui/src/components/SoftKey/SoftKey'
 import { withSoftKeyManager } from '../../kai-ui/src/components/SoftKey/withSoftKeyManager'
 import '../styles/HomePage.css'
 
-const NotificationBarStyle = {
-    height: '25px',
-    width: '240px',
-    backgroundColor: 'grey'
-  };
+
 export default class HomePage extends Component {
      
     render() {
         return (
-            <div style={{backgroundColor:'#F2F2F2'}}> 
+            <div className='mainDiv'> 
                {/* remove the below div, its notification bar of jio phone */}
                {/* <div style={NotificationBarStyle}/> */}
                <Header text='Outlook' backgroundColor='lightgrey' bottomMargin='1px'/>

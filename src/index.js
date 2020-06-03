@@ -9,7 +9,6 @@ import HomePage from './homepage/components/HomePage'
 
 const bootstrap = () => {
     // Render the app
-    console.log(process.env.REACT_APP_DEMO);
     if(process.env.REACT_APP_KAI_UI){
         //https://kai-ui.onrender.com
         ReactDOM.render(<KaiUI/>, document.getElementById('root'));

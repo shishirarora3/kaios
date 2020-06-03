@@ -22,8 +22,8 @@ const IconListItem = React.memo(
       onFocusChange,
       iconSrc2,                  //if there are two icons pass the source of second icon
       areThere2Icons,            //if there are two icons(overlapped) pass true
-      notification,             //if there is any notification pass true
-      notificationTyp           //pass the type of notification
+      isNotification,             //if there is any notification pass true
+      notificationType           //pass the type of notification
     } = props;
     
     const handleFocusChange = isNowFocused => {
@@ -45,7 +45,7 @@ const IconListItem = React.memo(
         <span className={icon} /> :
         <img src={iconSrc}  alt="" />;
      
-    let anyNotification=notification; 
+    let anyNotification=isNotification; 
 
     const overlappedIcons=(
       <div style={{width:'98px',height:'72px'}}>
@@ -66,7 +66,7 @@ const IconListItem = React.memo(
     
     //functions below are to render different type of notification for different styles
     let styleForNotificationTwo={}
-    const notificationType=(type)=>{
+    const notificationTypeCode=(type)=>{
       if(type===1){
       return(
         <div>
@@ -114,9 +114,12 @@ const IconListItem = React.memo(
         </div>
         }
         <div className={lineCls} >
-          {/*for styling of notification of box2  */}{styleForNotification(notificationTyp)}
-      <span className={primaryCls}>{primary}{/*if its notification 3*/} {notificationTyp===3?<div className={notificationType3}></div>:null}{/*if its notification 1 or 2*/}{anyNotification?<div className={notificationBox} style={styleForNotificationTwo}>{notificationType(notificationTyp)}</div>:null}</span>
-         
+          {styleForNotification(notificationType)} {/*for styling of notification of box2  */}
+          <span className={primaryCls}>
+            {primary}
+            {notificationType===3?<div className={notificationType3}></div>:null} {/*if its notification 3*/}
+            {anyNotification?<div className={notificationBox} style={styleForNotificationTwo}>{notificationTypeCode(notificationType)}</div>:null}{/*if its notification 1 or 2*/}
+          </span>
           <label className={secondaryCls}>{secondary}</label>
         </div>
       </div>
@@ -153,7 +156,7 @@ IconListItem.defaultProps = {
   focusColor: colors.defaultFocusColor,
   iconSrc2: null,
   areThere2Icons: false,
-  notification: false
+  isNotification: false
 };
 
 export default React.forwardRef((props, ref) => (

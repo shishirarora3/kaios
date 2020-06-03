@@ -13,9 +13,9 @@ export default function ListItems() {
       return (
         <div >
             <ListView>
-                <IconListItem primary="1. Messages" secondary="Sahil Warsi, Amm..."  iconSrc={imgPath1_1} iconSrc2={imgPath1_2} areThere2Icons={true} notification={true} notificationTyp={1} />
-                <IconListItem primary="2. News"  secondary="Cyclone Amphan..." iconSrc={imgPath2} notification={true} notificationTyp={2}/>
-                <IconListItem primary="3. Files" secondary="New folder created" iconSrc={imgPath3} notificationTyp={3} />
+                <IconListItem primary="1. Messages" secondary="Sahil Warsi, Amm..."  iconSrc={imgPath1_1} iconSrc2={imgPath1_2} areThere2Icons={true} isNotification={true} notificationType={1} />
+                <IconListItem primary="2. News"  secondary="Cyclone Amphan..." iconSrc={imgPath2} isNotification={true} notificationType={2}/>
+                <IconListItem primary="3. Files" secondary="New folder created" iconSrc={imgPath3} notificationType={3} />
             </ListView>
         </div>
     )
