@@ -76,29 +76,19 @@ const SoftKey = React.memo(props => {
   }, [handleKeyDown]);
 
   return (
-    <>
-      <div className={`${prefixCls} visible`}>
-        {/* <Button pos="left" text={leftText} handleClick={leftCallback} />
-        <Button
-          pos="center"
-          text={centerText}
-          // icon={centerIcon}
-          handleClick={centerCallback}
-        />
-        <Button pos="right" text={rightText} handleClick={rightCallback} /> */}
-        <span>{leftText}</span>
-        <span>{centerText}</span>
-        <span>{rightText}</span>
-        <HorLineSeperator topOrBottom={topOrBottom}></HorLineSeperator>
-        </div>
-    </>
+	<div className={`${prefixCls} visible`}>
+		<span>{leftText}</span>
+		<span>{centerText}</span>
+		<span>{rightText}</span>
+		<HorLineSeperator topOrBottom={topOrBottom}></HorLineSeperator>
+	</div>
   );
 });
 
 SoftKey.propTypes = {
-  leftText: PropTypes.string,
-  centerText: PropTypes.string,
-  rightText: PropTypes.string,
+  leftText: PropTypes.string.isRequired,
+  centerText: PropTypes.string.isRequired,
+  rightText: PropTypes.string.isRequired,
   centerIcon: PropTypes.string,
   leftCallback: PropTypes.func,
   centerCallback: PropTypes.func,

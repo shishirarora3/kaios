@@ -15,7 +15,8 @@ const FlexBox = React.memo(
       children,
       onChangeIndex,
       isActive,
-      ishr
+	  shouldBeHidden,
+	  numColumns,
     } = props;
 
     const handleChangeIndex = itemIndex => {
@@ -46,11 +47,11 @@ const FlexBox = React.memo(
             setFocusToIndex(index);
             break;
           case 'ArrowUp':
-            index = index-3 >=0 ? index - 3 : index + 6;
+            index = index-numColumns >=0 ? index - numColumns : index + 2*numColumns;
             setFocusToIndex(index);
             break;
           case 'ArrowDown':
-            index = index+3 < itemRefs.length ? index + 3 : index - 6;
+            index = index+numColumns < itemRefs.length ? index + numColumns : index - 2*numColumns;
             setFocusToIndex(index);
             break; 
           default:
@@ -84,7 +85,7 @@ const FlexBox = React.memo(
         if (child.props.separatorText != null) {
           return child;
         }
-        if(child.props.ishr === 'yes'){
+        if(child.props.shouldBeHidden === 'true'){
           return React.cloneElement(child,{
             className: 'toBeHidden'
           });
@@ -114,6 +115,8 @@ FlexBox.propTypes = {
 FlexBox.defaultProps = {
   onChangeIndex: () => {},
   isActive: true,
+  shouldBeHidden: 'false',
+  numColumns: 3,
 };
 
 export default FlexBox;

@@ -2,12 +2,14 @@
 
 .gridContainerType{
     position: absolute;
-    top: 45px;
+    //top: 4.5rem;
+	//bottom: 4.5rem;
+	//right: 1rem;
+	//left: 1rem;
+	top: 45px;
 	bottom: 45px;
 	right: 10px;
 	left: 10px;
-	height: 230px;
-	width: 220px;
 	box-sizing: border-box;
     background: var(--color-home-a-light-grey);
 }

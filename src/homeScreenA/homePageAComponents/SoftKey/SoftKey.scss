@@ -2,35 +2,16 @@
 @import '../../homePageA/HomePageATheme/fonts.scss';
 @import '../../homePageA/HomePageATheme/theme.scss';
 
-// :root {
-//   // --softkeybar-background-color: var(--color-gs20, #cccccc);
-//   // --softkey-color: var(--color-gs90, #323232);
-//   // --softkey-color--icon: var(--color-gs70, #6a6a6a);
-//   // --softkey-color--disabled: var(--color-eta, #c7c7c7);
-//   // --softkey-background-color--active: #00aacc;
-//   // --softkey-icon-size: 2rem;
-// }
 
 .kai-softkey{
-  // $skbar-gap: 0.5rem;
-  // z-index: var(--z-index--softkey, 9999);
-  // display: flex;
-  // justify-content: space-between;
-  // outline: none;
-  // text-align: center;
-  // color: var(--softkey-color);
-  // background-color: var(--softkeybar-background-color);
-  // position: absolute;
-  // bottom: 0;
-  // width: 100%;
     position: absolute;
-    width: 240px;
     height: 30px;
-	left: 0px;
-	right: 0px;
-    top: 290px;
+	left: 0%;
+	right: 0%;
+	bottom: 0%;
 	box-sizing: border-box;
 	background: var(--color-home-a-light-grey);
+	text-align: center;
 
   &:not(.visible) {
     opacity: 0;
@@ -39,69 +20,40 @@
   > * {
     text-transform: capitalize;
     &:first-child {
-      // @extend h5;
-      // min-width: 7.2rem + $skbar-gap;
-      // padding: 0 0 0 $skbar-gap;
-      // text-align: left;
-
       position: absolute;
-      left: 3.75%;
-      right: 86.25%;
-      top: 20%;
-      bottom: 16.67%;
-
+      left: 4%;
       font-family: Noto Sans;
       font-style: normal;
       font-weight: normal;
-      font-size: 14px;
-      line-height: 19px;
-      /* identical to box height */
-
-
-      color: #000000;
+	  font-size: 1.4rem;
+	  /* identical to box height */
+      line-height: 30px;
+      color: var(--color-home-a-black);
     }
 
     &:nth-child(2) {
-      // font-size: 1.6rem;
-      // font-weight: 700;
-      // min-width: 2rem + $skbar-gap * 2; // min gap between LSK & RSK = 2rem
-      // max-width: 7.6rem;
-      // text-transform: uppercase;
-      // padding: 0 $skbar-gap;
-
-      position: absolute;
-      left: 40.42%;
-      right: 40%;
-      top: 10%;
-      bottom: 6.67%;
+      position: relative;
       font-family: Noto Sans;
       font-style: normal;
       font-weight: 500;
-      font-size: 18px;
-      line-height: 25px;
+	  font-size: 1.8rem;
+	  /* identical to box height */
+      line-height: 3rem;
       text-align: center;
-      color: #000000;
+      color: var(--color-home-a-black);
     }
 
     &:nth-child(3) {
-      // @extend h5;
-      // min-width: 7.2rem + $skbar-gap;
-      // text-align: right;
-      // padding: 0 $skbar-gap 0 0;
-
       position: absolute;
-      left: 74.17%;
-      right: 3.75%;
-      top: 20%;
-      bottom: 16.67%;
+	  right: 4%;
       font-family: Noto Sans;
       font-style: normal;
       font-weight: normal;
-      font-size: 14px;
-      line-height: 19px;
-      /* identical to box height */
+	  font-size: 1.4rem;
+	  /* identical to box height */
+      line-height: 3rem;
       text-align: right;
-      color: #000000;
+      color: var(--color-home-a-black);
     }
   }
 
@@ -139,12 +91,3 @@
     }
   }
 }
-
-// .bottom{
-//   position: absolute;
-//   left: 0%;
-//   right: 0%;
-//   top: 3.33%;
-//   // bottom: 96.67%;
-//   border: 1px solid #E4E4E4;
-// }

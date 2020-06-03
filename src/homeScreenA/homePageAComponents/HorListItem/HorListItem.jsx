@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import colors from '../../homePageA/HomePageATheme/colors.scss';
 import { useFocus } from '../../homePageAHooks';
-
+import {requireOneOf} from '../../homePageAUtils';
 import './HorListItem.scss';
 
 const prefixCls = 'kai-tl';
@@ -10,9 +10,6 @@ const prefixCls = 'kai-tl';
 const HorListItem = React.memo(
   props => {
     const {
-      primary,
-      secondary,
-      tertiary,
       focusColor,
       nonFocusColor,
       focusBorderColor,
@@ -30,35 +27,39 @@ const HorListItem = React.memo(
 
     const isFocused = useFocus(forwardedRef, handleFocusChange, false);
 
-    const itemCls = prefixCls;
-    const primaryCls = `${prefixCls}-primary`;
-    const secondaryCls = `${prefixCls}-secondary ${secondary ? '' : 'hidden'}`;
-    const tertiaryCls = `${prefixCls}-tertiary ${tertiary ? '' : 'hidden'}`;
-    // console.log(`focus color is ${focusColor}`);
+	const itemCls = prefixCls;
+
+	const assignStyleForDiv = () => {
+		return (
+			isFocused ?	{backgroundColor: focusColor, borderColor: focusBorderColor}:
+			 {backgroundColor: nonFocusColor, borderColor: nonFocusColor}
+		)
+	}
+
     return (
       <div
         tabIndex="0"
         className={itemCls}
-        style={{ backgroundColor: isFocused ? focusColor : nonFocusColor, borderRadius: '6px', border: isFocused ? `2px solid ${focusBorderColor}` : `2px solid ${nonFocusColor}`, borderSizing: 'border-box'}}
-        ref={forwardedRef}
+        style={assignStyleForDiv()}
+		ref={forwardedRef}
       >
-        {/* {primary} */}
         <img src={props.iconSrc} alt="alter"></img>
-        {/* <spaa
-        n className={primaryCls}>{primary}</span> */}
-        {/* <label className={secondaryCls}>{secondary}</label>
-        <label className={tertiaryCls}>{tertiary}</label> */}
       </div>
     );
   }
 );
+const requireOneIcon = requireOneOf({
+	icon: PropTypes.string,
+	iconSrc: PropTypes.string
+  });
 
 HorListItem.propTypes = {
+  iconSrc: requireOneIcon.isRequired,
   primary: PropTypes.string,
   secondary: PropTypes.string,
   tertiary: PropTypes.string,
-  // focusColor: PropTypes.string,
-  // nonFocusColor: PropTypes.string,
+  focusColor: PropTypes.string,
+  nonFocusColor: PropTypes.string,
   forwardedRef: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
