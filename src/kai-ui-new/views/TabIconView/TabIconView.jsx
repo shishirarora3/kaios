@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
 import Tabs from '../../components/Tabs/Tabs';
 import TabIcon from '../../components/TabIcon/TabIcon';
-import colors from '../../theme/colors.scss';
+
 
 import './TabIconView.scss';
 
@@ -83,7 +83,7 @@ const TabIconView = React.memo(
 );
 
 TabIconView.propTypes = {
-  tabIcons: PropTypes.arrayOf(PropTypes.object).isRequired,
+  tabIcons: PropTypes.arrayOf(PropTypes.string).isRequired,
   onChangeIndex: PropTypes.func,
   focusColor: PropTypes.string,
   children: PropTypes.array,
@@ -91,7 +91,7 @@ TabIconView.propTypes = {
 
 TabIconView.defaultProps = {
   onChangeIndex: () => {},
-  focusColor: colors.defaultFocusColor,
+  focusColor: "#0078D4",
 };
 
 export default TabIconView;

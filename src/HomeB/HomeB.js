@@ -1,7 +1,7 @@
 import React from "react";
 import TabIconView from "../kai-ui-new/views/TabIconView/TabIconView";
 import TabView from "../kai-ui-new/views/TabView/TabView";
-import ListView from "../kai-ui/src/views/ListView/ListView";
+import ListView from "../kai-ui-new/views/ListView/ListView";
 import RoundIconListItem from "../kai-ui-new/components/RoundIconListItem/RoundIconListItem";
 import SoftKey from "../kai-ui-new/components/SoftKey/SoftKey";
 import mailIcon from "../icons/homeb/mailIcon.png";
@@ -13,14 +13,11 @@ import person2 from "../icons/homeb/person2.png";
 import person3 from "../icons/homeb/person3.png";
 import './HomeB.css'
 export default function HomeB() {
-  
   return (
     <div className="Page-Content">
     <TabIconView
       tabIcons={[mailIcon, newsIcon, filesIcon, calendarIcon]}
-      focusColor="#0078D4"
     >
-     
       <ListView>
         <div className="Tab1">
           <TabView tabLabels={["Email", "SMS"]} focusColor="black">
@@ -47,9 +44,9 @@ export default function HomeB() {
                 messages="1"
               />
             </ListView>
-
             <ListView>
-              <p>SMSes</p>
+              <h1>SMSes</h1>
+              <p>SMSes will be integrated here</p>
             </ListView>
           </TabView>
         </div>
