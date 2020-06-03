@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import colors from '../../../../kai-ui/src/theme/colors.scss';
 import './Header.scss';
 
-const prefixCls = 'kai-heade';
+const prefixCls = 'kaiHeader';
 const Header = React.memo(
   props => {
     const {
