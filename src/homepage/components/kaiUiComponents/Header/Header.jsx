@@ -13,7 +13,7 @@ const Header = React.memo(
     } = props;
 
     return (
-      <header className={prefixCls} style={{ background: backgroundColor,marginBottom: bottomMargin,width:'240px' }}>
+      <header className={prefixCls}>
         <span className='h1style'>{text}</span>
       </header>
     );

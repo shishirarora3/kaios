@@ -2,16 +2,15 @@
 
 
 .kaiHeader {
-  left: 0%;
-  right: 0%;
-  top: 0%;
-  bottom: 0%;
   border-bottom: 1px solid #E4E4E4;
   height:30px;
+  width: 240px;
+  background-color:#F2F2F2;
+  margin-bottom:1px
 
 }
  .h1style{
-  display: inline-flex;
+  display: inline-block;
   margin:3px 85px 4px 86px ;
   font-weight: bold;
   font-size: 17px;

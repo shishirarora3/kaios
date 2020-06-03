@@ -14,7 +14,7 @@ export default class HomePage extends Component {
             <div className='mainDiv'> 
                {/* remove the below div, its notification bar of jio phone */}
                {/* <div style={NotificationBarStyle}/> */}
-               <Header text='Outlook' backgroundColor='lightgrey' bottomMargin='1px'/>
+               <Header text='Outlook'/>
                <ListItems></ListItems>
                <SoftKey leftText='Exit' centerText='Open' rightText='Options'></SoftKey>
              </div>

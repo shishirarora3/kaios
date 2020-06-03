@@ -54,17 +54,7 @@ const IconListItem = React.memo(
         
       </div>
     )
-    //styling for vector top
-    // const vectorStyling={
-    //   display:'inline',
-    //   position:'relative',
-    //   right:'0em',
-    //   bottom:'0em',
-    //   width: '3px',
-    //   height:'3px',  
-    // }
-    
-    //functions below are to render different type of notification for different styles
+   
     let styleForNotificationTwo={}
     const notificationTypeCode=(type)=>{
       if(type===1){
