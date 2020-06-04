@@ -1,0 +1,103 @@
+@import '../../../../kai-ui/src/theme/fonts.scss';
+@import '../../HomePageATheme/theme.scss';
+
+:root {
+	--tl-text-focused: var(--color-gs00);
+  }
+  .kai-HorListItem{
+	width: 6.5rem;
+	height: 6.5rem;
+	align-items: center;
+	min-width: var(--list-item-height);
+	outline: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	border-radius: 6px;
+	border-width: 2px;
+	border-style: solid;
+	box-sizing: border-box;
+  
+	img{
+	  height: fit-content;
+	  width: fit-content;
+	}
+	span,
+	label {
+	  padding: 0;
+	  height: 100%;
+	  width: fit-content;
+	  overflow: hidden;
+	}
+  
+	&:focus {
+	  color: var(--tl-text-focused);
+	}
+  
+	&-primary {
+	  @extend .p-pri;
+	}
+  
+	&-secondary {
+	  @extend .p-sec;
+	}
+  
+	&-tertiary {
+	  @extend .p-thi;
+	}
+  }
+
+
+/*
+Use If Flex-wrap is not supported on kaiOS
+
+:root {
+  --tl-text-focused: var(--color-gs00);
+}
+.kai-HorListItem{
+  position: relative;
+  width: 30%;
+  height: 30%;
+  align-items: center;
+  min-width: var(--list-item-height);
+  outline: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  float: left;
+  margin: 1.0% 1.6%;
+  border-radius: 6px;
+  border-width: 2px;
+  border-style: solid;
+  box-sizing: border-box;
+
+  img{
+    height: fit-content;
+    width: fit-content;
+  }
+  span,
+  label {
+    padding: 0;
+    height: 100%;
+    width: fit-content;
+    overflow: hidden;
+  }
+
+  &:focus {
+    color: var(--tl-text-focused);
+  }
+
+  &-primary {
+    @extend .p-pri;
+  }
+
+  &-secondary {
+    @extend .p-sec;
+  }
+
+  &-tertiary {
+    @extend .p-thi;
+  }
+}
+
+*/

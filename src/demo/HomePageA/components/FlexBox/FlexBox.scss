@@ -1,0 +1,38 @@
+.kai-flexbox {
+    position: absolute;
+	height: 100%;
+	width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	margin: auto auto;
+	box-sizing: border-box;
+	overflow: auto;
+}
+.toBeHidden{
+    width: 100%;
+    clear: both;
+    visibility: hidden;
+}
+
+/*
+Use If Flex-wrap is not supported on kaiOS
+
+.kai-flexbox {
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+    display: table;
+	align-items: center;
+	margin: 0 0;
+	box-sizing: border-box;
+}
+.toBeHidden{
+    width: 100%;
+    clear: both;
+    visibility: hidden;
+}
+
+*/

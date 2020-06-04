@@ -1,0 +1,28 @@
+@import '../../../homePageA/HomePageATheme/theme.scss';
+
+.gridContainerType{
+    position: absolute;
+    top: 4.5rem;
+	bottom: 4.5rem;
+	right: 1rem;
+	left: 1rem;
+	box-sizing: border-box;
+    background: var(--color-home-a-light-grey);
+}
+
+/*
+Use If Flex-wrap is not supported on kaiOS
+
+.gridContainerType{
+	position: absolute;
+	display: flex;
+    top: 4.5rem;
+	bottom: 4.5rem;
+	right: 1rem;
+	left: 1rem;
+	box-sizing: border-box;
+	background: var(--color-home-a-light-grey);
+	overflow: auto;
+}
+
+*/

@@ -1,0 +1,101 @@
+@import '../../../../kai-ui/src/theme/layout.scss';
+@import '../../../../kai-ui/src/theme/fonts.scss';
+@import '../../HomePageATheme/theme.scss';
+
+
+.kai-softkey{
+	//position: absolute;
+    position: fixed;
+    height: 3rem;
+	left: 0%;
+	right: 0%;
+	bottom: 0%;
+	box-sizing: border-box;
+	background: var(--color-home-a-light-grey);
+	text-align: center;
+
+  &:not(.visible) {
+    opacity: 0;
+  }
+
+  > * {
+    text-transform: capitalize;
+    &:first-child {
+      position: absolute;
+      left: 4%;
+      font-family: Noto Sans;
+      font-style: normal;
+      font-weight: normal;
+	  font-size: 1.4rem;
+	  /* identical to box height */
+      line-height: 3rem;
+      color: var(--color-home-a-black);
+    }
+
+    &:nth-child(2) {
+      position: relative;
+      font-family: Noto Sans;
+      font-style: normal;
+      font-weight: 500;
+	  font-size: 1.8rem;
+	  /* identical to box height */
+      line-height: 3rem;
+      text-align: center;
+      color: var(--color-home-a-black);
+    }
+
+    &:nth-child(3) {
+      position: absolute;
+	  right: 4%;
+      font-family: Noto Sans;
+      font-style: normal;
+      font-weight: normal;
+	  font-size: 1.4rem;
+	  /* identical to box height */
+      line-height: 3rem;
+      text-align: right;
+      color: var(--color-home-a-black);
+    }
+  }
+
+  &-btn {
+    display: block;
+    min-width: 1rem;
+    height: var(--softkeybar-height);
+    line-height: var(--softkeybar-height);
+    border: unset;
+    overflow: hidden;
+    @extend %text-ellipsis;
+    color: var(--softkey-color);
+    background: unset;
+
+    &:active,
+    &.active {
+      background-color: var(--softkey-background-color--active);
+    }
+
+    &[disabled] {
+      --softkey-color: var(--softkey-color--disabled);
+      background-color: transparent;
+      pointer-events: auto;
+    }
+
+    &[data-icon] {
+      --softkey-font-size: var(--softkey-icon-size);
+      --softkey-color: var(--softkey-color--icon);
+    }
+
+    span::before {
+      @extend .button-icon-font;
+      line-height: var(--softkeybar-height);
+      color: var(--softkey-color);
+    }
+  }
+}
+
+/*
+Use If Flex-wrap is not supported on kaiOS
+
+footer bottom fixed
+
+*/
