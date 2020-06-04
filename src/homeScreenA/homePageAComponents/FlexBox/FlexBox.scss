@@ -1,12 +1,15 @@
 .kai-listhor-view {
     position: absolute;
-    width: stretch;
-    height: stretch;
-    overflow: hidden;
+    //width: stretch;
+    //height: stretch;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+	justify-content: space-around;
+	align-items: center;
 	margin: auto auto;
 	box-sizing: border-box;
 }

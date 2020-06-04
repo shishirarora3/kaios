@@ -32,11 +32,11 @@ export default class HomePageA extends Component {
                         <HorListItem iconSrc={icon01}></HorListItem>
                         <HorListItem iconSrc={icon02}></HorListItem>
                         <HorListItem iconSrc={icon03}></HorListItem>
-                        <hr shouldBeHidden='true'/>
+						<hr shouldbehidden='true'/>
                         <HorListItem iconSrc={icon04}></HorListItem>
                         <HorListItem iconSrc={icon05}></HorListItem>
                         <HorListItem iconSrc={icon06}></HorListItem>
-                        <hr shouldBeHidden='true'/>
+						<hr shouldbehidden='true'/>
                         <HorListItem iconSrc={icon07}></HorListItem>
                         <HorListItem iconSrc={icon08}></HorListItem>
                         <HorListItem iconSrc={icon09}></HorListItem>

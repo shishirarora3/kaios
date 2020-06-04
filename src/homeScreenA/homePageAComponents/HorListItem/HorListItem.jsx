@@ -54,7 +54,8 @@ const requireOneIcon = requireOneOf({
   });
 
 HorListItem.propTypes = {
-  iconSrc: requireOneIcon.isRequired,
+  //iconSrc: requireOneIcon.isRequired,
+  iconSrc: PropTypes.string.isRequired, 
   primary: PropTypes.string,
   secondary: PropTypes.string,
   tertiary: PropTypes.string,

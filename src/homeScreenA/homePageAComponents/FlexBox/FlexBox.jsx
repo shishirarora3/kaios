@@ -15,7 +15,7 @@ const FlexBox = React.memo(
       children,
       onChangeIndex,
       isActive,
-	  shouldBeHidden,
+	  shouldbehidden,
 	  numColumns,
     } = props;
 
@@ -85,7 +85,7 @@ const FlexBox = React.memo(
         if (child.props.separatorText != null) {
           return child;
         }
-        if(child.props.shouldBeHidden === 'true'){
+        if(child.props.shouldbehidden === 'true'){
           return React.cloneElement(child,{
             className: 'toBeHidden'
           });
@@ -108,6 +108,7 @@ const FlexBox = React.memo(
 FlexBox.propTypes = {
   children: PropTypes.array.isRequired,
   onChangeIndex: PropTypes.func,
+  shouldbehidden: PropTypes.string,
   // Refocus on tab change
   isActive: PropTypes.bool,
 };
@@ -115,7 +116,7 @@ FlexBox.propTypes = {
 FlexBox.defaultProps = {
   onChangeIndex: () => {},
   isActive: true,
-  shouldBeHidden: 'false',
+  shouldbehidden: 'false',
   numColumns: 3,
 };
 
