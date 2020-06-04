@@ -35,12 +35,13 @@ const IconListItem = React.memo(
     const isFocused = useFocus(forwardedRef, handleFocusChange, false);
 
     const itemCls = prefixCls;
-    const iconCls = `${prefixCls}-icon-${isFocused ? 'focused' : 'unfocused'}`;
+    const isFocusedUnfocused=`${isFocused ? 'focused' : 'unfocused'}`
+    const iconCls = `${prefixCls}-icon-`+isFocusedUnfocused;
     const lineCls = `${prefixCls}-line`;
-    const primaryCls = `${prefixCls}-primary-${isFocused ? 'focused' : 'unfocused'}`;
-    const secondaryCls = `${prefixCls}-secondary-${isFocused ? 'focused' : 'unfocused'}`;
-    const notificationBox= `notificationBox-${isFocused ? 'focused' : 'unfocused'}`
-    const notificationType3=`notificationBox3-${isFocused ? 'focused' : 'unfocused'}`
+    const primaryCls = `${prefixCls}-primary-`+isFocusedUnfocused;
+    const secondaryCls = `${prefixCls}-secondary-`+isFocusedUnfocused;
+    const notificationBox= `notificationBox-`+isFocusedUnfocused;
+    const notificationType3=`notificationBox3-`+isFocusedUnfocused;
     const renderedIcon = iconSrc === null ?
         <span className={icon} /> :
         <img src={iconSrc}  alt="" />;
