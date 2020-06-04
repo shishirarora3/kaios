@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import colors from '../../../../kai-ui/src/theme/colors.scss';
+import colors from '../../../../../kai-ui/src/theme/colors.scss';
 import './Header.scss';
 
 const prefixCls = 'kaiHeader';

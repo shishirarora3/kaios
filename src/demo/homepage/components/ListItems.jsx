@@ -1,6 +1,5 @@
 import React from 'react'
-import ListView from '../../kai-ui/src/views/ListView/ListView'
-import ArrowListItem from "../../kai-ui/src/components/ArrowListItem/ArrowListItem";
+import ListView from '../../../kai-ui/src/views/ListView/ListView'
 import IconListItem from './kaiUiComponents/IconListItem/IconListItem'
 import Icon from '../assets/pic1.jpg'
 

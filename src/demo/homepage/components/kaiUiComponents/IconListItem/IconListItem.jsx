@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { requireOneOf } from '../../../../kai-ui/src/utils';
-import { useFocus } from '../../../../kai-ui/src/hooks';
-import colors from '../../../../kai-ui/src/theme/colors.scss';
+import { requireOneOf } from '../../../../../kai-ui/src/utils';
+import { useFocus } from '../../../../../kai-ui/src/hooks';
+import colors from '../../../../../kai-ui/src/theme/colors.scss';
 
 
 import './IconListItem.scss';
