@@ -3,8 +3,8 @@ import 'react-app-polyfill/stable'
 import React from 'react';
 import ReactDOM from 'react-dom';
 //import App from './App';
-import HomeB from'./HomeB/HomeB';
-import Demo from './demo';
+import HomeB from'./demo/HomeScreenB/HomeScreenB';
+import Demo from './demo/index';
 import KaiUI from './kai-ui/src/App';
 
 const bootstrap = () => {
