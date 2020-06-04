@@ -9,9 +9,7 @@ export default class HomePage extends Component {
      
     render() {
         return (
-            <div className='mainDiv'> 
-               {/* remove the below div, its notification bar of jio phone */}
-               {/* <div style={NotificationBarStyle}/> */}
+            <div className='mainDiv'>
                <Header text='Outlook'/>
                <ListItems></ListItems>
                <SoftKey leftText='Exit' centerText='Open' rightText='Options'></SoftKey>
