@@ -15,6 +15,7 @@
     "@types/react-dom": "^16.9.0",
     "classnames": "^2.2.6",
     "cross-env": "^7.0.2",
+    "figma-theme": "^1.0.0-3",
     "gh-pages": "^2.2.0",
     "mobx": "^5.15.4",
     "mobx-react": "^6.2.2",
@@ -37,7 +38,8 @@
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "figma-theme": "cross-env FIGMA_TOKEN='48218-095f5cbb-3954-48b4-8c7f-d6c5fad4c9d5' figma-theme 'awGFKcU9U0XpnU4b500iT8'"
   },
   "eslintConfig": {
     "extends": "react-app"
