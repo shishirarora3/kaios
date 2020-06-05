@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import './FlexBox.scss';
 
-const prefixCls = 'kai-flexbox';
+const prefixCls = 'flexboxA';
 
 const FlexBox = React.memo(
   props => {

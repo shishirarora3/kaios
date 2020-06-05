@@ -1,7 +1,7 @@
 import React from 'react';
 import './HorizontalLineSeperator.scss';
 
-const prefixCls = 'seperatorLine'
+const prefixCls = 'seperatorLineA'
 const HorLineSeperator = React.memo(
   props => {
     const {

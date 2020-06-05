@@ -1,6 +1,6 @@
 @import '../../../homePageA/HomePageATheme/theme.scss';
 
-.gridContainerType{
+.gridContainerA{
     position: absolute;
     top: 4.5rem;
 	bottom: 4.5rem;
@@ -13,7 +13,7 @@
 /*
 Use If Flex-wrap is not supported on kaiOS
 
-.gridContainerType{
+.gridContainerA{
 	position: absolute;
 	display: flex;
     top: 4.5rem;

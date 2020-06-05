@@ -5,7 +5,7 @@ import HorizontalLineSeperator from '../../components/HorizontalLineSeperator/Ho
 
 import './Header.scss';
 
-const prefixCls = 'kai-header';
+const prefixCls = 'headerA';
 const Header = React.memo(
   props => {
     const {

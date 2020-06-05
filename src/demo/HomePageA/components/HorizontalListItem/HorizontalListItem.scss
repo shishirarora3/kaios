@@ -4,7 +4,7 @@
 :root {
 	--tl-text-focused: var(--color-gs00);
   }
-  .kai-HorListItem{
+  .HorListItemA{
 	width: 6.5rem;
 	height: 6.5rem;
 	align-items: center;
@@ -54,7 +54,7 @@ Use If Flex-wrap is not supported on kaiOS
 :root {
   --tl-text-focused: var(--color-gs00);
 }
-.kai-HorListItem{
+.HorListItemA{
   position: relative;
   width: 30%;
   height: 30%;

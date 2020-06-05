@@ -4,7 +4,7 @@ import HorizontalLineSeperator from '../HorizontalLineSeperator/HorizontalLineSe
 
 import './SoftKey.scss';
 
-const prefixCls = 'kai-softkey';
+const prefixCls = 'softkeyA';
 
 const Button = props => {
   const { handleClick, icon, text } = props;

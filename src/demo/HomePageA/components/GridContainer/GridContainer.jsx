@@ -1,7 +1,7 @@
 import React from 'react';
 import './GridContainer.scss';
 
-const prefixCls = 'gridContainerType'
+const prefixCls = 'gridContainerA'
 const GridContainer = React.memo(
   props => {
     const {

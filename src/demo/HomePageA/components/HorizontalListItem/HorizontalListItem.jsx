@@ -4,7 +4,7 @@ import colors from '../../HomePageATheme/colors.scss';
 import { useFocus } from '../../../../kai-ui/src/hooks';
 import './HorizontalListItem.scss';
 
-const prefixCls = 'kai-HorListItem';
+const prefixCls = 'HorListItemA';
 
 const HorizontalListItem = React.memo(
   props => {
