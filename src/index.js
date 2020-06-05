@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import Demo from './demo';
 import KaiUI from './kai-ui/src/App';
-import HomePage from './demo/homepage/components/HomePage'
+import HomePage from './demo/HomeScreenC/components/HomePage'
 
 const bootstrap = () => {
     // Render the app
