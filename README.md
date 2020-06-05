@@ -50,7 +50,7 @@ steps to run:
 7) ci-cd service 
    https://dashboard.render.com/
 8) Storybook for documentation of components, hosted at  https://shishirarora3.github.io/kaios/
-<img src="./storybook.png"/>
+<img src="./src//storybook.png"/>
 
    
     
