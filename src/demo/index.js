@@ -1,16 +1,4 @@
 import React from 'react';
-import HomePageA from './HomePageA/HomePageA';
-
-const App=()=>{
-	return(
-		<HomePageA/>
-	)
-}
-
-export default App ;
-/*
-
-import React from 'react';
 import HomepageA from './HomePageA/HomePageA';
 //import HomePageB from './HomepageB/HomePageB';
 //import HomePageC from './HomepageB/HomePageC';
@@ -67,6 +55,9 @@ const MessageOptionsScreen = () => {
 	const { theme } = useParams();
 	const { color } = useParams();
 
+	console.log(theme);
+	console.log(color);
+
 	const ScreenTheme = theme || 'white';
 	const ScreenColor = color || 'blue';
 
@@ -75,6 +66,7 @@ const MessageOptionsScreen = () => {
 	)
 }
 
+/* dummy message options component */
 const MessageOptions = (props) => {
 	console.log(props);
 	return(
@@ -86,4 +78,4 @@ const MessageOptions = (props) => {
 }
 
 export default App ;
-*/
+
