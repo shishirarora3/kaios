@@ -49,10 +49,11 @@ const IconListItem = React.memo(
     let anyNotification=isNotification; 
 
     const overlappedIcons=(
-      <div style={{width:'40.833vw',height:'22.5vh'}}>
+      <div className='imageBox' >
+        <div className='box'>
         <img src={iconSrc2} className='firstIcon' alt="" />
         <img src={iconSrc} className='secondIcon' alt="" />
-        
+        </div>
       </div>
     )
    
@@ -67,9 +68,9 @@ const IconListItem = React.memo(
       
       }
       else if(type===2){
-        return (<div style={{alignItems:'center',justifyContent:'center'}}>
-          <img src={require('../../../assets/imageForNotification.svg' ) } className='listTwoNotification1' />
-          { <img src={require('../../../assets/imageForNotification2.svg' )} className='listTwoNotification2'></img> }
+        return (<div className="vectorOuterBox">
+            <img src={require('../../../assets/imageForNotification.svg' ) } className='listTwoNotification1' />
+            { <img src={require('../../../assets/imageForNotification2.svg' )} className='listTwoNotification2'></img> }
           </div>);
       }
       else{
