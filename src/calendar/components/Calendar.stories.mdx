@@ -1,0 +1,25 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import {BrowserRouter as Router} from 'react-router-dom';
+import {
+    CalendarContainer
+} from "./Calendar";
+import props from "./CalendarPropsMock.json";
+
+<Meta title="Design System|CalendarContainer" component={CalendarContainer} />
+
+# CalendarContainer
+
+CalendarContainer will serve as full app
+
+## Usage
+
+CalendarContainer is generic app container
+
+<Preview withToolbar>
+<Story name="calendar-container">
+<Router>
+    <CalendarContainer {...props}/>
+ </Router>
+</Story>
+</Preview>
+
