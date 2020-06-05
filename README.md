@@ -16,28 +16,41 @@ steps to run:
     
 2) in browser with kai-ui demo
   
-    npm run start:kai-ui
+    `npm run start:kai-ui`
 
 3)  in browser with actual components (to be built)
   
-    npm run start:demo
+    `npm run start:demo`
   
 4) in browser with Outlook+kaiui+services integrated
-    npm run start
+    `npm run start`
     
     
 5)  
     ci-cd Hosted urls
-        with demo components to be build:
+    
+    <table>
+ <th>
+   <td>url
+   <td> demo
+ </th>
+ <tr>
+    <td> with demo components to be build:
             https://kaios.onrender.com
-            <img src="./src/demo/screenshot.png"/>
-            
-        with integrated app
+    <td> <img src="./src/demo/screenshot.png"/> 
+ </tr>
+
+ <tr>
+    <td> with integrated app:
             https://integrated-app.onrender.com
-            <img src="./src/integrated-app.gif"/>
-        with kai ui
+    <td> <img src="./src/integrated-app.gif"/>
+ </tr>
+ <tr>
+    <td> with kai ui:
             https://kai-ui.onrender.com
-            <img src="./src/kai-ui.gif"/>
+    <td> <img src="./src/kai-ui.gif"/> 
+ </tr>
+ </table>
             
 6) every pr against master, will have a deploy link generated
 
