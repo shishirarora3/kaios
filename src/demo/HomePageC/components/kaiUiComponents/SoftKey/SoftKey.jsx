@@ -74,7 +74,7 @@ const SoftKey = React.memo(props => {
   }, [handleKeyDown]);
 
   return (
-    <div className={`${prefixCls} visible`}>
+    <div className={`${prefixCls} visible`} style={{backgroundColor:'#F2F2F2'}} >
       <Button pos="left" text={leftText} handleClick={leftCallback} />
       <Button
         pos="center"

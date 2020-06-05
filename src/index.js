@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import Demo from './demo';
 import KaiUI from './kai-ui/src/App';
-import HomePage from './demo/HomeScreenC/components/HomePage'
+import HomePage from './demo/HomePageC/components/HomePageC'
 
 const bootstrap = () => {
     // Render the app
@@ -17,7 +17,7 @@ const bootstrap = () => {
         ReactDOM.render(<Demo/>, document.getElementById('root'));
     }else{
         //https://integrated-app.onrender.com
-        ReactDOM.render(<HomePage/>, document.getElementById('root'));
+        ReactDOM.render(<App/>, document.getElementById('root'));
     }
 };
 

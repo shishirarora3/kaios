@@ -7,7 +7,7 @@ import colors from '../../../../../kai-ui/src/theme/colors.scss';
 
 import './IconListItem.scss';
 
-const prefixCls = 'kai-il';
+const prefixCls = 'kai-ilC';
 
 const IconListItem = React.memo(
   props => {
