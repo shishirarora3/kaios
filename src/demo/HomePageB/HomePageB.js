@@ -1,18 +1,18 @@
 import React from 'react';
-import TabIconView from './HomeScreenBViews/TabIconView/TabIconView';
-import TabView from './HomeScreenBViews/TabView/TabView';
-import ListView from '././HomeScreenBViews/ListView/ListView';
-import RoundIconListItem from './HomeScreenBComponents/RoundIconListItem/RoundIconListItem';
-import SoftKey from './HomeScreenBComponents/SoftKey/SoftKey';
-import mailIcon from './HomeScreenBIcons/mailIcon.png';
-import newsIcon from './HomeScreenBIcons/newsIcon.png';
-import filesIcon from './HomeScreenBIcons/filesIcon.png';
-import calendarIcon from './HomeScreenBIcons/calendarIcon.png';
-import person1 from './HomeScreenBIcons/person1.png';
-import person2 from './HomeScreenBIcons/person2.png';
-import person3 from './HomeScreenBIcons/person3.png';
-import './HomeScreenB.css';
-export default function HomeScreenB() {
+import TabIconView from './HomePageBViews/TabIconView/TabIconView';
+import TabView from './HomePageBViews/TabView/TabView';
+import ListView from './HomePageBViews/ListView/ListView';
+import RoundIconListItem from './HomePageBComponents/RoundIconListItem/RoundIconListItem';
+import SoftKey from './HomePageBComponents/SoftKey/SoftKey';
+import mailIcon from './HomePageBIcons/mailIcon.png';
+import newsIcon from './HomePageBIcons/newsIcon.png';
+import filesIcon from './HomePageBIcons/filesIcon.png';
+import calendarIcon from './HomePageBIcons/calendarIcon.png';
+import person1 from './HomePageBIcons/person1.png';
+import person2 from './HomePageBIcons/person2.png';
+import person3 from './HomePageBIcons/person3.png';
+import './HomePageB.css';
+export default function HomePageB() {
 	return (
 		<div className="Page-Content">
 			<TabIconView tabIcons={[ mailIcon, newsIcon, filesIcon, calendarIcon ]}>

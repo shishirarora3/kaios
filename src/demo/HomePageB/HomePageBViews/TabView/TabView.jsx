@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
-import Tabs from '../../HomeScreenBComponents/Tabs/Tabs';
-import Tab from '../../HomeScreenBComponents/Tab/Tab';
+import Tabs from '../../HomePageBComponents/Tabs/Tabs';
+import Tab from '../../HomePageBComponents/Tab/Tab';
 import colors from '../../../../kai-ui/src/theme/colors.scss';
 
 import './TabView.scss';

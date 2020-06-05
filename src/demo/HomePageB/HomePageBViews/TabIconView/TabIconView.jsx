@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
-import Tabs from '../../HomeScreenBComponents/Tabs/Tabs';
-import TabIcon from '../../HomeScreenBComponents/TabIcon/TabIcon';
+import Tabs from '../../HomePageBComponents/Tabs/Tabs';
+import TabIcon from '../../HomePageBComponents/TabIcon/TabIcon';
 
 import './TabIconView.scss';
 

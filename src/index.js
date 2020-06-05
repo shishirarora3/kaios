@@ -3,7 +3,7 @@ import 'react-app-polyfill/stable'
 import React from 'react';
 import ReactDOM from 'react-dom';
 //import App from './App';
-import HomeB from'./demo/HomeScreenB/HomeScreenB';
+import HomeB from'./demo/HomePageB/HomePageB';
 import Demo from './demo/index';
 import KaiUI from './kai-ui/src/App';
 
