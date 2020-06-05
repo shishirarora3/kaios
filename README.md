@@ -34,16 +34,10 @@ steps to run:
             
         with integrated app
             https://integrated-app.onrender.com
-            <video width="320" height="240" controls Autoplay=autoplay>
-                          <source src="./src/integrated-app.mov" type="video/quicktime">
-                          Your browser does not support the video tag.
-                        </video>
+            <img src="./src/integrated-app.gif"/>
         with kai ui
             https://kai-ui.onrender.com
-            <video width="320" height="240" controls Autoplay=autoplay>
-              <source src="./src/kai-ui.mov" type="video/quicktime">
-              Your browser does not support the video tag.
-            </video>
+            <img src="./src/kai-ui.gif"/>
             
 6) every pr against master, will have a deploy link generated
 
