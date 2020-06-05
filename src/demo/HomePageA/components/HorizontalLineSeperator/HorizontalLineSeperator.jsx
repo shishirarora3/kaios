@@ -10,7 +10,9 @@ const HorLineSeperator = React.memo(
     } = props;
 
     return (
-        <hr className={`${prefixCls}-`+`${topOrBottom}`}></hr>
+		<div className={prefixCls}>
+        	<hr className={`${prefixCls}-`+`${topOrBottom}`}></hr>
+		</div>
     );
   }
 );

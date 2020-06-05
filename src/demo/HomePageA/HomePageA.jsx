@@ -6,6 +6,7 @@ import HorizontalListItem from './components/HorizontalListItem/HorizontalListIt
 import SoftKey from './components/SoftKey/SoftKey'
 import './HomePageA.scss';
 import {icon01, icon02, icon03, icon04, icon05, icon06, icon07, icon08, icon09} from './HomePageAIcons';
+import HorLineSeperator from './components/HorizontalLineSeperator/HorizontalLineSeperator'
 
 
 export default class HomePageA extends Component {
@@ -25,11 +26,11 @@ export default class HomePageA extends Component {
                         <HorizontalListItem iconSrc={icon01}/>
                         <HorizontalListItem iconSrc={icon02}/>
                         <HorizontalListItem iconSrc={icon03}/>
-						<hr shouldbehidden='true'/>
+						<HorLineSeperator shouldBeHidden={true} topOrBottom='invisible'/>
                         <HorizontalListItem iconSrc={icon04}/>
                         <HorizontalListItem iconSrc={icon05}/>
                         <HorizontalListItem iconSrc={icon06}/>
-						<hr shouldbehidden='true'/>
+						<HorLineSeperator shouldBeHidden={true} topOrBottom='invisible'/>
                         <HorizontalListItem iconSrc={icon07}/>
                         <HorizontalListItem iconSrc={icon08}/>
                         <HorizontalListItem iconSrc={icon09}/>
@@ -40,3 +41,13 @@ export default class HomePageA extends Component {
         )
     }
 }
+
+/*
+
+<HorLineSeperator shouldbehidden='true' topOrBottom='invisible'/>
+<HorLineSeperator shouldbehidden='true' topOrBottom='invisible'/>
+
+<hr shouldbehidden='true'/>
+<hr shouldbehidden='true'/>
+
+*/ 
