@@ -2,8 +2,7 @@ import 'react-app-polyfill/ie9';
 import 'react-app-polyfill/stable'
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import App from './App';
-import HomeB from'./demo/HomePageB/HomePageB';
+import App from './App';
 import Demo from './demo/index';
 import KaiUI from './kai-ui/src/App';
 
@@ -18,7 +17,7 @@ const bootstrap = () => {
         ReactDOM.render(<Demo/>, document.getElementById('root'));
     }else{
         //https://integrated-app.onrender.com
-        ReactDOM.render(<HomeB/>, document.getElementById('root'));
+        ReactDOM.render(<App/>, document.getElementById('root'));
     }
 };
 

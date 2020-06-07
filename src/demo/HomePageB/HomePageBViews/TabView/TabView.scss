@@ -1,7 +1,7 @@
 @import '../../../../kai-ui/src/theme/fonts.scss';
 @import '../../../../kai-ui/src/theme/theme.scss';
 
-.kai-tab-view {
+.kai-tab-view-B {
   height: 100%;
   width: 100%;
   display: flex;
@@ -28,6 +28,5 @@
   width:100%;
   position:absolute;
   z-index:2;
-  top:2.4rem;
-  
+  top:2.5rem;
 }

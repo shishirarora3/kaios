@@ -1,4 +1,4 @@
-.footer{
+.footer-B{
     font-family: 'Noto Sans', sans-serif;
     position: fixed;
     left: 0;
@@ -6,7 +6,7 @@
     width: 100%;
     height:3rem;
 }
-.Page-Content{
+.Page-Content-B{
     font-family: 'Noto Sans', sans-serif;
     height:100vh;
 }

@@ -1,6 +1,5 @@
 import React from 'react';
+import HomePageB from './HomePageB/HomePageB';
 
-const App=()=><pre>
-    This is demo. use this to make demo actual components using KaiUI and designs given
-</pre>
+const App=()=> <HomePageB />
 export default App;

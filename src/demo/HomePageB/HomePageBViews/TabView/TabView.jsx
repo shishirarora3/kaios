@@ -7,7 +7,7 @@ import colors from '../../../../kai-ui/src/theme/colors.scss';
 
 import './TabView.scss';
 
-const prefixCls = 'kai-tab-view';
+const prefixCls = 'kai-tab-view-B';
 
 const TabView = React.memo(
   props => {

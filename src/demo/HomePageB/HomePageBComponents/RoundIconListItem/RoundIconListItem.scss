@@ -1,4 +1,3 @@
-@import '../../../../kai-ui/src/theme/fonts.scss';
 @import '../../../../kai-ui/src/theme/theme.scss';
 @import '../../../../kai-ui/src/kai-font/style.scss';
 
@@ -7,6 +6,7 @@
 	--il-icon-unfocused: var(--color-zeta);
 }
 .kai-ril {
+	font-family: 'Noto Sans', sans-serif;;
 	width: 100%;
 	height: 28%;
 	display: flex;
@@ -31,6 +31,7 @@
 				
 				//color: var(--il-text-focused);
 				border: 0.18rem solid #ffffff;
+				margin-left:0.5rem;
 				border-radius: 50px;
 				padding: 0.18px;
 			}
@@ -51,16 +52,16 @@
 	}
 
 	&-line {
-		font-family: 'Noto Sans';
+		font-family: 'Noto Sans', sans-serif;;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		height: 100%;
 		width: 100%;
-		padding: 1rem 1rem 1rem 0;
+		padding: 1rem 1rem 1rem 0.6rem;
 		span,
 		label {
-			padding: 0;
+			padding:0;
 			width: 100%;
 			overflow: hidden;
 		}

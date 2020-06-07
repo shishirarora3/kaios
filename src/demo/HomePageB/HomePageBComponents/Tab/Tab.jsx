@@ -4,7 +4,7 @@ import colors from '../../../../kai-ui/src/theme/colors.scss';
 
 import './Tab.scss';
 
-const prefixCls = 'kai-tab';
+const prefixCls = 'kai-tab-B';
 
 const Tab = React.memo((props) => {
 	const { index, label, onTabChange, isActive, focusColor, forwardedRef } = props;

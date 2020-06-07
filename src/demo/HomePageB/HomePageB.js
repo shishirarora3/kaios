@@ -14,7 +14,7 @@ import person3 from './HomePageBIcons/person3.png';
 import './HomePageB.css';
 export default function HomePageB() {
 	return (
-		<div className="Page-Content">
+		<div className="Page-Content-B">
 			<TabIconView tabIcons={[ mailIcon, newsIcon, filesIcon, calendarIcon ]}>
 				<ListView>
 					<div className="Tab1" style={{height:"100%"}}>
@@ -59,7 +59,7 @@ export default function HomePageB() {
 					<h1>Calendar Page</h1>
 				</ListView>
 			</TabIconView>
-			<div className="footer">
+			<div className="footer-B">
 				<SoftKey leftText="Exit" centerText="Open" rightText="Options" />
 			</div>
 		</div>

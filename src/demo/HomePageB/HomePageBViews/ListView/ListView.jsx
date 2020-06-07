@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import './ListView.scss';
 
-const prefixCls = 'kai-list-view-n';
+const prefixCls = 'kai-list-view-B';
 
 const ListView = React.memo((props) => {
 	const itemRefs = [];

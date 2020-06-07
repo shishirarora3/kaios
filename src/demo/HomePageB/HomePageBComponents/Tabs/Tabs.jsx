@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import './Tabs.scss';
 
-const prefixCls = 'kai-tabs';
+const prefixCls = 'kai-tabs-B';
 
 const Tabs = React.memo((props) => {
 	const { onChangeIndex, children } = props;

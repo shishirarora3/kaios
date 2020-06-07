@@ -6,15 +6,15 @@
 	--tab-background-color: var(--color-gs00);
 }
 
-.kai-tab-active {
+.kai-tab-B-active {
 	outline: none;
 	text-align: center;
 	background-color: var(--tab-background-color);
 	width: 100%;
-	height: 0.35rem;
+	height: 0.4rem;
 	//border-radius: 8px;
 	margin-bottom: 0.2rem;
-	box-shadow: 0 2.72rem 0 0 var(--tab-underline-color);
+	box-shadow: 0 2.54rem 0 0 var(--tab-underline-color);
 
 	&-label {
 		@extend h3;
@@ -26,7 +26,7 @@
 	}
 }
 
-.kai-tab-inactive {
+.kai-tab-B-inactive {
 	outline: none;
 	text-align: center;
 	background-color: var(--tab-background-color);
