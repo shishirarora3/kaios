@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import Header from './kaiUiComponents/Header/Header'
-import ListItems from './ListItems'
-import SoftKey from './kaiUiComponents/SoftKey/SoftKey'
-import '../styles/HomePage.css'
+import Header from './components/kaiUiComponents/Header/Header'
+import ListItems from './components/ListItems'
+import SoftKey from './components/kaiUiComponents/SoftKey/SoftKey'
+import './styles/HomePage.css'
 
 
 export default class HomePage extends Component {
