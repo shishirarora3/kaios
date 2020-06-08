@@ -3,13 +3,12 @@ import { addDecorator } from "@storybook/react";
 import { withKnobs } from "@storybook/addon-knobs";
 import { withA11y } from "@storybook/addon-a11y";
 
-
 const customViewports = {
     kaios: {
         name: 'jiophone',
         styles: {
             width: '240px',
-            height: '320px',
+            height: '320px'
         },
     }
 };
@@ -21,8 +20,8 @@ addParameters({
     ],
     viewport: {
         viewports: customViewports,
-        defaultViewport: 'kaios',
-    },
+        defaultViewport: 'kaios'
+    }
 });
 
 addDecorator(withKnobs);

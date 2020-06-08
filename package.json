@@ -69,6 +69,7 @@
     "@storybook/storybook-deployer": "^2.8.6",
     "chromatic": "^4.0.3",
     "react-app-rewire-disable-chunks": "^0.0.1",
-    "react-app-rewired": "^2.1.6"
+    "react-app-rewired": "^2.1.6",
+    "storybook-addon-designs": "^5.2.1"
   }
 }

@@ -1,4 +1,3 @@
-var path=require('path');
 module.exports = {
   stories: ['../src/**/*.stories.mdx'],
   addons: [
@@ -10,6 +9,7 @@ module.exports = {
     "@storybook/addon-contexts/register",
     "@storybook/addon-backgrounds/register",
     "@storybook/addon-viewport/register",
+    "storybook-addon-designs/register",
     {
       name: "@storybook/addon-docs",
       options: {
