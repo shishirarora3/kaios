@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/kaios/static/css/main.42099924.css",
-    "main.js": "/kaios/static/js/main.f6f7d018.js",
-    "main.js.map": "/kaios/static/js/main.f6f7d018.js.map",
-    "index.html": "/kaios/index.html",
-    "precache-manifest.5ba47276f4db08f26393fa9fb36987bf.js": "/kaios/precache-manifest.5ba47276f4db08f26393fa9fb36987bf.js",
-    "service-worker.js": "/kaios/service-worker.js",
-    "static/css/main.42099924.css.map": "/kaios/static/css/main.42099924.css.map",
-    "static/js/main.f6f7d018.js.LICENSE.txt": "/kaios/static/js/main.f6f7d018.js.LICENSE.txt",
-    "static/media/ArrowListItem.scss": "/kaios/static/media/kai-icons.686d74df.eot"
+    "main.css": "/static/css/main.9210698f.css",
+    "main.js": "/static/js/main.abaf3ccc.js",
+    "main.js.map": "/static/js/main.abaf3ccc.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.7048be62dede07ac8fd833189c0d5d0e.js": "/precache-manifest.7048be62dede07ac8fd833189c0d5d0e.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.9210698f.css.map": "/static/css/main.9210698f.css.map",
+    "static/js/main.abaf3ccc.js.LICENSE.txt": "/static/js/main.abaf3ccc.js.LICENSE.txt",
+    "static/media/Button.scss": "/static/media/kai-icons.686d74df.eot"
   },
   "entrypoints": [
-    "static/css/main.42099924.css",
-    "static/js/main.f6f7d018.js"
+    "static/css/main.9210698f.css",
+    "static/js/main.abaf3ccc.js"
   ]
 }
