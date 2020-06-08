@@ -1,0 +1,115 @@
+@import '../../../../kai-ui/src/theme/fonts.scss';
+@import '../../../../kai-ui/src/theme/theme.scss';
+@import '../../../../kai-ui/src/theme/layout';
+@import '../../../../kai-ui/src/kai-font/style.scss';
+
+
+// Themes for Header and ListView
+.kai-light{
+  background-color: #F2F2F2;
+  color:black;
+}
+.kai-white{
+  background-color:white;
+  color:black;
+}
+.kai-dark{
+  background-color:#323232;
+  color:#FFFFFF;
+}
+
+
+//Themes for IconItems
+.kai-il-theme{
+    &-dark{
+        &-unfocused{
+            color: white;
+        }
+        &-focused{
+            &-white{
+                color: white;
+            }
+            &-black{
+                color:black;
+            }
+            &-default{
+                color: black;
+                background-color: #F2F2F2;
+            }
+        }
+    }
+    &-light{
+        &-unfocused{
+            color: black;
+        }
+        &-focused{
+            &-white{
+                color: white;
+            }
+            &-black{
+                color:black;
+            }
+            &-default{
+                color: white;
+                background-color: #323232;
+            }
+            
+        }
+    }
+    &-white{
+        &-unfocused{
+            color: black;
+        }
+        &-focused{
+            &-white{
+                color: white;
+            }
+            &-black{
+                color:black;
+            }
+            &-default{
+                color: white;
+                background-color: #323232;
+            }     
+        }
+    }
+}
+
+
+//Theme for Softkeys
+.kai-softkey-dark{
+    background-color:#323232;
+    color: white;
+    &-btn{
+        color:white;
+        &:active,
+        &.active {
+            background-color: #F2F2F2;
+            color:black;
+        }
+    }
+}
+.kai-softkey-white{
+    background-color:white;
+    color: black;
+    &-btn{
+        color:black;
+        &:active,
+        &.active {
+            background-color: #323232;
+            color:white;
+        }
+    }
+}
+.kai-softkey-light{
+    background-color:#F2F2F2;
+    color: black;
+    &-btn{
+        color:black;
+        &:active,
+        &.active {
+            background-color: #323232;
+            color:white;
+        }
+    }
+}
