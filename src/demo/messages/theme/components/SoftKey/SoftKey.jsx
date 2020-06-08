@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './SoftKey.scss';
 
-const prefixCls = 'kai-softkey';
+const prefixCls = 'kai-softkeyD';
 
 const Button = props => {
   const { handleClick, icon, text, theme, color } = props;

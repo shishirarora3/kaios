@@ -5,7 +5,7 @@ import Header from './theme/components/Header/Header'
 import SoftKey from './theme/components/SoftKey/SoftKey'
 import {focusColor} from './theme/colors_and_themes/theme_colors'
 
-class HomeScreen extends Component{
+class MessageOptions extends Component{
     render(){
         
         return(
@@ -23,4 +23,4 @@ class HomeScreen extends Component{
     }
 }
 
-export default HomeScreen;
+export default MessageOptions;

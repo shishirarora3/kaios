@@ -10,7 +10,7 @@ const Header = React.memo(
       theme
     } = props;
 
-    const prefixCls = 'kai-header';
+    const prefixCls = 'kai-headerD';
     const themeCls=`kai-${theme}`;
 
     return (

@@ -28,7 +28,7 @@ const IconListItem = React.memo(
 
     const isFocused = useFocus(forwardedRef, handleFocusChange, false);
 
-    const prefixCls = 'kai-il';
+    const prefixCls = 'kai-ilD';
 
     var textFocusColor="default";
     switch(focusColor){

@@ -4,7 +4,7 @@
 
 $kai-header-height: 30px;
 
-.kai-header {
+.kai-headerD {
   @include flex(row);
   width: 100%;
   line-height: $kai-header-height;

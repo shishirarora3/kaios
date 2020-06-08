@@ -17,7 +17,7 @@ const ListView = React.memo(
       theme
     } = props;
 
-    const prefixCls = 'kai-list-view';
+    const prefixCls = 'kai-list-viewD';
     const themeCls=`kai-${theme}`;
 
     const handleChangeIndex = itemIndex => {
