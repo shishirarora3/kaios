@@ -1,81 +1,99 @@
 import React from 'react';
-import HomepageA from './HomePageA/HomePageA';
-//import HomePageB from './HomepageB/HomePageB';
-//import HomePageC from './HomepageB/HomePageC';
-//import MessageOptions from './messages/homescreen';
-import ReactDOM from 'react-dom';
-import {BrowserRouter as Router,Switch,Route,Link,useParams} from "react-router-dom";
+import HomePageA from './HomePageA/HomePageA';
+//import HomePageB from './HomePageB/HomePageB';
+//import HomePageC from './HomePageC/HomePageC';
+//import MessageOptions from './messages/MessageOptions';
+import {BrowserRouter as Router, Switch, Route, Link, useParams} from "react-router-dom";
+
+const ErrorMessage = 'Sorry, Incorrect URL';
+
 const App=()=>{
-    return(
-        <Router>
-            <Switch>
-				<Route exact path="/homepagea">
-                    <HomepageA/>
-                </Route>
-                <Route exact path="/homepageb">
-                    <h1>HomepageB</h1>
-                </Route>
-                <Route exact path="/homepagec">
-                    <h1>HomepageC</h1>
-                </Route>
-				<Route exact path='/messageoptions'>
-					<MessageOptionsScreen/>
-				</Route>
-				<Route path="/messageoptions/:theme/:color" children={<MessageOptionsScreen/>} />
-                <Route path="/">
-                    <Home/>
-                </Route>
-            </Switch>
-        </Router>
-    )
+	return(
+		<Router>
+			<Switch>
+				<Route exact path="/HomePageA" component={HomePageA}/>
+				<Route exact path="/HomePageB" component={HomePageB}/>
+				<Route exact path="/HomePageC" component={HomePageC}/>
+				<Route exact path='/MessageOptions' component={MessageOptionsScreen}/>
+				<Route path="/MessageOptions/:theme/:color" children={<MessageOptionsScreen/>} />
+				<Route exact path="/" component={Home}/>
+				<Route component={NoMatch}/>
+			</Switch>
+		</Router>
+	)
 }
 function Home(){
-    return(
+	return(
 		<div>
 			<h2>Concept Validation Screens</h2>
 			<ul>
 				<li>
-				<Link to="/homepagea">HomeA</Link>
+				<Link to="/HomePageA">HomeA</Link>
 				</li>
 				<li>
-				<Link to="/homepageb">HomeB</Link>
+				<Link to="/HomePageB">HomeB</Link>
 				</li>
 				<li>
-				<Link to="/homepagec">HomeC</Link>
+				<Link to="/HomePageC">HomeC</Link>
 				</li>
 				<li>
-				<Link to="/messageoptions">Message Options</Link>
+				<Link to="/MessageOptions">Message Options</Link>
 				</li>
 			</ul>
 		</div>
-    )
+	)
+}
+
+const NoMatch = () => {
+	return(
+		<div>
+			<p>{ErrorMessage}</p>
+		</div>
+	)
 }
 
 const MessageOptionsScreen = () => {
+	const validThemes = ['white', 'dark', 'light'];
+	const validColors = ['lightblue', 'monochrome', 'brand'];
+
 	const { theme } = useParams();
 	const { color } = useParams();
 
 	console.log(theme);
 	console.log(color);
 
-	const ScreenTheme = theme || 'white';
-	const ScreenColor = color || 'blue';
+	const ScreenTheme = theme ? theme.toLowerCase() : validThemes[0];
+	const ScreenColor = color ? color.toLowerCase() : validColors[0];
 
-	return(
-		<MessageOptions theme={ScreenTheme} color={ScreenColor}></MessageOptions>
-	)
+	return (validThemes.includes(ScreenTheme) && validColors.includes(ScreenColor)) ? 
+		<MessageOptions theme={ScreenTheme} color={ScreenColor}></MessageOptions> : 
+		<NoMatch/>
 }
 
-/* dummy message options component */
+/* dummy Home Page components */
 const MessageOptions = (props) => {
 	console.log(props);
 	return(
 		<div>
-			<h1>{`Theme: ${props.theme}`}</h1>
-			<h1>{`Color: ${props.color}`}</h1>
+			<p>{`Theme: ${props.theme}`}</p>
+			<p>{`Color: ${props.color}`}</p>
 		</div>
 	)
 }
 
-export default App ;
+const HomePageB = () => {
+	return(
+		<div>
+			<h1>Home Page B</h1>
+		</div>
+	)
+}
 
+const HomePageC = () => {
+	return(
+		<div>
+			<h1>Home Page C</h1>
+		</div>
+	)
+}
+export default App ;
