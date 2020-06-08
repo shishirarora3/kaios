@@ -1,0 +1,22 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+
+import {
+    CalendarHeader
+} from "./CalendarHeader";
+
+<Meta title="Design System|Header" component={CalendarHeader} />
+
+# CalendarHeader
+
+Header will serve as generic header for kaios app.
+
+## Usage
+
+CalendarHeader are used to tab through various modules of our app
+
+<Preview withToolbar>
+    <Story name="calendar-header">
+        <CalendarHeader headerText={"calendar"}/>
+    </Story>
+</Preview>
+
