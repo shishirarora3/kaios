@@ -1,8 +1,9 @@
 import React from 'react';
-import {News} from "../news/News";
+import HomePageA from './HomePageA/HomePageA';
 
-const App=()=><pre>
-    <News/>
-    This is demo. use this to make demo actual components using KaiUI and designs given
-</pre>
+const App=()=>{
+    return(
+        <HomePageA/>
+    )
+}
 export default App;

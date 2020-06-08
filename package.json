@@ -73,6 +73,7 @@
     "@storybook/react": "^5.3.19",
     "@storybook/storybook-deployer": "^2.8.6",
     "@types/node-sass": "^4.11.1",
+    "node-sass": "^4.14.1",
     "react-app-rewire-disable-chunks": "^0.0.1",
     "react-app-rewired": "^2.1.6",
     "storybook-addon-designs": "^5.2.1"
