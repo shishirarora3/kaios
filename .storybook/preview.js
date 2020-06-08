@@ -2,6 +2,7 @@ import { addParameters } from "@storybook/react";
 import { addDecorator } from "@storybook/react";
 import { withKnobs } from "@storybook/addon-knobs";
 import { withA11y } from "@storybook/addon-a11y";
+import { withDesign } from 'storybook-addon-designs'
 
 const customViewports = {
     kaios: {
@@ -26,3 +27,4 @@ addParameters({
 
 addDecorator(withKnobs);
 addDecorator(withA11y);
+addDecorator(withDesign);
