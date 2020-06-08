@@ -1,3 +1,5 @@
+@import "theme";
+
 $white-color: #fcf5ed;
 $dark-color: #402f2b;
 $light-color: #e6d5c3;
@@ -19,4 +21,5 @@ $header-height: nth($sizes, 1);
   lightblackcolor: $light-black-color;
   blackcolor: $black-color;
   headerHeight: $header-height;
+  theme: $theme
 }

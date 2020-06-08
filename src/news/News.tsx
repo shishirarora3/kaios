@@ -4,11 +4,11 @@ import variables from "../variables.scss";
 interface IProps {
     name?: string;
 }
-
+console.log(variables.theme);
 export const News: React.FC<IProps> =
     (props: IProps) => <div style={{
-        color: variables.alertcolor,
-        height: variables.headerHeight
+        color: variables.theme,
+        height: variables.headerHeight,
     }}>{props.name}</div>;
 
 

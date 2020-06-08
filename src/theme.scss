@@ -1,0 +1,41 @@
+$theme: (
+  colors: (
+    Black: #000000,
+    White: #ffffff,
+    Light Grey: #f2f2f2,
+    Dark grey: #323232,
+    Outlook Blue: #0078d4,
+    Accessible Grey (Light): #7c7c7c,
+    Accesible Grey (Dark): #c4c4c4,
+    Error Red: #ca2727,
+    Outlook Jio / Black: #000000,
+    Outlook Jio / Dark grey: #323232,
+    Outlook Jio / Light grey: #f2f2f2,
+    Outlook Jio / White: #ffffff,
+    Outlook Jio / Outlook Blue: #0078d4
+  ),
+  textStyles: (
+    Label - Noto Sans Bold, 15px: (
+      fontFamily: Noto Sans,
+      fontWeight: 700,
+      fontSize: 15,
+      lineHeight: 1
+    ),
+    Title - Noto Sans Regular 15: (
+      fontFamily: Noto Sans,
+      fontWeight: 400,
+      fontSize: 15,
+      lineHeight: 1
+    ),
+    Header - Noto Sans Bold, 17: (
+      fontFamily: Noto Sans,
+      fontWeight: 700,
+      fontSize: 17,
+      lineHeight: 1
+    )
+  ),
+  fonts: (Noto Sans),
+  fontSizes: (15, 17),
+  fontWeights: (400, 700),
+  lineHeights: (1)
+);

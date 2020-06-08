@@ -1,56 +1,29 @@
 {
   "colors": {
-    "Accessible Grey (Light)": "#7c7c7c",
-    "Communication Blue / Dark / Web / Comm tint 10 #0078D4": "#0078d4",
-    "Dark grey": "#323232",
-    "Neutrals / Mobile / Gray 900  #212121": "#212121",
     "Black": "#000000",
-    "Neutrals / Mobile / Gray 600  #404040": "#404040",
-    "Light Grey": "#f2f2f2",
     "White": "#ffffff",
+    "Light Grey": "#f2f2f2",
+    "Dark grey": "#323232",
     "Outlook Blue": "#0078d4",
-    "Neutrals / Mobile / Gray 300  #ACACAC": "#acacac",
-    "Neutrals / Mobile / Gray 25 #F8F8F8": "#f8f8f8",
-    "Neutrals / White  #FFFFFF": "#ffffff",
-    "Communication Blue / Dark / Mobile / Comm tint 20 #004C87": "#004c87",
-    "Communication Blue / Comm shade 30 #004578": "#004578",
-    "Communication Blue / Comm shade 20 #005A9E": "#005a9e",
-    "Communication Blue / Comm tint 30 #DEECF9": "#deecf9"
+    "Accessible Grey (Light)": "#7c7c7c",
+    "Accesible Grey (Dark)": "#c4c4c4",
+    "Error Red": "#ca2727",
+    "Outlook Jio / Black": "#000000",
+    "Outlook Jio / Dark grey": "#323232",
+    "Outlook Jio / Light grey": "#f2f2f2",
+    "Outlook Jio / White": "#ffffff",
+    "Outlook Jio / Outlook Blue": "#0078d4"
   },
   "textStyles": {
-    "Separator - Noto Sans Regular 12": {
-      "fontFamily": "Noto Sans",
-      "fontWeight": 400,
-      "fontSize": 12,
-      "lineHeight": 1
-    },
-    "Separator - Noto Sans Bold 12": {
+    "Label - Noto Sans Bold, 15px": {
       "fontFamily": "Noto Sans",
       "fontWeight": 700,
-      "fontSize": 12,
-      "lineHeight": 1
-    },
-    "Label - Noto Sans Regular 14": {
-      "fontFamily": "Noto Sans",
-      "fontWeight": 400,
-      "fontSize": 14,
-      "lineHeight": 1
-    },
-    "Label - Noto Sans Bold 14": {
-      "fontFamily": "Noto Sans",
-      "fontWeight": 700,
-      "fontSize": 14,
+      "fontSize": 15,
       "lineHeight": 1
     },
     "Title - Noto Sans Regular 15": {
       "fontFamily": "Noto Sans",
       "fontWeight": 400,
-      "fontSize": 15,
-      "lineHeight": 1
-    },
-    "Label - Noto Sans Bold, 15px": {
-      "fontFamily": "Noto Sans",
-      "fontWeight": 700,
       "fontSize": 15,
       "lineHeight": 1
     },
@@ -65,8 +38,6 @@
     "Noto Sans"
   ],
   "fontSizes": [
-    12,
-    14,
     15,
     17
   ],
