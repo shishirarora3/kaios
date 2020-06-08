@@ -54,8 +54,10 @@ steps to run:
             
 6) every pr against master, will have a deploy link generated
 
-7)ci-cd service 
+7) ci-cd service 
    https://dashboard.render.com/
+8) Storybook for documentation of components, hosted at  https://shishirarora3.github.io/kaios/
+<img src="./src/storybook.png"/>   
     
  
 
