@@ -1,0 +1,16 @@
+@import './HomePageATheme/theme.scss';
+.PhoneDimentions{
+	// include pos for float
+	//position: absolute;
+
+	margin: 0px;
+	padding: 0px;
+	height: 100vh;
+	width: 100vw;
+	box-sizing: border-box;
+	background: var(--color-home-a-light-grey);
+	overflow: auto;
+}
+*{
+    box-sizing: border-box;
+}

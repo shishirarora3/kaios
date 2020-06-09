@@ -1,3 +1,4 @@
+
 import 'react-app-polyfill/ie9';
 import 'react-app-polyfill/stable'
 import React from 'react';
@@ -5,10 +6,10 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import Demo from './demo/index';
 import KaiUI from './kai-ui/src/App';
+import HomePage from './demo/HomePageC/HomePageC'
 
 const bootstrap = () => {
     // Render the app
-    console.log(process.env.REACT_APP_DEMO);
     if(process.env.REACT_APP_KAI_UI){
         //https://kai-ui.onrender.com
         ReactDOM.render(<KaiUI/>, document.getElementById('root'));
@@ -23,4 +24,3 @@ const bootstrap = () => {
 
 
 bootstrap();
-
