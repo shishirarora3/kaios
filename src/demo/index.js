@@ -1,7 +1,7 @@
 import React from 'react';
 import HomePageA from './HomePageA/HomePageA';
 //import HomePageB from './HomePageB/HomePageB';
-//import HomePageC from './HomePageC/HomePageC';
+import HomePageC from './HomePageC/HomePageC';
 //import MessageOptions from './messages/MessageOptions';
 import {BrowserRouter as Router, Switch, Route, Link, useParams} from "react-router-dom";
 
@@ -89,11 +89,4 @@ const HomePageB = () => {
 	)
 }
 
-const HomePageC = () => {
-	return(
-		<div>
-			<h1>Home Page C</h1>
-		</div>
-	)
-}
 export default App ;
