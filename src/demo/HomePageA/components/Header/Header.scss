@@ -16,20 +16,21 @@ $kai-header-height: 3rem;
   text-align: center;
   line-height: 3rem;
   box-sizing: border-box;
+  span{
+    display: inline-block;
+    vertical-align: middle;
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.7rem;
+    line-height: 2.3rem;
+    /* Black */
+    color: var(--color-home-a-black);
+  }
 }
 
-span{
-  display: inline-block;
-  vertical-align: middle;
-  font-family: Noto Sans;
-  font-style: normal;
-  font-weight: bold;
-  text-align: center;
-  font-size: 1.7rem;
-  line-height: 2.3rem;
-  /* Black */
-  color: var(--color-home-a-black);
-}
+
 
 
 

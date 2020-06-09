@@ -1,8 +1,8 @@
 import React from 'react';
 import HomePageA from './HomePageA/HomePageA';
-//import HomePageB from './HomePageB/HomePageB';
+import HomePageB from './HomePageB/HomePageB';
 import HomePageC from './HomePageC/HomePageC';
-//import MessageOptions from './messages/MessageOptions';
+import MessageOptions from './messages/MessageOptions';
 import {BrowserRouter as Router, Switch, Route, Link, useParams} from "react-router-dom";
 
 const ErrorMessage = 'Sorry, Incorrect URL';
@@ -68,25 +68,6 @@ const MessageOptionsScreen = () => {
 	return (validThemes.includes(ScreenTheme) && validColors.includes(ScreenColor)) ?
 		<MessageOptions theme={ScreenTheme} color={ScreenColor}></MessageOptions> :
 		<NoMatch/>
-}
-
-/* dummy Home Page components */
-const MessageOptions = (props) => {
-	console.log(props);
-	return(
-		<div>
-			<p>{`Theme: ${props.theme}`}</p>
-			<p>{`Color: ${props.color}`}</p>
-		</div>
-	)
-}
-
-const HomePageB = () => {
-	return(
-		<div>
-			<h1>Home Page B</h1>
-		</div>
-	)
 }
 
 export default App ;

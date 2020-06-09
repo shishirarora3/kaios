@@ -1,11 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import './FlexBox.scss';
+import './ListView.scss';
+import '../../colors_and_themes/theme_colors.scss'
 
-const prefixCls = 'flexboxA';
-
-const FlexBox = React.memo(
+const ListView = React.memo(
   props => {
     const itemRefs = [];
 
@@ -15,9 +14,11 @@ const FlexBox = React.memo(
       children,
       onChangeIndex,
       isActive,
-	  shouldBeHidden,
-	  numColumns,
+      theme
     } = props;
+
+    const prefixCls = 'kai-list-viewD';
+    const themeCls=`kai-${theme}`;
 
     const handleChangeIndex = itemIndex => {
       setActiveItem(itemIndex);
@@ -32,28 +33,21 @@ const FlexBox = React.memo(
     const handleKeyDown = useCallback(
       e => {
         let index = activeItem;
-        //console.log(`Active Item was ${activeItem}`);
         if (!isActive) {
           return;
         }
 
         switch (e.key) {
-          case 'ArrowLeft':
+          case 'ArrowUp':
+            // looping to bottom
             index = index - 1 >= 0 ? index - 1 : itemRefs.length - 1;
             setFocusToIndex(index);
             break;
-          case 'ArrowRight':
+          case 'ArrowDown':
+            // looping to top
             index = index + 1 < itemRefs.length ? index + 1 : 0;
             setFocusToIndex(index);
             break;
-          case 'ArrowUp':
-            index = index-numColumns >=0 ? index - numColumns : index + 2*numColumns;
-            setFocusToIndex(index);
-            break;
-          case 'ArrowDown':
-            index = index+numColumns < itemRefs.length ? index + numColumns : index - 2*numColumns;
-            setFocusToIndex(index);
-            break; 
           default:
             break;
         }
@@ -85,9 +79,6 @@ const FlexBox = React.memo(
         if (child.props.separatorText != null) {
           return child;
         }
-        if(child.props.shouldBeHidden === true){
-		  return child;
-        }
         index++;
         const newRef = React.createRef();
         itemRefs[index] = newRef;
@@ -99,23 +90,24 @@ const FlexBox = React.memo(
       });
     };
 
-    return <div className={prefixCls}>{renderChildren()}</div>;
+    return <div className={`${prefixCls} ${themeCls}`}>{renderChildren()}</div>;
   }
 );
 
-FlexBox.propTypes = {
+ListView.propTypes = {
   children: PropTypes.array.isRequired,
   onChangeIndex: PropTypes.func,
-  shouldBeHidden: PropTypes.bool,
   // Refocus on tab change
   isActive: PropTypes.bool,
+  theme: PropTypes.string,
+  color:PropTypes.string
 };
 
-FlexBox.defaultProps = {
+ListView.defaultProps = {
   onChangeIndex: () => {},
   isActive: true,
-  shouldBeHidden: false,
-  numColumns: 3,
+  color:"monochrome",
+  theme: "white"
 };
 
-export default FlexBox;
+export default ListView;
