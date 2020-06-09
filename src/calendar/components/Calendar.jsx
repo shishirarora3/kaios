@@ -1,8 +1,7 @@
 import React from 'react';
-import {CalendarListItemHeader} from "./CalendarListItemHeader";
 import {CalendarListItem} from "./CalendarListItem";
 import config from "../../Config";
-import {getEvents, getAllDriveItems} from "../../GraphService";
+import {getAllDriveItems} from "../../GraphService";
 import "../styles/Calender.css";
 
 import ListView from "../../kai-ui/src/views/ListView/ListView";
@@ -10,6 +9,35 @@ import ArrowListItem from "../../kai-ui/src/components/ArrowListItem/ArrowListIt
 import {observer} from 'mobx-react';
 import {updateCalendarItemsMap} from '../actions/calendarActions';
 import {getActiveEventDetailsByEtag, getParsedEventsMap} from "../selectors/getCalendarEvents";
+
+export const CalendarContainer = (props) => {
+    const {eventKeys, eventsMap, eventDetails} = props;
+    if (eventDetails) {
+        return <div className="mailListContainer" dangerouslySetInnerHTML={{__html: eventDetails?.body?.content}}/>;
+    }
+    return <div className="mailListContainer">
+        {
+            eventKeys.length > 0 && <ListView>
+                {
+                    eventKeys.map((eventKey, k) => {
+                        const start = eventsMap[eventKey][0]?.start;
+                        const ref = React.createRef();
+                        return <ArrowListItem
+                            ref={ref}
+                            primary={`${start[0]} ${start[2]}`}
+                            index={k}
+                            key={k}
+                        >
+                            {eventsMap[eventKey].map((e, k) => <div>
+                                <CalendarListItem key={k} tabIndex={k + 1} {...e} />
+                            </div>)}
+                        </ArrowListItem>
+                    })
+                }
+            </ListView>
+        }
+    </div>;
+}
 
 export const Calendar = observer(class Calendar extends React.Component {
     async componentDidMount() {
@@ -32,32 +60,8 @@ export const Calendar = observer(class Calendar extends React.Component {
     render() {
         const eventsMap = getParsedEventsMap();
         const eventKeys = Object.keys(eventsMap).sort();
-        const activeEtag = this?.props?.match?.params?.etag;
-        if (activeEtag) {
-            const eventDetails = getActiveEventDetailsByEtag(activeEtag);
-            return <div className="mailListContainer" dangerouslySetInnerHTML={{__html: eventDetails?.body?.content}}/>;
-        }
-        return <div className="mailListContainer">
-            {
-                eventKeys.length > 0 && <ListView>
-                    {
-                        eventKeys.map((eventKey, k) => {
-                            const start = eventsMap[eventKey][0]?.start;
-                            const ref = React.createRef();
-                            return <ArrowListItem
-                                ref={ref}
-                                primary={`${start[0]} ${start[2]}`}
-                                index={k}
-                                key={k}
-                            >
-                                {eventsMap[eventKey].map((e, k) => <div>
-                                    <CalendarListItem key={k} tabIndex={k + 1} {...e} />
-                                </div>)}
-                            </ArrowListItem>
-                        })
-                    }
-                </ListView>
-            }
-        </div>;
+        const activeEtag = this.props?.match?.params?.etag;
+        const eventDetails = activeEtag && getActiveEventDetailsByEtag(activeEtag);
+        return <CalendarContainer {...{...this.props, eventKeys, eventsMap, eventDetails}}/>;
     }
 });
