@@ -4,7 +4,7 @@ import 'react-app-polyfill/stable'
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import Demo from './demo';
+import Demo from './demo/index';
 import KaiUI from './kai-ui/src/App';
 import HomePage from './demo/HomePageC/HomePageC'
 
