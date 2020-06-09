@@ -6,10 +6,16 @@
   "homepage": "https://shishirarora3.github.io",
   "dependencies": {
     "@microsoft/microsoft-graph-client": "^2.0.0",
+    "@storybook/addon-a11y": "^5.3.19",
+    "@storybook/addon-backgrounds": "^5.3.19",
+    "@storybook/addon-contexts": "^5.3.19",
+    "@storybook/addon-docs": "^5.3.19",
+    "@storybook/addon-knobs": "^5.3.19",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "@types/jest": "^24.0.0",
+    "@types/lodash-es": "^4.17.3",
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
@@ -17,16 +23,17 @@
     "cross-env": "^7.0.2",
     "figma-theme": "^1.0.0-3",
     "gh-pages": "^2.2.0",
+    "lodash-es": "^4.17.15",
     "mobx": "^5.15.4",
     "mobx-react": "^6.2.2",
     "msal": "^1.3.0",
-    "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-router-dom": "^5.1.2",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-swipeable-views": "^0.13.9",
     "satcheljs": "^4.2.2",
+    "theme-ui": "^0.3.1",
     "typescript": "~3.7.2"
   },
   "scripts": {
@@ -38,8 +45,11 @@
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject",
     "predeploy": "npm run build",
+    "figma-theme": "cross-env FIGMA_TOKEN='48218-095f5cbb-3954-48b4-8c7f-d6c5fad4c9d5' figma-theme 'awGFKcU9U0XpnU4b500iT8'",
     "deploy": "gh-pages -d build",
-    "figma-theme": "cross-env FIGMA_TOKEN='48218-095f5cbb-3954-48b4-8c7f-d6c5fad4c9d5' figma-theme 'awGFKcU9U0XpnU4b500iT8'"
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -55,7 +65,17 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addon-viewport": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/preset-create-react-app": "^3.0.0",
+    "@storybook/react": "^5.3.19",
+    "@storybook/storybook-deployer": "^2.8.6",
+    "@types/node-sass": "^4.11.1",
+    "node-sass": "^4.14.1",
     "react-app-rewire-disable-chunks": "^0.0.1",
-    "react-app-rewired": "^2.1.6"
+    "react-app-rewired": "^2.1.6",
+    "storybook-addon-designs": "^5.2.1"
   }
 }
