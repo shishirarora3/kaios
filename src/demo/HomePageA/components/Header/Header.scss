@@ -1,0 +1,36 @@
+@import '../../../../kai-ui/src/theme/layout.scss';
+@import '../../../../kai-ui/src/theme/fonts.scss';
+@import '../../HomePageATheme/theme.scss';
+
+$kai-header-height: 3rem;
+
+.headerA {
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  height: 3rem;
+  width: 100%;
+  background: var(--color-home-a-light-grey);
+  text-align: center;
+  line-height: 3rem;
+  box-sizing: border-box;
+  span{
+    display: inline-block;
+    vertical-align: middle;
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.7rem;
+    line-height: 2.3rem;
+    /* Black */
+    color: var(--color-home-a-black);
+  }
+}
+
+
+
+
+
