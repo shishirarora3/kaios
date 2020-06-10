@@ -15,9 +15,9 @@ const App=()=>{
 				<Route exact path="/HomePageB" component={HomePageB}/>
 				<Route exact path="/HomePageC" component={HomePageC}/>
 				<Route exact path='/MessageOptions' component={MessageOptionsScreen}/>
-				<Route path="/MessageOptions/:theme/:color" children={<MessageOptionsScreen/>} />
+				<Route exact path="/MessageOptions/:theme/:color" children={<MessageOptionsScreen/>} />
 				<Route exact path="/" component={Home}/>
-				<Route component={NoMatch}/>
+				<Route component={Home}/>
 			</Switch>
 		</Router>
 	)
@@ -37,7 +37,22 @@ function Home(){
 				<Link to="/HomePageC">HomeC</Link>
 				</li>
 				<li>
-				<Link to="/MessageOptions">Message Options</Link>
+					<Link to="/MessageOptions/light/grey">Message Options theme Light</Link>
+				</li>
+				<li>
+					<Link to="/MessageOptions/white/grey">Message Options theme white</Link>
+				</li>
+				<li>
+					<Link to="/MessageOptions/dark/grey">Message Options theme dark</Link>
+				</li>
+				<li>
+					<Link to="/MessageOptions/white/monochrome">Message Options theme monochrome</Link>
+				</li>
+				<li>
+					<Link to="/MessageOptions/white/brand">Message Options theme brand</Link>
+				</li>
+				<li>
+					<Link to="/MessageOptions/white/lightblue">Message Options theme lightblue</Link>
 				</li>
 			</ul>
 		</div>
