@@ -42,9 +42,11 @@ const IconListItem = React.memo((props) => {
 
 				<label className={secondaryCls}>{secondary}</label>
 			</div>
-			<div className={messageCls} style={messageIconColor(isFocused)}>
-				{messages}
-			</div>
+			{ (messages>1)?
+				<div className={messageCls} style={messageIconColor(isFocused)}>
+					{messages}
+				</div>:<div></div>
+			}
 		</div>
 	);
 });
