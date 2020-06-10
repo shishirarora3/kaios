@@ -110,7 +110,8 @@ const IconListItem = React.memo(
           <span className={primaryCls}>
             {primary}
             {notificationType===3?<div className={notificationType3}></div>:null} {/*if its notification 3*/}
-            {anyNotification?<div className={notificationBox} style={styleForNotificationTwo}>{notificationTypeCode(notificationType)}</div>:null}{/*if its notification 1 or 2*/}
+           <div className="notifcationBox1_2">{anyNotification?<div className={notificationBox} style={styleForNotificationTwo}>{notificationTypeCode(notificationType)}</div>:null}{/*if its notification 1 or 2*/}
+           </div> 
           </span>
           <label className={secondaryCls}>{secondary}</label>
         </div>
