@@ -54,7 +54,7 @@ const NoMatch = () => {
 
 const MessageOptionsScreen = () => {
 	const validThemes = ['white', 'dark', 'light'];
-	const validColors = ['lightblue', 'monochrome', 'brand'];
+	const validColors = ['lightblue', 'monochrome', 'brand','grey'];
 
 	const { theme } = useParams();
 	const { color } = useParams();
