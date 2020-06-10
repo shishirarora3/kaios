@@ -5,8 +5,6 @@ import HomePageC from './HomePageC/HomePageC';
 import MessageOptions from './messages/MessageOptions';
 import {BrowserRouter as Router, Switch, Route, Link, useParams} from "react-router-dom";
 
-const ErrorMessage = 'Sorry, Incorrect URL';
-
 const App=()=>{
 	return(
 		<Router>
