@@ -23,6 +23,7 @@
   position: fixed;
   bottom: 0;
   width: 100%;
+  border-top: solid 1px #E4E4E4;
 
   &:not(.visible) {
     opacity: 0;

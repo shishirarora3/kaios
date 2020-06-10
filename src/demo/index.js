@@ -15,9 +15,9 @@ const App=()=>{
 				<Route exact path="/HomePageB" component={HomePageB}/>
 				<Route exact path="/HomePageC" component={HomePageC}/>
 				<Route exact path='/MessageOptions' component={MessageOptionsScreen}/>
-				<Route path="/MessageOptions/:theme/:color" children={<MessageOptionsScreen/>} />
+				<Route exact path="/MessageOptions/:theme/:color" children={<MessageOptionsScreen/>} />
 				<Route exact path="/" component={Home}/>
-				<Route component={NoMatch}/>
+				<Route component={Home}/>
 			</Switch>
 		</Router>
 	)
@@ -37,17 +37,24 @@ function Home(){
 				<Link to="/HomePageC">HomeC</Link>
 				</li>
 				<li>
-				<Link to="/MessageOptions">Message Options</Link>
+				<Link to="/MessageOptions/light/monochrome">Message Options Theme 01</Link>
+				</li>
+				<li>
+				<Link to="/MessageOptions/white/monochrome">Message Options Theme 01</Link>
+				</li>
+				<li>
+				<Link to="/MessageOptions/dark/grey">Message Options Theme 03</Link>
+				</li>
+				<li>
+				<Link to="/MessageOptions/white/monochrome">Message Options Colors 01</Link>
+				</li>
+				<li>
+				<Link to="/MessageOptions/white/brand">Message Options Colors 02</Link>
+				</li>
+				<li>
+				<Link to="/MessageOptions/white/lightblue">Message Options Colors 03</Link>
 				</li>
 			</ul>
-		</div>
-	)
-}
-
-const NoMatch = () => {
-	return(
-		<div>
-			<p>{ErrorMessage}</p>
 		</div>
 	)
 }
@@ -59,15 +66,12 @@ const MessageOptionsScreen = () => {
 	const { theme } = useParams();
 	const { color } = useParams();
 
-	console.log(theme);
-	console.log(color);
-
 	const ScreenTheme = theme ? theme.toLowerCase() : validThemes[0];
 	const ScreenColor = color ? color.toLowerCase() : validColors[0];
 
 	return (validThemes.includes(ScreenTheme) && validColors.includes(ScreenColor)) ?
 		<MessageOptions theme={ScreenTheme} color={ScreenColor}></MessageOptions> :
-		<NoMatch/>
+		<Home/>
 }
 
 export default App ;
