@@ -44,7 +44,7 @@ const IconListItem = React.memo(
     const notificationType3=`notificationBox3-`+isFocusedUnfocused;
     const renderedIcon = iconSrc === null ?
         <span className={icon} /> :
-        <img src={iconSrc}  alt="" />;
+        <div className="imageHolderC"><img src={iconSrc}  alt="" /></div>;
      
     let anyNotification=isNotification; 
 
