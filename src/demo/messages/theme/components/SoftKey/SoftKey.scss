@@ -1,9 +1,9 @@
-@import '../../theme/fonts.scss';
-@import '../../theme/theme.scss';
-@import '../../theme/layout';
+@import '../../../../../kai-ui/src/theme/fonts.scss';
+@import '../../../../../kai-ui/src/theme/theme.scss';
+@import '../../../../../kai-ui/src/theme/layout.scss';
 
 :root {
-  --softkeybar-background-color: var(--color-gs20, #cccccc);
+  --softkeybar-background-color: var(--color-gs20,white);
   --softkey-color: var(--color-gs90, #323232);
   --softkey-color--icon: var(--color-gs70, #6a6a6a);
   --softkey-color--disabled: var(--color-eta, #c7c7c7);
@@ -11,16 +11,16 @@
   --softkey-icon-size: 2rem;
 }
 
-.kai-softkey {
+
+
+.kai-softkeyD {
   $skbar-gap: 0.5rem;
   z-index: var(--z-index--softkey, 9999);
   display: flex;
   justify-content: space-between;
   outline: none;
   text-align: center;
-  color: var(--softkey-color);
-  background-color: var(--softkeybar-background-color);
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
 
@@ -42,7 +42,7 @@
       font-weight: 700;
       min-width: 2rem + $skbar-gap * 2; // min gap between LSK & RSK = 2rem
       max-width: 7.6rem;
-     // text-transform: uppercase;
+      text-transform: uppercase;
       padding: 0 $skbar-gap;
     }
 
@@ -62,13 +62,7 @@
     border: unset;
     overflow: hidden;
     @extend %text-ellipsis;
-    color: var(--softkey-color);
     background: unset;
-
-    &:active,
-    &.active {
-      background-color: var(--softkey-background-color--active);
-    }
 
     &[disabled] {
       --softkey-color: var(--softkey-color--disabled);
@@ -88,3 +82,5 @@
     }
   }
 }
+
+

@@ -1,0 +1,31 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import {BrowserRouter as Router} from 'react-router-dom';
+import {
+    CalendarContainer
+} from "./Calendar";
+import props from "./CalendarPropsMock.json";
+
+<Meta title="Design System|CalendarContainer" component={CalendarContainer} />
+
+# CalendarContainer
+
+CalendarContainer will serve as full app
+
+## Usage
+
+CalendarContainer is generic app container
+<Preview withToolbar>
+<Story name="calendar-container"
+parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/awGFKcU9U0XpnU4b500iT8/Early-Concepts?node-id=240%3A21'
+    }
+  }}
+>
+<Router>
+    <CalendarContainer {...props}/>
+ </Router>
+</Story>
+</Preview>
+

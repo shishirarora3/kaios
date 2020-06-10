@@ -1,0 +1,218 @@
+@import '../../../../../kai-ui/src/theme/fonts.scss';
+@import '../../../../../kai-ui/src/theme/theme.scss';
+@import '../../../../../kai-ui/src/theme/layout.scss';
+@import '../../../../../kai-ui/src/kai-font/style.scss';
+
+
+.kai-ilC {
+
+  
+  display: flex;
+  flex-direction: row;
+  
+  overflow: hidden;
+  outline: none;
+  width: 92.0833vw;    //221px
+  height: 22.5vh;      //72px
+  margin:5px auto;
+  border-radius: 6px;
+  padding:0px;
+  
+
+  &-icon{
+     &-focused {
+      height: 100%;
+     }
+
+    &-unfocused {
+      height: 100%;
+    }
+    
+    &-unfocused img{
+      margin:0;
+      padding:0;
+    }
+    &-focused img{
+      margin:0;
+      padding:0;
+    }
+  }
+
+  &-line {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    
+    span,
+    label {
+      padding: 0;
+      width: 56.25vw;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &-primary {
+    &-unfocused{
+    font-weight: bold;
+    font-size: 6.25vw;
+    height: 7.1875vh;
+    margin-left: 2.9166vw;
+    color: #000000;
+    }
+    &-focused{
+      font-weight: bold;
+      font-size: 6.25vw;
+      height: 7.1875vh;
+      margin-left: 2.9166vw;
+      color: #ffffff;
+    }
+  }
+
+  &-secondary {
+    &-unfocused{
+    font-size: 6.25vw;
+    height: 7.1875vh;
+    margin-left: 2.9166vw;
+    color: #000000;
+    }
+    &-focused{
+      font-size: 6.25vw;
+      height: 7.1875vh;
+      margin-left: 2.9166vw;
+      color: #ffffff;
+      }
+  }
+}
+// images
+img {
+height: 100%;
+}
+
+//Notification for list item 1 and 2
+
+.notificationBox{
+  &-focused{
+  width: 8.33vw;
+  height: 6.25vh;
+  background-color: white;
+  display: flex;
+  float: right;
+  border-radius: 3px;
+  align-items: center;
+  justify-content: center;
+  }
+  &-unfocused{
+    width: 8.33vw;
+    height: 6.25vh;
+    background-color:#0078D4;
+    display: flex;
+    float: right;
+    border-radius: 3px;
+    align-items: center;
+    justify-content: center;  
+  }
+  &-focused h1{
+    font-weight: 500;
+    font-size: 5.416vw;
+    line-height: 5.625vh;
+    color: #0078D4;
+  }
+  &-unfocused h1{
+    font-weight: 500;
+    font-size: 5.416vw;
+    line-height: 5.625vh;
+    color: #ffffff;
+  }
+}
+//styling for overlapping images in list 1
+.imageBox{
+  display:flex;
+  width:42.6vw;height:22.5vh;
+  align-items:center;
+  justify-content:center;
+
+}
+
+.box{
+  display: flex;
+  position:relative;
+  width:80%  ; ///23vw;
+  height:85%;   //18vh;
+  
+}
+
+.firstIcon{
+  width:15.41vw;
+  height:11.5625vh;
+  border-radius:50%;
+  position:absolute;
+  top:0rem;
+  left:0rem;
+  border:1px solid #ffffff;
+}
+.secondIcon{
+  position:absolute;
+  bottom:0rem;
+  right:0rem;
+  width:15.41vw;
+  height:11.5625vh;
+  border-radius:50%;
+  border:1px solid #ffffff;
+  
+}
+//notification for list item 3
+.notificationBox3{
+  &-unfocused{
+    height: 1.5625vh;
+    width: 2.0833vw;
+    border-radius: 60%;
+    background-color:  #0078D4;
+    display: inline-block;
+    position: relative;
+    bottom: 0.9em;
+    left:0.3em;
+    
+  }
+  &-focused{
+    height: 1.5625vh;
+    width: 2.0833vw;
+    border-radius: 60%;
+    background-color: white;
+    display: inline-block;
+    position: relative;
+    bottom: 1em;
+    left:0.2em;
+    
+  }
+}
+//list two image vector styling
+.vectorOuterBox{
+  display:flex;
+  position:relative;
+  width: 61%;
+  height: 49%;
+  background-color:#0078D4;
+  
+}
+
+.listTwoNotification1{
+  height:2.8125vh;
+  width:4.791vw;
+  position: absolute;
+  left:0;
+  bottom:0;
+  background-color:#0078D4;
+  
+}
+.listTwoNotification2{
+  position: absolute;
+  right:0;
+  top:0;
+  width:1.25vw;
+  height:0.9375vh; 
+  
+}

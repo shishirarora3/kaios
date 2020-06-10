@@ -1,5 +1,6 @@
 /* Set default font to all elements */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans);
 
 * {
   font-family: 'Noto Sans';
@@ -52,6 +53,14 @@ input {
   --color-destructive: #e2443a;
   --color-preferred: #00ba91;
 
+  /* Home Page A - colors */
+  --color-home-a-light-grey: #F2F2F2;
+  --color-home-a-white: #FFFFFF;
+  --color-home-a-focus-blue: #0078D4;
+  --color-home-a-dark-grey: #E4E4E4;
+  --color-home-a-black: #000000;
+
+
   /** KaiOS Colors
      ---------------------------------------------------------*/
 
@@ -72,6 +81,8 @@ input {
   --color-blue: #0da1e1;
   --color-orange: #ff8329;
   --color-red: #f3203d;
+  
+
 
   /* Mid-dark Colors - Generally used for the press effect */
   --color-purple-mid-dark: #6c32cc;

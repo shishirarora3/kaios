@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5846d1b4.css",
+    "main.js": "/static/js/main.ef9ef74a.js",
+    "main.js.map": "/static/js/main.ef9ef74a.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.27cdbb1347275d59dfc09117b8abc5ad.js": "/precache-manifest.27cdbb1347275d59dfc09117b8abc5ad.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.5846d1b4.css.map": "/static/css/main.5846d1b4.css.map",
+    "static/js/main.ef9ef74a.js.LICENSE.txt": "/static/js/main.ef9ef74a.js.LICENSE.txt",
+    "static/media/icon01.svg": "/static/media/icon01.3353a7b6.svg",
+    "static/media/icon02.svg": "/static/media/icon02.d682ce59.svg",
+    "static/media/icon03.svg": "/static/media/icon03.a4f74077.svg",
+    "static/media/icon04.svg": "/static/media/icon04.ce9e8a62.svg",
+    "static/media/icon05.svg": "/static/media/icon05.109d61bf.svg",
+    "static/media/icon06.svg": "/static/media/icon06.e108a53d.svg",
+    "static/media/icon07.svg": "/static/media/icon07.44ec5650.svg",
+    "static/media/icon08.svg": "/static/media/icon08.79eae9b2.svg",
+    "static/media/icon09.svg": "/static/media/icon09.7f06a9f8.svg",
+    "static/media/imageForNotification.svg": "/static/media/imageForNotification.ef98637a.svg",
+    "static/media/imageForNotification2.svg": "/static/media/imageForNotification2.cf009122.svg",
+    "static/media/Button.scss": "/static/media/kai-icons.686d74df.eot",
+    "static/media/pic1.1.svg": "/static/media/pic1.1.c6021cd0.svg",
+    "static/media/pic1.2.svg": "/static/media/pic1.2.28d2e9be.svg",
+    "static/media/pic2.svg": "/static/media/pic2.bf76c3b0.svg",
+    "static/media/pic3.svg": "/static/media/pic3.cb413c91.svg"
+  },
+  "entrypoints": [
+    "static/css/main.5846d1b4.css",
+    "static/js/main.ef9ef74a.js"
+  ]
+}
