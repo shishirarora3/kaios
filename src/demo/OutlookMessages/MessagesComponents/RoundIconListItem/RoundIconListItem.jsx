@@ -5,7 +5,7 @@ import { useFocus } from '../../../../kai-ui/src/hooks';
 import colors from '../../../../kai-ui/src/theme/colors.scss';
 import './RoundIconListItem.scss';
 
-const prefixCls = 'kai-ril-m';
+const prefixCls = 'kai-ril-OM';
 
 const IconListItem = React.memo((props) => {
 	const { primary, secondary, icon, iconSrc, focusColor, forwardedRef, index, onFocusChange, messages,textColor } = props;

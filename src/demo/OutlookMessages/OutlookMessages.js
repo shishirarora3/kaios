@@ -1,18 +1,22 @@
 import React from 'react';
-import Header from '../messages/theme/components/Header/Header';
-import ListView from '../HomePageB/HomePageBViews/ListView/ListView';
+import Header from './MessagesComponents/Header/Header';
+import ListView from './MessagesViews/ListView/ListView';
 import RoundIconListItem from './MessagesComponents/RoundIconListItem/RoundIconListItem';
 import person1 from '../HomePageB/HomePageBIcons/person1.png';
 import person2 from '../HomePageB/HomePageBIcons/person2.png';
 import person3 from '../HomePageB/HomePageBIcons/person3.png';
 import icon1 from './Icons/Icon1.png';
-//import SoftKey from '../HomePageB/HomePageBComponents/SoftKey/SoftKey';
+import SoftKey from './MessagesComponents/SoftKey/SoftKey';
 import {focusColor} from '../messages/theme/colors_and_themes/theme_colors'
 
 export function OutlookMessages(props) {
-    const focusText=(props.color==="lightblue")?"black":"white"
+	const focusText=(props.color==="lightblue")?"black":"white";
+	const mysoftcallback = () => {
+		props.history.goBack();
+	}
 	return (
 		<div>
+			<Header text="Outlook Messages" backgroundColor="white"/>
 			<ListView>
 				<RoundIconListItem
 					primary="Guddu"
@@ -21,22 +25,6 @@ export function OutlookMessages(props) {
                     focusColor={focusColor[props.color]}
                     textColor={focusText}
 					messages="4"
-				/>
-				<RoundIconListItem
-					primary="TM-AMZN"
-					secondary="Your Amazon deli..."
-					iconSrc={icon1}
-                    focusColor={focusColor[props.color]}
-                    textColor={focusText}
-					messages="2"
-				/>
-				<RoundIconListItem
-					primary="TM-AMZN"
-					secondary="Your Amazon deli..."
-					iconSrc={icon1}
-                    focusColor={focusColor[props.color]}
-                    textColor={focusText}
-					messages="2"
 				/>
 				<RoundIconListItem
 					primary="TM-AMZN"
@@ -63,6 +51,7 @@ export function OutlookMessages(props) {
 					messages="10"
 				/>
 			</ListView>
+			<SoftKey leftCallback={mysoftcallback} leftText="Back" centerText="Open" rightText="Options" />
 		</div>
 	);
 }

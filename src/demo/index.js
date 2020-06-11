@@ -2,12 +2,14 @@ import React from 'react';
 import HomePageA from './HomePageA/HomePageA';
 import HomePageB from './HomePageB/HomePageB';
 import HomePageC from './HomePageC/HomePageC';
+import OutlookMessages from './OutlookMessages/OutlookMessages';
 import MessageOptions from './messages/MessageOptions';
 import {BrowserRouter as Router, Switch, Route, useParams} from "react-router-dom";
 import HyperLinkListItem from './NavPage/NavPageComponents/HyperLinkListItem/HyperLinkListItem';
 import NavListView from './NavPage/NavPageComponents/NavListView/NavListView';
 import Header from './NavPage/NavPageComponents/Header/Header';
 import './NavPage/NavPage.scss';
+
 
 const App=()=>{
 	return(
@@ -19,6 +21,7 @@ const App=()=>{
 				<Route exact path='/MessageOptions' component={MessageOptionsScreen}/>
 				*/
 				}
+				<Route exact path="/OutlookMessages/:color" render={routeProps => (<OutlookMessagesScreen {...routeProps}/>)} />
 				<Route exact path="/HomePageA" render={routeProps => (<HomePageA {...routeProps}/>)}/>
 				<Route exact path="/HomePageB" render={routeProps => (<HomePageB {...routeProps}/>)}/>
 				<Route exact path="/HomePageC" render={routeProps => (<HomePageC {...routeProps}/>)}/>
@@ -45,6 +48,9 @@ function Home(){
 				<HyperLinkListItem linkTo="/MessageOptions/white/monochrome" primary="Message Options Colors 01"></HyperLinkListItem>
 				<HyperLinkListItem linkTo="/MessageOptions/white/brand" primary="Message Options Colors 02"></HyperLinkListItem>
 				<HyperLinkListItem linkTo="/MessageOptions/white/lightblue" primary="Message Options Colors 03"></HyperLinkListItem>
+				<HyperLinkListItem linkTo="/OutlookMessages/monochrome" primary="Outlook Messages Mock 01"></HyperLinkListItem>
+				<HyperLinkListItem linkTo="/OutlookMessages/brand" primary="Outlook Messages Mock 02"></HyperLinkListItem>
+				<HyperLinkListItem linkTo="/OutlookMessages/lightblue" primary="Outlook Messages Mock 03"></HyperLinkListItem>
 			</NavListView>
 		</div>
 	)
@@ -60,6 +66,16 @@ const MessageOptionsScreen = (props) => {
 
 	return (validThemes.includes(theme) && validColors.includes(color)) ?
 		<MessageOptions history={props.history} theme={theme} color={color}></MessageOptions> :
+		<Home/>
+}
+
+const OutlookMessagesScreen = (props) => {
+	const validColors = ['lightblue', 'monochrome', 'brand'];
+
+	const { color } = useParams();
+
+	return  validColors.includes(color) ?
+		<OutlookMessages history={props.history}  color={color} />:
 		<Home/>
 }
 
