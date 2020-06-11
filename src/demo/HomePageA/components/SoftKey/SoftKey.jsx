@@ -57,7 +57,7 @@ const SoftKey = React.memo(props => {
           leftCallback();
 		  break;
         case 'Backspace':
-          Callback();
+          leftCallback();
           break; 
         case 'SoftRight':
           rightCallback();
