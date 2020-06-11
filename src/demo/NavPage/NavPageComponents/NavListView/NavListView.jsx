@@ -25,7 +25,7 @@ const NavListView = React.memo(
     const setFocusToIndex = useCallback(
       index => {
 		  const element = ReactDOM.findDOMNode(itemRefs[index].current);
-		  element.scrollIntoView();
+		  element.scrollIntoView({"block": "end"});
 		  element.focus();
 	  },
       [itemRefs]

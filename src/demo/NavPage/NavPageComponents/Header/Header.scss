@@ -9,6 +9,9 @@ $kai-header-height: 2.8rem;
   width: 100%;
   line-height: $kai-header-height;
   outline: none;
+  top: 0;
+  position: fixed;
+  height: 3rem;
 
   h1 {
     width: 100%;
