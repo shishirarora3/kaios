@@ -44,9 +44,11 @@
 			}
 
 			img {
-			
-				color: var(--il-icon-unfocused);
+				//color: var(--il-text-focused);
+				border: 0.18rem solid #ffffff;
+				margin-left:0.5rem;
 				border-radius: 50px;
+				padding: 0.18px;
 			}
 		}
 	}

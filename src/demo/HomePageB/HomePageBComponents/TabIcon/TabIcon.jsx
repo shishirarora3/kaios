@@ -21,7 +21,7 @@ const Tab = React.memo((props) => {
 			style={{ '--tab-underline-color': focusColor }}
 			ref={forwardedRef}
 		>
-			<div className={`${actPrefixCls}-label`}>
+			<div className={`${actPrefixCls}-img`}>
 				<img src={icon} alt="Tab-icon" />
 			</div>
 		</div>

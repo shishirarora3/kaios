@@ -8,14 +8,17 @@ import './HomePageA.scss';
 import {icon01, icon02, icon03, icon04, icon05, icon06, icon07, icon08, icon09} from './HomePageAIcons';
 import HorLineSeperator from './components/HorizontalLineSeperator/HorizontalLineSeperator'
 
-
 export default class HomePageA extends Component {
-	constructor(){
-		super();
+	constructor(props){
+		super(props);
 		this.footerLeftText = 'Exit';
 		this.footerRightText = 'Options';
 		this.FooterCenterText = 'Open';
 		this.headerText = 'Microsoft Outlook';
+		this.mysoftcallback = this.mysoftcallback.bind(this);
+	}
+	mysoftcallback = () => {
+		this.props.history.goBack();
 	}
     render() {
         return (
@@ -36,7 +39,7 @@ export default class HomePageA extends Component {
                         <HorizontalListItem iconSrc={icon09}/>
                     </FlexBox>
                 </GridContainer>
-                <SoftKey leftText={this.footerLeftText} rightText={this.footerRightText} centerText={this.FooterCenterText} topOrBottom='bottom'></SoftKey>
+                <SoftKey leftCallback={this.mysoftcallback} leftText={this.footerLeftText} rightText={this.footerRightText} centerText={this.FooterCenterText} topOrBottom='bottom'></SoftKey>
             </div>
         )
     }

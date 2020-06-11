@@ -13,11 +13,17 @@ const App=()=>{
 	return(
 		<Router>
 			<Switch>
+				{
+				/*
 				<Route exact path="/HomePageA" component={HomePageA}/>
-				<Route exact path="/HomePageB" component={HomePageB}/>
-				<Route exact path="/HomePageC" component={HomePageC}/>
 				<Route exact path='/MessageOptions' component={MessageOptionsScreen}/>
-				<Route exact path="/MessageOptions/:theme/:color" children={<MessageOptionsScreen/>} />
+				*/
+				}
+				<Route exact path="/HomePageA" render={routeProps => (<HomePageA {...routeProps}/>)}/>
+				<Route exact path="/HomePageB" render={routeProps => (<HomePageB {...routeProps}/>)}/>
+				<Route exact path="/HomePageC" render={routeProps => (<HomePageC {...routeProps}/>)}/>
+				
+				<Route exact path="/MessageOptions/:theme/:color" render={routeProps => (<MessageOptionsScreen {...routeProps}/>)}/>
 				<Route exact path="/" component={Home}/>
 				<Route component={Home}/>
 			</Switch>
@@ -45,7 +51,7 @@ function Home(){
 }
 
 
-const MessageOptionsScreen = () => {
+const MessageOptionsScreen = (props) => {
 	const validThemes = ['white', 'dark', 'light'];
 	const validColors = ['lightblue', 'monochrome', 'brand','grey'];
 
@@ -53,7 +59,7 @@ const MessageOptionsScreen = () => {
 	const { color } = useParams();
 
 	return (validThemes.includes(theme) && validColors.includes(color)) ?
-		<MessageOptions theme={theme} color={color}></MessageOptions> :
+		<MessageOptions history={props.history} theme={theme} color={color}></MessageOptions> :
 		<Home/>
 }
 
