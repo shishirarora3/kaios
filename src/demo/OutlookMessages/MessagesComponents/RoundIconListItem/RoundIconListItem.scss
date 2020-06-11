@@ -1,0 +1,99 @@
+@import '../../../../kai-ui/src/theme/theme.scss';
+@import '../../../../kai-ui/src/kai-font/style.scss';
+
+:root {
+	--il-text-focused: var(--color-gs00);
+	--il-icon-unfocused: var(--color-zeta);
+}
+.kai-ril-OM {
+	font-family: 'Noto Sans', sans-serif;;
+	width: 100%;
+	height: 24.5%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	overflow: hidden;
+	outline: none;
+	padding: 2px 0;
+	&:focus {
+		border-radius: 6px;
+	}
+
+	&-icon {
+		&-focused {
+			span::before {
+				
+				color: var(--il-text-focused);
+			}
+
+			img {
+				
+				//color: var(--il-text-focused);
+				border: 0.18rem solid #ffffff;
+				padding:0.18px;
+				margin-left:0.5rem;
+				height:5rem;
+				width:5rem;
+				border-radius:3rem;
+			}
+		}
+
+		&-unfocused {
+			span::before {
+			
+				color: var(--il-icon-unfocused);
+			}
+
+			img {
+				border: 0.18rem solid #ffffff;
+				padding:0.18px;
+				margin-left:0.5rem;
+				border-radius: 3rem;
+				height:5rem;
+				width:5rem;
+			}
+		}
+	}
+
+	&-line {
+		font-family: 'Noto Sans', sans-serif;;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 100%;
+		width: 100%;
+		padding: 1rem 1rem 1rem 0.6rem;
+		span,
+		label {
+			padding:0;
+			width: 100%;
+			overflow: hidden;
+		}
+	}
+
+	&-primary {
+		font-weight: bold;
+		font-size: 1.5rem;
+		line-height: 2rem;
+	}
+
+	&-secondary {
+		font-weight: normal;
+		font-size: 1.5rem;
+		line-height: 2rem;
+	}
+
+	&-message {
+		position: absolute;
+		right: 0.3rem;
+		vertical-align: middle;
+		z-index: 1;
+		text-align: center;
+		font-weight: 500;
+		font-size: 1.3rem;
+		line-height: 1.8rem;
+		width: 1.8rem;
+		height: 1.8rem;
+		border-radius: 3px;
+	}
+}

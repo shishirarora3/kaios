@@ -5,10 +5,10 @@ import { useFocus } from '../../../../kai-ui/src/hooks';
 import colors from '../../../../kai-ui/src/theme/colors.scss';
 import './RoundIconListItem.scss';
 
-const prefixCls = 'kai-ril';
+const prefixCls = 'kai-ril-OM';
 
 const IconListItem = React.memo((props) => {
-	const { primary, secondary, icon, iconSrc, focusColor, forwardedRef, index, onFocusChange, messages } = props;
+	const { primary, secondary, icon, iconSrc, focusColor, forwardedRef, index, onFocusChange, messages,textColor } = props;
 
 	const handleFocusChange = (isNowFocused) => {
 		if (isNowFocused) {
@@ -25,17 +25,16 @@ const IconListItem = React.memo((props) => {
 	const secondaryCls = `${prefixCls}-secondary ${secondary ? '' : 'hidden'}`;
 	const messageCls = `${prefixCls}-message`;
 	const renderedIcon = iconSrc === null ? <span className={icon} /> : <img src={iconSrc} alt="" />;
-	const itemBgColor = (isFocused) => {
-		return isFocused ? { backgroundColor: focusColor } : { backgroundColor: colors.white };
-	};
-	const messageIconColor = (isFocused) => {
-		return isFocused
-			? { backgroundColor: colors.white, color: colors.black }
-			: { backgroundColor: focusColor, color: colors.white };
-	};
+	const itemColor = isFocused ? { backgroundColor: focusColor,color:textColor } : { backgroundColor: colors.white };
+	
+	const messageIconColor= 
+		isFocused
+			? { backgroundColor: colors.white, color: "#0078D4" }
+			: { backgroundColor:"#0078D4", color: colors.white };
+	
 
 	return (
-		<div tabIndex="0" className={itemCls} ref={forwardedRef} style={itemBgColor(isFocused)}>
+		<div tabIndex="0" className={itemCls} ref={forwardedRef} style={itemColor}>
 			<div className={iconCls}>{renderedIcon}</div>
 			<div className={lineCls}>
 				<span className={primaryCls}>{primary}</span>
@@ -43,7 +42,7 @@ const IconListItem = React.memo((props) => {
 				<label className={secondaryCls}>{secondary}</label>
 			</div>
 			{ (messages>1)?
-				<div className={messageCls} style={messageIconColor(isFocused)}>
+				<div className={messageCls} style={messageIconColor}>
 					{messages}
 				</div>:<div></div>
 			}
@@ -64,6 +63,7 @@ IconListItem.propTypes = {
 	focusColor: PropTypes.string,
 	forwardedRef: PropTypes.oneOfType([ PropTypes.func, PropTypes.shape({ current: PropTypes.instanceOf(Element) }) ]),
 	index: PropTypes.number,
+	textColor:PropTypes.string,
 	onFocusChange: PropTypes.func
 };
 
