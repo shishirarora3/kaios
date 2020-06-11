@@ -3,90 +3,64 @@ import HomePageA from './HomePageA/HomePageA';
 import HomePageB from './HomePageB/HomePageB';
 import HomePageC from './HomePageC/HomePageC';
 import MessageOptions from './messages/MessageOptions';
-import OutlookMessages from './OutlookMessages/OutlookMessages';
-import {BrowserRouter as Router, Switch, Route, Link, useParams} from "react-router-dom";
-
-const ErrorMessage = 'Sorry, Incorrect URL';
+import {BrowserRouter as Router, Switch, Route, useParams} from "react-router-dom";
+import HyperLinkListItem from './NavPage/NavPageComponents/HyperLinkListItem/HyperLinkListItem';
+import NavListView from './NavPage/NavPageComponents/NavListView/NavListView';
+import Header from './NavPage/NavPageComponents/Header/Header';
+import './NavPage/NavPage.scss';
 
 const App=()=>{
 	return(
 		<Router>
 			<Switch>
-				<Route exact path="/OutlookMessages">
-					<OutlookMessages color="monochrome"/>
-				</Route>
+				{
+				/*
 				<Route exact path="/HomePageA" component={HomePageA}/>
-				<Route exact path="/HomePageB" component={HomePageB}/>
-				<Route exact path="/HomePageC" component={HomePageC}/>
 				<Route exact path='/MessageOptions' component={MessageOptionsScreen}/>
-				<Route exact path="/MessageOptions/:theme/:color" children={<MessageOptionsScreen/>} />
+				*/
+				}
+				<Route exact path="/HomePageA" render={routeProps => (<HomePageA {...routeProps}/>)}/>
+				<Route exact path="/HomePageB" render={routeProps => (<HomePageB {...routeProps}/>)}/>
+				<Route exact path="/HomePageC" render={routeProps => (<HomePageC {...routeProps}/>)}/>
+				
+				<Route exact path="/MessageOptions/:theme/:color" render={routeProps => (<MessageOptionsScreen {...routeProps}/>)}/>
 				<Route exact path="/" component={Home}/>
 				<Route component={Home}/>
 			</Switch>
 		</Router>
 	)
 }
+
 function Home(){
 	return(
-		<div>
-			<h2>Concept Validation Screens</h2>
-			<ul>
-				<li>
-				<Link to="/HomePageA">HomeA</Link>
-				</li>
-				<li>
-				<Link to="/HomePageB">HomeB</Link>
-				</li>
-				<li>
-				<Link to="/HomePageC">HomeC</Link>
-				</li>
-				<li>
-					<Link to="/MessageOptions/light/grey">Message Options theme Light</Link>
-				</li>
-				<li>
-					<Link to="/MessageOptions/white/grey">Message Options theme white</Link>
-				</li>
-				<li>
-					<Link to="/MessageOptions/dark/grey">Message Options theme dark</Link>
-				</li>
-				<li>
-					<Link to="/MessageOptions/white/monochrome">Message Options theme monochrome</Link>
-				</li>
-				<li>
-					<Link to="/MessageOptions/white/brand">Message Options theme brand</Link>
-				</li>
-				<li>
-					<Link to="/MessageOptions/white/lightblue">Message Options theme lightblue</Link>
-				</li>
-			</ul>
+		<div className={'nav-page-container'}>
+			<Header backgroundColor="#F2F2F2" text="Concept Validation Screens"/>
+			<NavListView>
+				<HyperLinkListItem linkTo="/HomePageA" primary="HomeA"></HyperLinkListItem>
+				<HyperLinkListItem linkTo="/HomePageB" primary="HomeB"></HyperLinkListItem>
+				<HyperLinkListItem linkTo="/HomePageC" primary="HomeC"></HyperLinkListItem>
+				<HyperLinkListItem linkTo="/MessageOptions/light/monochrome" primary="Message Options Theme 01"></HyperLinkListItem>
+				<HyperLinkListItem linkTo="/MessageOptions/white/monochrome" primary="Message Options Theme 02"></HyperLinkListItem>
+				<HyperLinkListItem linkTo="/MessageOptions/dark/grey" primary="Message Options Theme 03"></HyperLinkListItem>
+				<HyperLinkListItem linkTo="/MessageOptions/white/monochrome" primary="Message Options Colors 01"></HyperLinkListItem>
+				<HyperLinkListItem linkTo="/MessageOptions/white/brand" primary="Message Options Colors 02"></HyperLinkListItem>
+				<HyperLinkListItem linkTo="/MessageOptions/white/lightblue" primary="Message Options Colors 03"></HyperLinkListItem>
+			</NavListView>
 		</div>
 	)
 }
 
-const NoMatch = () => {
-	return(
-		<div>
-			<p>{ErrorMessage}</p>
-		</div>
-	)
-}
 
-const MessageOptionsScreen = () => {
+const MessageOptionsScreen = (props) => {
 	const validThemes = ['white', 'dark', 'light'];
 	const validColors = ['lightblue', 'monochrome', 'brand','grey'];
 
 	const { theme } = useParams();
 	const { color } = useParams();
 
-	console.log(theme);
-	console.log(color);
-
-	const ScreenTheme = theme ? theme.toLowerCase() : validThemes[0];
-	const ScreenColor = color ? color.toLowerCase() : validColors[0];
-
-	return (validThemes.includes(ScreenTheme) && validColors.includes(ScreenColor)) ?
-		<MessageOptions theme={ScreenTheme} color={ScreenColor}></MessageOptions> :
-		<NoMatch/>
+	return (validThemes.includes(theme) && validColors.includes(color)) ?
+		<MessageOptions history={props.history} theme={theme} color={color}></MessageOptions> :
+		<Home/>
 }
 
 export default App ;

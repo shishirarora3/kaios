@@ -19,8 +19,8 @@
 	box-sizing: border-box;
   
 	img{
-	  height: 50%;
-	  width: 60%;
+	  height: auto;
+	  max-width: 60%;
 	}
 	span,
 	label {
