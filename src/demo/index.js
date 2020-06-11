@@ -37,10 +37,10 @@ function Home(){
 				<Link to="/HomePageC">HomeC</Link>
 				</li>
 				<li>
-					<Link to="/MessageOptions/light/grey">Message Options theme Light</Link>
+					<Link to="/MessageOptions/light/monochrome">Message Options theme Light</Link>
 				</li>
 				<li>
-					<Link to="/MessageOptions/white/grey">Message Options theme white</Link>
+					<Link to="/MessageOptions/white/monochrome">Message Options theme white</Link>
 				</li>
 				<li>
 					<Link to="/MessageOptions/dark/grey">Message Options theme dark</Link>
