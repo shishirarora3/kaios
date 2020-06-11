@@ -33,6 +33,9 @@ function Home(){
 				<HyperLinkListItem linkTo="/HomePageA" primary="HomeA"></HyperLinkListItem>
 				<HyperLinkListItem linkTo="/HomePageB" primary="HomeB"></HyperLinkListItem>
 				<HyperLinkListItem linkTo="/HomePageC" primary="HomeC"></HyperLinkListItem>
+				<HyperLinkListItem linkTo="/HomePageA" primary="HomeAA"></HyperLinkListItem>
+				<HyperLinkListItem linkTo="/HomePageB" primary="HomeBB"></HyperLinkListItem>
+				<HyperLinkListItem linkTo="/HomePageC" primary="HomeCC"></HyperLinkListItem>
 				<HyperLinkListItem linkTo="/MessageOptions/light/monochrome" primary="Message Options Theme 01"></HyperLinkListItem>
 				<HyperLinkListItem linkTo="/MessageOptions/white/monochrome" primary="Message Options Theme 02"></HyperLinkListItem>
 				<HyperLinkListItem linkTo="/MessageOptions/dark/grey" primary="Message Options Theme 03"></HyperLinkListItem>

@@ -5,7 +5,7 @@
 $kai-header-height: 2.8rem;
 
 .kai-header-navpage {
-  //@include flex(row);
+  @include flex(row);
   width: 100%;
   line-height: $kai-header-height;
   outline: none;
