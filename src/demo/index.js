@@ -3,6 +3,7 @@ import HomePageA from './HomePageA/HomePageA';
 import HomePageB from './HomePageB/HomePageB';
 import HomePageC from './HomePageC/HomePageC';
 import MessageOptions from './messages/MessageOptions';
+import OutlookMessages from './OutlookMessages/OutlookMessages';
 import {BrowserRouter as Router, Switch, Route, Link, useParams} from "react-router-dom";
 
 const ErrorMessage = 'Sorry, Incorrect URL';
@@ -11,6 +12,9 @@ const App=()=>{
 	return(
 		<Router>
 			<Switch>
+				<Route exact path="/OutlookMessages">
+					<OutlookMessages color="monochrome"/>
+				</Route>
 				<Route exact path="/HomePageA" component={HomePageA}/>
 				<Route exact path="/HomePageB" component={HomePageB}/>
 				<Route exact path="/HomePageC" component={HomePageC}/>
