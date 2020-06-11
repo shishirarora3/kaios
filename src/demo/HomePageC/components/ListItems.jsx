@@ -15,9 +15,9 @@ export default function ListItems() {
         <div >
             <ListView>
                 {
-                    ListItems.map((item)=>{
+                    ListItems.map((item,i)=>{
                         return <IconListItem primary={item.primary} secondary={item.secondary} iconSrc={item.iconSrc} isNotification={item.isNotification} notificationType={item.notificationType} 
-                        areThere2Icons={item.areThere2Icons} iconSrc2={item.iconSrc2}/>   
+                        areThere2Icons={item.areThere2Icons} iconSrc2={item.iconSrc2} key={i}/>   
                     })
                 }
             </ListView>

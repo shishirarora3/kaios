@@ -6,8 +6,14 @@ import SoftKey from './theme/components/SoftKey/SoftKey'
 import {focusColor} from './theme/colors_and_themes/theme_colors'
 
 class MessageOptions extends Component{
+	constructor(props){
+		super(props);
+		this.mysoftcallback = this.mysoftcallback.bind(this);
+	}
+	mysoftcallback = () => {
+		this.props.history.goBack();
+	}
     render(){
-        
         return(
             <div>
                 <Header text="Message" theme={this.props.theme}></Header>
@@ -17,7 +23,7 @@ class MessageOptions extends Component{
                     <IconList primary="Delete" theme={this.props.theme} focusColor={focusColor[this.props.color]}></IconList>
                     <IconList primary="New" theme={this.props.theme} focusColor={focusColor[this.props.color]}></IconList>
                 </ListView>
-                <SoftKey leftText='Back' centerText="Select" rightText="Options" theme={this.props.theme}></SoftKey>
+                <SoftKey leftCallback={this.mysoftcallback} leftText='Back' centerText="Select" rightText="Options" theme={this.props.theme}></SoftKey>
             </div>
         )
     }

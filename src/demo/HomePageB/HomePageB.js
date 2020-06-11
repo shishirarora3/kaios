@@ -12,7 +12,11 @@ import person1 from './HomePageBIcons/person1.png';
 import person2 from './HomePageBIcons/person2.png';
 import person3 from './HomePageBIcons/person3.png';
 import './HomePageB.css';
-export default function HomePageB() {
+
+export default function HomePageB(props) {
+	const mysoftcallback = () => {
+		props.history.goBack();
+	}
 	return (
 		<div className="Page-Content-B">
 			<TabIconView tabIcons={[ mailIcon, newsIcon, filesIcon, calendarIcon ]}>
@@ -60,7 +64,7 @@ export default function HomePageB() {
 				</ListView>
 			</TabIconView>
 			<div className="footer-B">
-				<SoftKey leftText="Exit" centerText="Open" rightText="Options" />
+				<SoftKey leftCallback={mysoftcallback} leftText="Exit" centerText="Open" rightText="Options" />
 			</div>
 		</div>
 	);
