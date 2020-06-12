@@ -46,6 +46,7 @@ const SoftKey = React.memo(props => {
     rightText,
     centerText,
     centerIcon,
+    backgroundColor
   } = props;
 
   const handleKeyDown = useCallback(
@@ -74,7 +75,7 @@ const SoftKey = React.memo(props => {
   }, [handleKeyDown]);
 
   return (
-    <div className={`${prefixCls} visible`}>
+    <div className={`${prefixCls} visible`} style={{backgroundColor:backgroundColor}}>
       <Button pos="left" text={leftText} handleClick={leftCallback} />
       <Button
         pos="center"
@@ -95,6 +96,7 @@ SoftKey.propTypes = {
   leftCallback: PropTypes.func,
   centerCallback: PropTypes.func,
   rightCallback: PropTypes.func,
+  backgroundColor: PropTypes.string
 };
 
 SoftKey.defaultProps = {
@@ -105,6 +107,7 @@ SoftKey.defaultProps = {
   leftCallback: () => {},
   centerCallback: () => {},
   rightCallback: () => {},
+  backgroundColor:''
 };
 
 export default SoftKey;

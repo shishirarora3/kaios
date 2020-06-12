@@ -8,12 +8,21 @@ const Header = React.memo(
   props => {
     const {
       text,
-      backgroundColor
+      backgroundColor,
+      fontColor,      
     } = props;
 
+    //sets styling for header
+    const styleHeader={
+      backgroundColor:backgroundColor,
+    }  
+    // sets styling for text
+    const styleText={
+      color:fontColor
+    }
     return (
-      <header className={prefixCls} style={{ background: backgroundColor }}>
-        <h1 className="h1">{text}</h1>
+      <header className={prefixCls} style={styleHeader}>
+        <h1 className="h1" style={styleText}>{text}</h1>
       </header>
     );
   }
@@ -22,10 +31,13 @@ const Header = React.memo(
 Header.propTypes = {
   text: PropTypes.string.isRequired,
   backgroundColor: PropTypes.string,
+  fontColor: PropTypes.string,
 };
 
 Header.defaultProps = {
-  backgroundColor: colors.headerPurple,
+  backgroundColor: "#FFFFFF",
+  text:"Outlook",
+  fontColor:"#000000"
 };
 
 export default Header;
