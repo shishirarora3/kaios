@@ -1,0 +1,11 @@
+.typeIconOuter{
+    position: relative;
+}
+.typeIconOuter > img {
+    position: absolute;
+    width: 1.249rem;
+    height: 1.75rem;
+    right:1.8rem;
+    top:2rem;
+  }
+  

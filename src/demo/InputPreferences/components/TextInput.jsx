@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import colors from '../../theme/colors.scss';
+import colors from '../../../kai-ui/src/theme/colors.scss';
 
 import './TextInput.scss';
 
@@ -15,6 +15,7 @@ const TextInput = ({
   forwardedRef,
   onChange,
   enableTabSwitching,
+  handleKeyDown,                  // added for moving to the next input on pressing enter
   initialValue,
   ...props
 }) => {
@@ -75,9 +76,11 @@ const TextInput = ({
       <input
         ref={forwardedRef}
         type="text"
+        placeholder="Type name"
         className={inputCls}
         onChange={handleChange}
         onKeyUpCapture={handleKeyUp}
+        onKeyDownCapture={handleKeyDown}
         value={value}
         {...props}
       />
@@ -103,7 +106,8 @@ TextInput.propTypes = {
   onFocusChange: PropTypes.func,
   onChange: PropTypes.func,
   enableTabSwitching: PropTypes.bool,
-  initialValue: PropTypes.string
+  initialValue: PropTypes.string,
+  handleKeyDown: PropTypes.func
 };
 
 export default React.forwardRef((props, ref) => (
