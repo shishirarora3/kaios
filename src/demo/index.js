@@ -2,6 +2,8 @@ import React from 'react';
 import HomePageA from './HomePageA/HomePageA';
 import HomePageB from './HomePageB/HomePageB';
 import HomePageC from './HomePageC/HomePageC';
+import InputPreferenceType from './InputPreferences/InputPreferenceType'
+import InputPreferenceVoice from './InputPreferences/InputPreferenceVoice'
 import MessageOptions from './messages/MessageOptions';
 import {BrowserRouter as Router, Switch, Route, useParams} from "react-router-dom";
 import HyperLinkListItem from './NavPage/NavPageComponents/HyperLinkListItem/HyperLinkListItem';
@@ -24,6 +26,8 @@ const App=()=>{
 				<Route exact path="/HomePageC" render={routeProps => (<HomePageC {...routeProps}/>)}/>
 				
 				<Route exact path="/MessageOptions/:theme/:color" render={routeProps => (<MessageOptionsScreen {...routeProps}/>)}/>
+				<Route exact path="/InputPreferenceType" render={routeProps => (<InputPreferenceType {...routeProps}/>)}/>
+				<Route exact path="/InputPreferenceVoice" render={routeProps => (<InputPreferenceVoice {...routeProps}/>)}/>
 				<Route exact path="/" component={Home}/>
 				<Route component={Home}/>
 			</Switch>
@@ -45,6 +49,8 @@ function Home(){
 				<HyperLinkListItem linkTo="/MessageOptions/white/monochrome" primary="Message Options Colors 01"></HyperLinkListItem>
 				<HyperLinkListItem linkTo="/MessageOptions/white/brand" primary="Message Options Colors 02"></HyperLinkListItem>
 				<HyperLinkListItem linkTo="/MessageOptions/white/lightblue" primary="Message Options Colors 03"></HyperLinkListItem>
+				<HyperLinkListItem linkTo="/InputPreferenceType" primary="Type Input"></HyperLinkListItem>
+				<HyperLinkListItem linkTo="/InputPreferenceVoice" primary="Voice Input"></HyperLinkListItem>
 			</NavListView>
 		</div>
 	)

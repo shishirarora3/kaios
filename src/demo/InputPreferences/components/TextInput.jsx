@@ -5,7 +5,7 @@ import colors from '../../../kai-ui/src/theme/colors.scss';
 
 import './TextInput.scss';
 
-const prefixCls = 'kai-text-input';
+const prefixCls = 'kai-text-input-custom';
 
 const TextInput = ({
   focusColor,
