@@ -25,7 +25,7 @@ const NavListView = React.memo(
     const setFocusToIndex = useCallback(
       index => {
 		  const element = ReactDOM.findDOMNode(itemRefs[index].current);
-		  element.scrollIntoView({"block": "end"});
+		  element.scrollIntoView({"block": "start"});
 		  element.focus();
 	  },
       [itemRefs]
@@ -46,12 +46,14 @@ const NavListView = React.memo(
         switch (e.key) {
           case 'ArrowUp':
             // looping to bottom
-            index = index - 1 >= 0 ? index - 1 : itemRefs.length - 1;
+			index = index - 1 >= 0 ? index - 1 : itemRefs.length - 1;
+			e.preventDefault();
             setFocusToIndex(index);
             break;
           case 'ArrowDown':
             // looping to top
-            index = index + 1 < itemRefs.length ? index + 1 : 0;
+			index = index + 1 < itemRefs.length ? index + 1 : 0;
+			e.preventDefault();
             setFocusToIndex(index);
 			break;
 		  case 'Enter':
