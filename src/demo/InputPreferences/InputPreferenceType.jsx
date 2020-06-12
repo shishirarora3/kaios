@@ -4,11 +4,14 @@ import SoftKey from '../../kai-ui/src/components/SoftKey/SoftKey'
 import TextInput from './components/TextInput'
 import './styles/InputPreferenceType.css'
 
-export default function InputPrefernceType() {
+export default function InputPrefernceType(props) {
     const inputRef1 = useRef(null);
     const inputRef2 = useRef(null);
     const [isfocused, setisfocused] = useState(0);
-
+    
+   const mysoftcallback = () => {
+		props.history.goBack();
+	}
     useEffect(()=>{
         inputRef1.current.focus();
         setisfocused(0);
@@ -49,7 +52,7 @@ export default function InputPrefernceType() {
                 <TextInput label="" ref={item} index={index} onFocusChange={onFocusChange} onChange={onChange} handleKeyDown={handleKeyDown} focusColor="#FFFFFF"/>
                 </div>
             })}
-             <SoftKey leftText="Back" centerText="Done" rightText="Options" backgroundColor="#FFFFFF"/>
+             <SoftKey leftCallback={mysoftcallback} leftText="Back" centerText="Done" rightText="Options" backgroundColor="#FFFFFF"/>
         </div>
     )
 }
