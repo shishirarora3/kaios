@@ -7,15 +7,17 @@ const Header = React.memo(
   props => {
     const {
       text,
-      theme
+      theme,
+      type,
     } = props;
 
     const prefixCls = 'kai-headerD';
     const themeCls=`kai-${theme}`;
+    const textCls=`h1-${type}`;
 
     return (
       <header className={`${prefixCls} ${themeCls}`}>
-        <h1 className="h1">{text}</h1>
+        <h1 className={`${textCls}`}>{text}</h1>
       </header>
     );
   }
@@ -23,11 +25,13 @@ const Header = React.memo(
 
 Header.propTypes = {
   text: PropTypes.string.isRequired,
-  theme: PropTypes.string
+  theme: PropTypes.string,
+  type:PropTypes.string,
 };
 
 Header.defaultProps = {
-  theme: "white"
+  theme: "white",
+  type:"default"
 };
 
 export default Header;

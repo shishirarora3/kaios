@@ -6,8 +6,8 @@
 
 // Themes for Header and ListView
 .kai-light{
-  background-color: #F2F2F2;
-  color:black;
+    background-color: #F2F2F2;
+    color:black;
 }
 .kai-white{
   background-color:white;
@@ -17,7 +17,21 @@
   background-color:#323232;
   color:#FFFFFF;
 }
-
+.h1{
+    width: 100%;
+    height: 100%;
+    @extend %text-ellipsis;
+    @extend h1;
+    text-align: center;
+    padding: 0 1rem;
+    margin: 0;
+    &-default{
+        font-weight: bold;
+    }
+    &-typeramp{
+        font-weight: 300;
+    }
+}
 
 //Themes for IconItems
 .kai-ilD-theme{
@@ -74,7 +88,18 @@
         }
     }
 }
-
+.kai-ilD-type{
+    &-default{
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 20px;
+    }
+    &-typeramp{
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 19px;
+    }
+}
 
 //Theme for Softkeys
 .kai-softkey-dark{
@@ -110,6 +135,25 @@
         &.active {
             background-color: #323232;
             color:white;
+        }
+    }
+}
+
+.kai-softkey{
+    &-default{
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 20px;
+        
+    }
+    &-typeramp{
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 19px;
+        > *{
+            &:nth-child(2){
+                text-transform: uppercase;
+            }
         }
     }
 }

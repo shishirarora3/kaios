@@ -6,7 +6,7 @@ import './SoftKey.scss';
 const prefixCls = 'kai-softkeyD';
 
 const Button = props => {
-  const { handleClick, icon, text, theme, color } = props;
+  const { handleClick, icon, text, theme, color,type } = props;
 
   const handleButtonClick = e => {
     e.preventDefault();
@@ -27,10 +27,11 @@ const Button = props => {
 
   const themeCls= `kai-softkey-${theme}`;
   const colorCls= `kai-softkey-${color}`;
+  const typeCls=`kai-softkey-${type}`
 
   return (
     <button
-      className={`${prefixCls}-btn ${themeCls}-btn ${colorCls}-btn`}
+      className={`${prefixCls}-btn ${themeCls}-btn ${colorCls}-btn ${typeCls}`}
       onClick={handleButtonClick}
       onFocus={handleCheckFocus}
     >
@@ -50,11 +51,13 @@ const SoftKey = React.memo(props => {
     centerText,
     centerIcon,
     theme,
-    color
+    color,
+    type
   } = props;
 
   const themeCls= `kai-softkey-${theme}`;
   const colorCls= `kai-softkey-${color}`;
+  const typeCls=`kai-softkey-${type}`
 
   const handleKeyDown = useCallback(
     e => {
@@ -85,8 +88,8 @@ const SoftKey = React.memo(props => {
   }, [handleKeyDown]);
 
   return (
-    <div className={`${prefixCls} visible ${themeCls}`}>
-      <Button pos="left" text={leftText} handleClick={leftCallback} theme={theme} color={color}/>
+    <div className={`${prefixCls} visible ${themeCls} ${typeCls}`}>
+      <Button pos="left" text={leftText} handleClick={leftCallback} theme={theme} color={color} type={type}/>
       <Button
         pos="center"
         text={centerText}
@@ -94,8 +97,9 @@ const SoftKey = React.memo(props => {
         handleClick={centerCallback}
         theme={theme}
         color={color}
+        type={type}
       />
-      <Button pos="right" text={rightText} handleClick={rightCallback} theme={theme} color={color}/>
+      <Button pos="right" text={rightText} handleClick={rightCallback} theme={theme} color={color} type={type} />
     </div>
   );
 });

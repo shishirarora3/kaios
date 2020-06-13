@@ -10,15 +10,4 @@ $kai-header-height: 30px;
   line-height: $kai-header-height;
   outline: none;
   border-bottom: solid 1px #E4E4E4;
-
-  h1 {
-    width: 100%;
-    height: 100%;
-    font-weight: bold;
-    @extend %text-ellipsis;
-    @extend h1;
-    text-align: center;
-    padding: 0 1rem;
-    margin: 0;
-  }
 }

@@ -16,14 +16,14 @@ class MessageOptions extends Component{
     render(){
         return(
             <div>
-                <Header text="Message" theme={this.props.theme}></Header>
+                <Header text="Message" theme={this.props.theme} type={this.props.type}></Header>
                 <ListView theme={this.props.theme}>
-                    <IconList primary="Reply" theme={this.props.theme} focusColor={focusColor[this.props.color]}></IconList>
-                    <IconList primary="Forward" theme={this.props.theme} focusColor={focusColor[this.props.color]}></IconList>
-                    <IconList primary="Delete" theme={this.props.theme} focusColor={focusColor[this.props.color]}></IconList>
-                    <IconList primary="New" theme={this.props.theme} focusColor={focusColor[this.props.color]}></IconList>
+                    <IconList primary="Reply" theme={this.props.theme} focusColor={focusColor[this.props.color]} type={this.props.type}></IconList>
+                    <IconList primary="Forward" theme={this.props.theme} focusColor={focusColor[this.props.color]} type={this.props.type}></IconList>
+                    <IconList primary="Delete" theme={this.props.theme} focusColor={focusColor[this.props.color]} type={this.props.type}></IconList>
+                    <IconList primary="New" theme={this.props.theme} focusColor={focusColor[this.props.color]} type={this.props.type}></IconList>
                 </ListView>
-                <SoftKey leftCallback={this.mysoftcallback} leftText='Back' centerText="Select" rightText="Options" theme={this.props.theme}></SoftKey>
+                <SoftKey leftCallback={this.mysoftcallback} leftText='Back' centerText="Select" rightText="Options" theme={this.props.theme} type={this.props.type}></SoftKey>
             </div>
         )
     }
