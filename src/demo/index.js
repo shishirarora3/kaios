@@ -38,12 +38,12 @@ function Home(){
 				<HyperLinkListItem linkTo="/HomePageA" primary="HomeA"></HyperLinkListItem>
 				<HyperLinkListItem linkTo="/HomePageB" primary="HomeB"></HyperLinkListItem>
 				<HyperLinkListItem linkTo="/HomePageC" primary="HomeC"></HyperLinkListItem>
-				<HyperLinkListItem linkTo="/MessageOptions/light/monochrome" primary="Message Options Theme 01"></HyperLinkListItem>
-				<HyperLinkListItem linkTo="/MessageOptions/white/monochrome" primary="Message Options Theme 02"></HyperLinkListItem>
-				<HyperLinkListItem linkTo="/MessageOptions/dark/grey" primary="Message Options Theme 03"></HyperLinkListItem>
-				<HyperLinkListItem linkTo="/MessageOptions/white/monochrome" primary="Message Options Colors 01"></HyperLinkListItem>
-				<HyperLinkListItem linkTo="/MessageOptions/white/brand" primary="Message Options Colors 02"></HyperLinkListItem>
-				<HyperLinkListItem linkTo="/MessageOptions/white/lightblue" primary="Message Options Colors 03"></HyperLinkListItem>
+				<HyperLinkListItem linkTo="/MessageOptions/light/monochrome/default" primary="Message Options Theme 01"></HyperLinkListItem>
+				<HyperLinkListItem linkTo="/MessageOptions/white/monochrome/default" primary="Message Options Theme 02"></HyperLinkListItem>
+				<HyperLinkListItem linkTo="/MessageOptions/dark/grey/default" primary="Message Options Theme 03"></HyperLinkListItem>
+				<HyperLinkListItem linkTo="/MessageOptions/white/monochrome/default" primary="Message Options Colors 01"></HyperLinkListItem>
+				<HyperLinkListItem linkTo="/MessageOptions/white/brand/default" primary="Message Options Colors 02"></HyperLinkListItem>
+				<HyperLinkListItem linkTo="/MessageOptions/white/lightblue/default" primary="Message Options Colors 03"></HyperLinkListItem>
 				<HyperLinkListItem linkTo="/MessageOptions/white/monochrome/typeramp" primary="Message Options Typeramp"></HyperLinkListItem>
 
 			</NavListView>
