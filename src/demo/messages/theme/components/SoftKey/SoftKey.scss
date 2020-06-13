@@ -28,25 +28,19 @@
   }
 
   > * {
-    //text-transform: capitalize;
     &:first-child {
-      //@extend h5;
       min-width: 7.2rem + $skbar-gap;
       padding: 0 0 0 $skbar-gap;
       text-align: left;
     }
 
     &:nth-child(2) {
-      //font-size: 1.6rem;
-      //font-weight: 700;
       min-width: 2rem + $skbar-gap * 2; // min gap between LSK & RSK = 2rem
       max-width: 7.6rem;
-      //text-transform: uppercase;
       padding: 0 $skbar-gap;
     }
 
     &:last-child {
-      //@extend h5;
       min-width: 7.2rem + $skbar-gap;
       text-align: right;
       padding: 0 $skbar-gap 0 0;
