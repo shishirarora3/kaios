@@ -17,6 +17,7 @@ const TextInput = ({
   enableTabSwitching,
   handleKeyDown,                  // added for moving to the next input on pressing enter
   initialValue,
+  placeholder,
   ...props
 }) => {
   const [isFocused, setIsFocused] = useState(false);
@@ -76,7 +77,7 @@ const TextInput = ({
       <input
         ref={forwardedRef}
         type="text"
-        placeholder="Type name"
+        placeholder={placeholder}
         className={inputCls}
         onChange={handleChange}
         onKeyUpCapture={handleKeyUp}
@@ -107,7 +108,8 @@ TextInput.propTypes = {
   onChange: PropTypes.func,
   enableTabSwitching: PropTypes.bool,
   initialValue: PropTypes.string,
-  handleKeyDown: PropTypes.func
+  handleKeyDown: PropTypes.func,
+  placeholder: PropTypes.string
 };
 
 export default React.forwardRef((props, ref) => (
