@@ -1,5 +1,5 @@
 {
-  "name": "kaios",
+  "name": "outlook",
   "version": "0.1.0",
   "private": true,
   "config-overrides-path": "node_modules/react-app-rewire-disable-chunks",
