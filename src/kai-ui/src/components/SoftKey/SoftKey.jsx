@@ -58,6 +58,10 @@ const SoftKey = React.memo(props => {
         case 'SoftRight':
           rightCallback();
           break;
+        case 'Backspace':
+          e.preventDefault();
+          leftCallback();
+          break;
         case 'Enter':
           // Action case press center key
           centerCallback();
