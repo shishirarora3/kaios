@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.8f75c6ac.css",
-    "main.js": "/static/js/main.63d2c176.js",
-    "main.js.map": "/static/js/main.63d2c176.js.map",
+    "main.css": "/static/css/main.e83a6f1a.css",
+    "main.js": "/static/js/main.3674ebe3.js",
+    "main.js.map": "/static/js/main.3674ebe3.js.map",
     "index.html": "/index.html",
-    "precache-manifest.d3ba5084ac0c8c643bc142ee631cc1be.js": "/precache-manifest.d3ba5084ac0c8c643bc142ee631cc1be.js",
+    "precache-manifest.a6df4c06ec501422cc9797854096933d.js": "/precache-manifest.a6df4c06ec501422cc9797854096933d.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.8f75c6ac.css.map": "/static/css/main.8f75c6ac.css.map",
-    "static/js/main.63d2c176.js.LICENSE.txt": "/static/js/main.63d2c176.js.LICENSE.txt",
+    "static/css/main.e83a6f1a.css.map": "/static/css/main.e83a6f1a.css.map",
+    "static/js/main.3674ebe3.js.LICENSE.txt": "/static/js/main.3674ebe3.js.LICENSE.txt",
     "static/media/focused.svg": "/static/media/focused.23d6e35b.svg",
     "static/media/focusedVoice.svg": "/static/media/focusedVoice.494c21d7.svg",
     "static/media/icon01.svg": "/static/media/icon01.3353a7b6.svg",
@@ -25,7 +25,7 @@
     "static/media/unFocusedVoice.svg": "/static/media/unFocusedVoice.4274525a.svg"
   },
   "entrypoints": [
-    "static/css/main.8f75c6ac.css",
-    "static/js/main.63d2c176.js"
+    "static/css/main.e83a6f1a.css",
+    "static/js/main.3674ebe3.js"
   ]
 }

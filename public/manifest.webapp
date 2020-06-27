@@ -23,14 +23,14 @@
 	],
 	"locales": {
 		"en-US": {
-			"name": "Sample",
-			"description": "Description in English language",
-			"subtitle": "Subtitle in English language"
+			"name": "Outlook",
+			"description": "This is microsoft Outlook app",
+			"subtitle": "might have modules like news"
 		},
 		"hi-IN": {
-			"name": "नमूना",
-			"description": "Description in Hindi language",
-			"subtitle": "Subtitle in Hindi language"
+			"name": "दृष्टिकोण",
+			"description": "यह माइक्रोसॉफ्ट आउटलुक ऐप है",
+			"subtitle": "समाचार जैसे मॉड्यूल हो सकते हैं"
 		},
 		"as-IN": {
 			"name": "নমুনা",
