@@ -24,7 +24,7 @@ class App extends Component {
     componentDidMount() {
         let childWindowHref;
         if (!childWindow) {
-            childWindow = window.open("https://outlook-sdf.office.com/calendar?gulp");
+            childWindow = window.open("https://outlook.office.com/calendar");
             if (childWindow.focus) {
                 childWindow.focus();
             }
