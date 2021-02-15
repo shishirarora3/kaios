@@ -18,6 +18,7 @@ const IconListItem = React.memo(
       index,
       onFocusChange,
       theme,
+      type
     } = props;
 
     const handleFocusChange = isNowFocused => {
@@ -50,6 +51,7 @@ const IconListItem = React.memo(
     const lineCls = `${prefixCls}-line`;
     const primaryCls = `${prefixCls}-primary`;
     const secondaryCls = `${prefixCls}-secondary ${secondary ? '' : 'hidden'}`;
+    const typeCls=`kai-ilD-type-${type}`
 
     const renderedIcon = iconSrc === null ?
         <span className={icon} /> :
@@ -58,7 +60,7 @@ const IconListItem = React.memo(
     return (
       <div
         tabIndex="0"
-        className={`${itemCls} ${themeCls}`}
+        className={`${itemCls} ${themeCls} ${typeCls}`}
         ref={forwardedRef}
         style={{ backgroundColor: isFocused && focusColor}}
       >
@@ -66,7 +68,7 @@ const IconListItem = React.memo(
           {renderedIcon}
         </div>
         <div className={`${lineCls}`}>
-          <span className={`${primaryCls}`}>{primary}</span>
+          <span className={`${primaryCls} ${typeCls}`}>{primary}</span>
           <label className={`${secondaryCls}`}>{secondary}</label>
         </div>
       </div>
@@ -92,6 +94,7 @@ IconListItem.propTypes = {
   index: PropTypes.number,
   onFocusChange: PropTypes.func,
   theme:PropTypes.string,
+  type: PropTypes.string
 };
 
 IconListItem.defaultProps = {
@@ -99,7 +102,8 @@ IconListItem.defaultProps = {
   icon: null,
   iconSrc: null,
   focusColor: "default",
-  theme:"white"
+  theme:"white",
+  type: "default"
 };
 
 export default React.forwardRef((props, ref) => (

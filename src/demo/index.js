@@ -25,7 +25,7 @@ const App=()=>{
 				<Route exact path="/HomePageB" render={routeProps => (<HomePageB {...routeProps}/>)}/>
 				<Route exact path="/HomePageC" render={routeProps => (<HomePageC {...routeProps}/>)}/>
 				
-				<Route exact path="/MessageOptions/:theme/:color" render={routeProps => (<MessageOptionsScreen {...routeProps}/>)}/>
+				<Route exact path="/MessageOptions/:theme/:color/:type" render={routeProps => (<MessageOptionsScreen {...routeProps}/>)}/>
 				<Route exact path="/InputPreferenceType" render={routeProps => (<InputPreferenceType {...routeProps}/>)}/>
 				<Route exact path="/InputPreferenceVoice" render={routeProps => (<InputPreferenceVoice {...routeProps}/>)}/>
 				<Route exact path="/" component={Home}/>
@@ -43,12 +43,13 @@ function Home(){
 				<HyperLinkListItem linkTo="/HomePageA" primary="HomeA"></HyperLinkListItem>
 				<HyperLinkListItem linkTo="/HomePageB" primary="HomeB"></HyperLinkListItem>
 				<HyperLinkListItem linkTo="/HomePageC" primary="HomeC"></HyperLinkListItem>
-				<HyperLinkListItem linkTo="/MessageOptions/light/monochrome" primary="Message Options Theme 01"></HyperLinkListItem>
-				<HyperLinkListItem linkTo="/MessageOptions/white/monochrome" primary="Message Options Theme 02"></HyperLinkListItem>
-				<HyperLinkListItem linkTo="/MessageOptions/dark/grey" primary="Message Options Theme 03"></HyperLinkListItem>
-				<HyperLinkListItem linkTo="/MessageOptions/white/monochrome" primary="Message Options Colors 01"></HyperLinkListItem>
-				<HyperLinkListItem linkTo="/MessageOptions/white/brand" primary="Message Options Colors 02"></HyperLinkListItem>
-				<HyperLinkListItem linkTo="/MessageOptions/white/lightblue" primary="Message Options Colors 03"></HyperLinkListItem>
+				<HyperLinkListItem linkTo="/MessageOptions/light/monochrome/default" primary="Message Options Theme 01"></HyperLinkListItem>
+				<HyperLinkListItem linkTo="/MessageOptions/white/monochrome/default" primary="Message Options Theme 02"></HyperLinkListItem>
+				<HyperLinkListItem linkTo="/MessageOptions/dark/grey/default" primary="Message Options Theme 03"></HyperLinkListItem>
+				<HyperLinkListItem linkTo="/MessageOptions/white/monochrome/default" primary="Message Options Colors 01"></HyperLinkListItem>
+				<HyperLinkListItem linkTo="/MessageOptions/white/brand/default" primary="Message Options Colors 02"></HyperLinkListItem>
+				<HyperLinkListItem linkTo="/MessageOptions/white/lightblue/default" primary="Message Options Colors 03"></HyperLinkListItem>
+				<HyperLinkListItem linkTo="/MessageOptions/white/monochrome/typeramp" primary="Message Options Typeramp"></HyperLinkListItem>
 				<HyperLinkListItem linkTo="/InputPreferenceType" primary="Type Input"></HyperLinkListItem>
 				<HyperLinkListItem linkTo="/InputPreferenceVoice" primary="Voice Input"></HyperLinkListItem>
 			</NavListView>
@@ -60,12 +61,12 @@ function Home(){
 const MessageOptionsScreen = (props) => {
 	const validThemes = ['white', 'dark', 'light'];
 	const validColors = ['lightblue', 'monochrome', 'brand','grey'];
-
+	const validTypes = ['default','typeramp']
 	const { theme } = useParams();
 	const { color } = useParams();
-
-	return (validThemes.includes(theme) && validColors.includes(color)) ?
-		<MessageOptions history={props.history} theme={theme} color={color}></MessageOptions> :
+	const {type}=useParams();
+	return (validThemes.includes(theme) && validColors.includes(color)&&validTypes.includes(type)) ?
+		<MessageOptions history={props.history} theme={theme} color={color} type={type}></MessageOptions> :
 		<Home/>
 }
 
