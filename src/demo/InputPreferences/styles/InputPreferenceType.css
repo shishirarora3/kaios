@@ -9,3 +9,9 @@
     top:2rem;
   }
   
+input::-webkit-input-placeholder {
+    color: #7C7C7C;
+}
+input:focus::-webkit-input-placeholder {
+    color: #0078D4;
+}

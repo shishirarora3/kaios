@@ -50,7 +50,7 @@ export default function InputPrefernceType(props) {
             {inputItems.map((item,index)=>{
                 return <div class="typeIconOuter">
                 {isfocused===index?<img src={require('./assets/focusedVoice.svg')}/>:<img src={require('./assets/unFocusedVoice.svg')}/>}              
-                <TextInput label="" ref={item} index={index} onFocusChange={onFocusChange} onChange={onChange} handleKeyDown={handleKeyDown} focusColor="#FFFFFF"/>
+                <TextInput placeholder="Speak or type name" label="" ref={item} index={index} onFocusChange={onFocusChange} onChange={onChange} handleKeyDown={handleKeyDown} focusColor="#FFFFFF"/>
                 </div>
             })}
              <SoftKey leftCallback={mysoftcallback} leftText="Back" centerText="Voice" rightText="Options" backgroundColor="#FFFFFF"/>
